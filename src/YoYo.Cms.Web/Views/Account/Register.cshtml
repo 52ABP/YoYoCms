@@ -3,7 +3,7 @@
 @using Abp.Web.Mvc.Extensions
 @model YoYo.Cms.Web.Models.Account.RegisterViewModel
 @{
-    ViewBag.Title = "注册";
+    ViewBag.Title = L("Register");
 }
 @section Styles
 {
@@ -12,8 +12,7 @@
 @section Scripts
 {
 
-    @Html.IncludeScript("~/creativeTim/assets/js/material.min.js")
-    @Html.IncludeScript("~/creativeTim/assets/js/material-kit.js")
+     
     @Html.IncludeScript("~/Views/Account/Register.js")
     
 }
@@ -69,8 +68,10 @@
                                     </div>
                                 </div>
                                 <div class="footer text-center">
+                                    <a href="@Url.Action("Login")" class="btn btn-primary btn-simple pull-left">返回<div class="ripple-container"></div></a>
+
                                     <button type="submit" id="RegisterButton" class="btn btn-primary">
-                                    <i class="fa fa-sign-in"></i> @L("RememberMe")</button>
+                                        <i class="fa fa-sign-in"></i> @L("Register")</button>
                                 </div>
                             </form>
                         </div>

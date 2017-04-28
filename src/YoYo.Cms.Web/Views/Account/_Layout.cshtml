@@ -29,8 +29,11 @@
     <link href="~/libs/toastr2.1.1/toastr.css" rel="stylesheet" />
     <link href="~/libs/flags/famfamfam-flags.css" rel="stylesheet" />
     <link href="~/libs/sweetalert/sweet-alert.css" rel="stylesheet" />
+
     @Html.IncludeStyle("http://fonts.lug.ustc.edu.cn/css?family=Roboto:400,700,300")
     @Html.IncludeStyle("/creativeTim/assets/css/material-kit.css")
+
+
     <link href="~/Views/Account/_Layout.css" rel="stylesheet" />
     @RenderSection("Styles", false)
 
@@ -146,8 +149,7 @@
             </div>
         </div>
 
-    </body>
-</body>
+ 
 <script type="text/javascript">
     $(function () {
         if (app) {
@@ -156,6 +158,7 @@
     });
 
 </script>
-
+@Html.IncludeScript("~/creativeTim/assets/js/material.min.js")
+@Html.IncludeScript("~/creativeTim/assets/js/material-kit.js")
 </body>
 </html>
