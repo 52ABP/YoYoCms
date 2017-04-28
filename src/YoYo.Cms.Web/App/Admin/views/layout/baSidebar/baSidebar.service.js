@@ -1,7 +1,7 @@
 ﻿(function() {
   'use strict';
 
-  galaxyModule
+  yoyocmsModule
       .provider('baSidebarService', baSidebarServiceProvider);
 
   /** @ngInject */

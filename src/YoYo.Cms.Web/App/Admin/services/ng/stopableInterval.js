@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  galaxyModule
+  yoyocmsModule
     .service('stopableInterval', stopableInterval);
 
   /** @ngInject */

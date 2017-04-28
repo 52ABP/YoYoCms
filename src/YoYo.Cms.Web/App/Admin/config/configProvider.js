@@ -30,7 +30,7 @@
     white: '#10c4b5',
   };
 
-  galaxyModule
+  yoyocmsModule
     .provider('baConfig', configProvider);
 
   /** @ngInject */

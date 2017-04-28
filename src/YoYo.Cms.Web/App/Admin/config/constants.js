@@ -7,7 +7,7 @@
 
     var IMAGES_ROOT = 'app/assets/img/';
 
-    galaxyModule
+    yoyocmsModule
         .constant('layoutSizes', {
             resWidthCollapseSidebar: 1200,
             resWidthHideSidebar: 500

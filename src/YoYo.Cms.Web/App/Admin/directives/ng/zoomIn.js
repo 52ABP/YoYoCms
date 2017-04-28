@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  galaxyModule
+  yoyocmsModule
       .directive('zoomIn', zoomIn);
 
   /** @ngInject */

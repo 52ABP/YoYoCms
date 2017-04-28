@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
- galaxyModule
+ yoyocmsModule
       .controller('MsgCenterCtrl', msgCenterCtrl);
 
   /** @ngInject */

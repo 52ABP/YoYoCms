@@ -1,5 +1,5 @@
 ﻿(function () {
-    galaxyModule.directive('buttonBusy', function () {
+    yoyocmsModule.directive('buttonBusy', function () {
           return {
               restrict: 'A',
               scope: {

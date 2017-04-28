@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module('ourGalaxy').directive('enterKey', [
+    yoyocmsModule.directive('enterKey', [
         function () {
             return function (scope, element, attrs) {
                 element.bind("keydown keypress", function (event) {

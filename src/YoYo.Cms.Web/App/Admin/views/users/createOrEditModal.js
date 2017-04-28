@@ -1,5 +1,5 @@
 ﻿(function () {
-    galaxyModule.controller('app.views.users.createOrEditModal', [
+    yoyocmsModule.controller('app.views.users.createOrEditModal', [
         '$scope', '$uibModalInstance', 'abp.services.app.user', 'userId',
         function ($scope, $uibModalInstance, userService, userId) {
             var vm = this;

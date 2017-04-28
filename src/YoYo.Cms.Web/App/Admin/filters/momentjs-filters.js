@@ -2,7 +2,7 @@
 
 (function () {
 
-    galaxyModule.filter('momentFormat', function () {
+    yoyocmsModule.filter('momentFormat', function () {
         return function (date, formatStr) {
             if (!date) {
                 return '-';

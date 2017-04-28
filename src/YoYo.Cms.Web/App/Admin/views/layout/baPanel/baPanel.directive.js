@@ -8,7 +8,7 @@
   /**
    * Includes basic panel layout inside of current element.
    */
-  galaxyModule
+  yoyocmsModule
       .directive('baPanel', baPanel);
 
   /** @ngInject */

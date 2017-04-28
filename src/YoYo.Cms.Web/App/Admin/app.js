@@ -1,6 +1,6 @@
 ﻿    'use strict';
 
-    var galaxyModule = angular.module('ourGalaxy', [
+    var yoyocmsModule = angular.module('YoYoCms', [
         'ui.router',
         'ui.bootstrap',
         'ui.utils',
@@ -19,7 +19,7 @@
     ]);
 
     //Configuration for Angular UI routing.
-    galaxyModule.config([
+    yoyocmsModule.config([
         '$stateProvider', '$urlRouterProvider', '$locationProvider', '$qProvider','baSidebarServiceProvider',
         function ($stateProvider, $urlRouterProvider, $locationProvider, $qProvider, baSidebarServiceProvider) {
             $locationProvider.hashPrefix('');
@@ -141,7 +141,7 @@
     ]);
 
 
-galaxyModule.run([
+yoyocmsModule.run([
     "$rootScope",  "$state", 'i18nService', '$uibModalStack',
     function($rootScope,  $state, i18nService, $uibModalStack) {
         $rootScope.$state = $state;

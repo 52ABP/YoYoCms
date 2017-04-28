@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  galaxyModule
+  yoyocmsModule
       .factory('baPanel', baPanel);
 
   /** @ngInject */

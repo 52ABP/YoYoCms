@@ -1,5 +1,5 @@
 ﻿(function() {
-    angular.module('ourGalaxy').controller('app.views.tenants.index', [
+    yoyocmsModule.controller('app.views.tenants.index', [
         '$scope', '$uibModal', 'abp.services.app.tenant',
         function ($scope, $uibModal, tenantService) {
             var vm = this;

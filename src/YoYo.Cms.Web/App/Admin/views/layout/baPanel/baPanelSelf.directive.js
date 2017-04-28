@@ -8,7 +8,7 @@
   /**
    * Represents current element as panel, adding all necessary classes.
    */
-  galaxyModule
+  yoyocmsModule
       .directive('baPanelSelf', baPanelSelf);
 
   /** @ngInject */

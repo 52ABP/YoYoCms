@@ -1,7 +1,7 @@
 ﻿(function () {
 
     var controllerId = "app.views.layout";
-    angular.module('ourGalaxy').controller(controllerId,
+    angular.module('YoYoCms').controller(controllerId,
     [
         '$rootScope',"$scope", "$state", "appSession", function($rootScope,$scope, $state, appSession) {
             var vm = this;
@@ -13,7 +13,7 @@
 
 
             $scope.$watch('$viewContentLoaded', function () {
-             //   GalaxyApp.initGalaxy();
+         
 
             });  
 

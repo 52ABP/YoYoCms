@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-galaxyModule
+yoyocmsModule
     .controller('BaSidebarCtrl', baSidebarCtrl);
 
   /** @ngInject */

@@ -1,7 +1,7 @@
 ﻿(function () {
   'use strict';
 
-  galaxyModule
+  yoyocmsModule
       .directive('autoFocus', autoFocus);
 
   /** @ngInject */

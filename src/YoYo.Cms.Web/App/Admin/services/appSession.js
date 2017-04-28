@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module('ourGalaxy').factory('appSession', [
+    yoyocmsModule.factory('appSession', [
             function () {
 
                 var _session = {

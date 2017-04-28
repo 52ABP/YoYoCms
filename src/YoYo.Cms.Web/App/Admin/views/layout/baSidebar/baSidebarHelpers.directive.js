@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-galaxyModule
+yoyocmsModule
       .directive('baSidebarToggleMenu', baSidebarToggleMenu)
       .directive('baSidebarCollapseMenu', baSidebarCollapseMenu)
       .directive('baSidebarTogglingItem', baSidebarTogglingItem)

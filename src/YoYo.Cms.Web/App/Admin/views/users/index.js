@@ -1,5 +1,5 @@
 ﻿(function () {
-    galaxyModule.controller('app.views.users.index', [
+    yoyocmsModule.controller('app.views.users.index', [
         '$scope', '$state', '$uibModal', '$stateParams', 'uiGridConstants', 'abp.services.app.user',
         function ($scope, $state, $uibModal, $stateParams, uiGridConstants, userService) {
             var vm = this;
@@ -7,7 +7,7 @@
             $state.current.title = abp.localization.values.Cms.Users;
 
             $scope.$on('$viewContentLoaded', function () {
-                App.initAjax();
+            
             });
 
             vm.loading = false;

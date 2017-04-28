@@ -1,5 +1,5 @@
 ﻿(function () {
-    galaxyModule.controller("app.views.userAnalysis.userLoginAttempts.index", [
+    yoyocmsModule.controller("app.views.userAnalysis.userLoginAttempts.index", [
         "$scope", "$uibModalInstance", "abp.services.app.userAnalysis",
         function ($scope, $uibModalInstance, userAnalysisService) {
         var vm = this;

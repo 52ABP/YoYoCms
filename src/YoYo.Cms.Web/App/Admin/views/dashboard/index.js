@@ -1,6 +1,6 @@
 ﻿(function() {
 
-    angular.module('ourGalaxy').controller('app.views.dashboard.index',
+    yoyocmsModule.controller('app.views.dashboard.index',
         ['$scope', '$uibModal', 'abp.services.app.user',
             function ($scope, $uibModal, userService) {
 

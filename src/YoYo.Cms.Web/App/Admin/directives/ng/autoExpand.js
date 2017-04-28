@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  galaxyModule
+  yoyocmsModule
       .directive('autoExpand', autoExpand);
 
   /** @ngInject */

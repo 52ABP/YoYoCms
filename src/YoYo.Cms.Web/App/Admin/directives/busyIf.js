@@ -1,5 +1,5 @@
 ﻿(function () {
-    galaxyModule.directive('busyIf', [
+    yoyocmsModule.directive('busyIf', [
         function () {
             return {
                 restrict: 'A',

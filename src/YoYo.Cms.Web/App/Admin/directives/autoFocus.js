@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module('ourGalaxy').directive('autoFocus', function () {
+    yoyocmsModule.directive('autoFocus', function () {
           return {
               restrict: 'A',
               link: function ($scope, element) {

@@ -1,6 +1,6 @@
 ﻿(function() {
     var controllerId = 'app.views.home';
-    angular.module('ourGalaxy').controller(controllerId, [
+    yoyocmsModule.controller(controllerId, [
         '$scope', function($scope) {
             var vm = this;
             //Home logic...
