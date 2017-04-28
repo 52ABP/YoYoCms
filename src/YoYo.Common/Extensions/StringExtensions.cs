@@ -18,13 +18,13 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using Galaxy.Common.Data;
-using Galaxy.Common.Secutiry;
 using Newtonsoft.Json;
+using YoYo.Common.Data;
+using YoYo.Common.Secutiry;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     字符串<see cref="string" />类型的扩展辅助操作类

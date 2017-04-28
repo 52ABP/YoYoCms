@@ -9,7 +9,7 @@
 // 修改描述：
 //  ------------------------------------------------------------------------------
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     布尔值<see cref="bool" />类型的扩展辅助操作类

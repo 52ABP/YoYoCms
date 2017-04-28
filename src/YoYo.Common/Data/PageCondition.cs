@@ -9,7 +9,7 @@
 // 修改描述：
 //  ------------------------------------------------------------------------------
 
-namespace Galaxy.Common.Data
+namespace YoYo.Common.Data
 {
     /// <summary>
     ///     分页查询条件信息

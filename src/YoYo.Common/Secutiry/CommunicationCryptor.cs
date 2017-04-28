@@ -14,11 +14,11 @@
 using System;
 using System.Security.Cryptography;
 using System.Text;
-using Galaxy.Common.Extensions;
+using YoYo.Common.Extensions;
 
 #endregion
 
-namespace Galaxy.Common.Secutiry
+namespace YoYo.Common.Secutiry
 {
     /// <summary>
     ///     结合RSA，DES的通信加密解密操作类

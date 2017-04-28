@@ -16,7 +16,7 @@ using System.Threading;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     线程扩展操作类

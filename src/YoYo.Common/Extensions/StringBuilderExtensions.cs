@@ -16,7 +16,7 @@ using System.Text;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     StringBuilder 扩展方法类

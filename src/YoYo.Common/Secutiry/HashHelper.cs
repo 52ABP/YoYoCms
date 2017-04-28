@@ -13,11 +13,11 @@
 
 using System.Security.Cryptography;
 using System.Text;
-using Galaxy.Common.Extensions;
+using YoYo.Common.Extensions;
 
 #endregion
 
-namespace Galaxy.Common.Secutiry
+namespace YoYo.Common.Secutiry
 {
     /// <summary>
     ///     字符串Hash操作类

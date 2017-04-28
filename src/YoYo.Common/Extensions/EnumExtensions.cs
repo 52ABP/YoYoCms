@@ -19,7 +19,7 @@ using System.Reflection;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     枚举<see cref="Enum" />的扩展辅助操作方法

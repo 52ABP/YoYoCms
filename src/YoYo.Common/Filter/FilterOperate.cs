@@ -9,7 +9,7 @@
 // 修改描述：
 //  ------------------------------------------------------------------------------
 
-namespace Galaxy.Common.Filter
+namespace YoYo.Common.Filter
 {
     /// <summary>
     ///     筛选操作方式

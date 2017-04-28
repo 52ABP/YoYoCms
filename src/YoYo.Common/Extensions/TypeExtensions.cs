@@ -20,7 +20,7 @@ using System.Reflection;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     类型<see cref="Type" />辅助扩展方法类

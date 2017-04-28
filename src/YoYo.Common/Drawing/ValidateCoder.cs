@@ -15,11 +15,11 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
-using Galaxy.Common.Extensions;
+using YoYo.Common.Extensions;
 
 #endregion
 
-namespace Galaxy.Common.Drawing
+namespace YoYo.Common.Drawing
 {
     /// <summary>
     ///     验证码生成类

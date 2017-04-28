@@ -189,6 +189,10 @@
       <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
       <Name>YoYo.Cms.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\YoYo.Common\YoYo.Common.csproj">
+      <Project>{06645ff6-a4fc-4a48-8b12-8a3cbd5752ba}</Project>
+      <Name>YoYo.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

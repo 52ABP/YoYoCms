@@ -20,7 +20,7 @@ using System.Xml;
 
 #endregion
 
-namespace Galaxy.Common.Net
+namespace YoYo.Common.Net
 {
     public class HttpCall
     {

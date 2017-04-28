@@ -9,7 +9,7 @@
 // 修改描述：
 //  ------------------------------------------------------------------------------
 
-namespace Galaxy.Common.Drawing
+namespace YoYo.Common.Drawing
 {
     /// <summary>
     ///     验证码类型

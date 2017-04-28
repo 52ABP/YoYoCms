@@ -2069,6 +2069,10 @@
       <Project>{5eb52d3d-09fd-463a-b02a-8d9856bd3724}</Project>
       <Name>YoYo.Cms.WebApi</Name>
     </ProjectReference>
+    <ProjectReference Include="..\YoYo.Common\YoYo.Common.csproj">
+      <Project>{06645ff6-a4fc-4a48-8b12-8a3cbd5752ba}</Project>
+      <Name>YoYo.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

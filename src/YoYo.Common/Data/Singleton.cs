@@ -16,7 +16,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace Galaxy.Common.Data
+namespace YoYo.Common.Data
 {
     /// <summary>
     ///     定义一个指定类型的单例，该实例的生命周期将跟随整个应用程序。

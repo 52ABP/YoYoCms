@@ -17,7 +17,7 @@ using System.Threading;
 
 #endregion
 
-namespace Galaxy.Common.Util
+namespace YoYo.Common.Util
 {
     /// <summary>
     ///     业务辅助类

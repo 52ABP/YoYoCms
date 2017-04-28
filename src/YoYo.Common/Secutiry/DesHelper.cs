@@ -16,11 +16,11 @@ using System.Globalization;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using Galaxy.Common.Extensions;
+using YoYo.Common.Extensions;
 
 #endregion
 
-namespace Galaxy.Common.Secutiry
+namespace YoYo.Common.Secutiry
 {
     /// <summary>
     ///     DES / TripleDES加密解密操作类

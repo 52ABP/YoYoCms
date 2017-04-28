@@ -16,7 +16,7 @@ using System.Text;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     异常操作扩展

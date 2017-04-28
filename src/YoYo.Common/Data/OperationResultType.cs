@@ -15,7 +15,7 @@ using System.ComponentModel;
 
 #endregion
 
-namespace Galaxy.Common.Data
+namespace YoYo.Common.Data
 {
     /// <summary>
     ///     表示业务操作结果的枚举

@@ -23,7 +23,7 @@ using Newtonsoft.Json.Serialization;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     基类型<see cref="object" />扩展辅助操作类

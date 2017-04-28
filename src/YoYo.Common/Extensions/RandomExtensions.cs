@@ -15,7 +15,7 @@ using System;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     随机数<see cref="Random" />类型的扩展辅助操作类

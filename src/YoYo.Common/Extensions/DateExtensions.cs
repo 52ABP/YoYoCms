@@ -15,7 +15,7 @@ using System;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     public static class DateExtensions
     {

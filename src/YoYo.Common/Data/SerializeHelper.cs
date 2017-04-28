@@ -15,11 +15,11 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Xml.Serialization;
-using Galaxy.Common.Extensions;
+using YoYo.Common.Extensions;
 
 #endregion
 
-namespace Galaxy.Common.Data
+namespace YoYo.Common.Data
 {
     /// <summary>
     ///     序列化辅助操作类

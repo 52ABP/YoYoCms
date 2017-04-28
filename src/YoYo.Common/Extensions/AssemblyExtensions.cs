@@ -17,7 +17,7 @@ using System.Reflection;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     程序集扩展操作类

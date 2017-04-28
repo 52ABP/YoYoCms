@@ -18,7 +18,7 @@ using System.Text.RegularExpressions;
 
 #endregion
 
-namespace Galaxy.Common
+namespace YoYo.Common
 {
     /// <summary>
     ///     用于平时拓展的一些功能

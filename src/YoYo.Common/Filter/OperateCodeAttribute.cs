@@ -15,7 +15,7 @@ using System;
 
 #endregion
 
-namespace Galaxy.Common.Filter
+namespace YoYo.Common.Filter
 {
     /// <summary>
     ///     表示查询操作的前台操作码

@@ -17,7 +17,7 @@ using Newtonsoft.Json;
 
 #endregion
 
-namespace Galaxy.Common.Data
+namespace YoYo.Common.Data
 {
     /// <summary>
     ///     JSON辅助操作类

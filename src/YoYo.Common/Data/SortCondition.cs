@@ -15,7 +15,7 @@ using System.ComponentModel;
 
 #endregion
 
-namespace Galaxy.Common.Data
+namespace YoYo.Common.Data
 {
     /// <summary>
     ///     列表字段排序条件

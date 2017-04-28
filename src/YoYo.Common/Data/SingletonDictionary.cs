@@ -15,7 +15,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace Galaxy.Common.Data
+namespace YoYo.Common.Data
 {
     /// <summary>
     ///     创建一个单例字典，该实例的生命周期将跟随整个应用程序

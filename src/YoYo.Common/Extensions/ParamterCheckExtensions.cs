@@ -18,7 +18,7 @@ using System.Linq;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     用于参数检查的扩展方法

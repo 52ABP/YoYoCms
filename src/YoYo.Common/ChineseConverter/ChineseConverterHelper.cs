@@ -16,7 +16,7 @@ using Microsoft.International.Converters.PinYinConverter;
 
 #endregion
 
-namespace Galaxy.Common.ChineseConverter
+namespace YoYo.Common.ChineseConverter
 {
     /// <summary>
     ///     中英文转换帮助类

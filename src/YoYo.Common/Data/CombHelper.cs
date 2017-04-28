@@ -15,7 +15,7 @@ using System;
 
 #endregion
 
-namespace Galaxy.Common.Data
+namespace YoYo.Common.Data
 {
     /// <summary>
     ///     COMB（<see cref="Guid" />与<see cref="DateTime" />混合构成的可排序<see cref="Guid" />）类型操作类

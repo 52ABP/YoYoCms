@@ -7,8 +7,8 @@
     <ProjectGuid>{06645FF6-A4FC-4A48-8B12-8A3CBD5752BA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Galaxy.Common</RootNamespace>
-    <AssemblyName>Galaxy.Common</AssemblyName>
+    <RootNamespace>YoYo.Common</RootNamespace>
+    <AssemblyName>YoYo.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

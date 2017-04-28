@@ -25,7 +25,7 @@ using NPOI.XSSF.UserModel;
 
 #endregion
 
-namespace Galaxy.Common.Npoi
+namespace YoYo.Common.Npoi
 {
     public class NpoiHelper
     {

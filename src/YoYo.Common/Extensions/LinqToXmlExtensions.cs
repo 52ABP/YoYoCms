@@ -16,7 +16,7 @@ using System.Xml.Linq;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     Xml 扩展操作类

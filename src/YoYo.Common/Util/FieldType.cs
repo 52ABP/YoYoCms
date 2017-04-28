@@ -15,7 +15,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace Galaxy.Common.Util
+namespace YoYo.Common.Util
 {
     public class FieldType
     {

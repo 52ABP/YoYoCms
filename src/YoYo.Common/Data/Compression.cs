@@ -15,11 +15,11 @@ using System;
 using System.IO;
 using System.IO.Compression;
 using System.Text;
-using Galaxy.Common.Extensions;
+using YoYo.Common.Extensions;
 
 #endregion
 
-namespace Galaxy.Common.Data
+namespace YoYo.Common.Data
 {
     /// <summary>
     ///     压缩操作类

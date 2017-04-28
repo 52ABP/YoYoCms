@@ -14,11 +14,11 @@
 using System;
 using System.Globalization;
 using System.Linq;
-using Galaxy.Common.Extensions;
+using YoYo.Common.Extensions;
 
 #endregion
 
-namespace Galaxy.Common.Data
+namespace YoYo.Common.Data
 {
     /// <summary>
     ///     任意[2,62]进制转换器

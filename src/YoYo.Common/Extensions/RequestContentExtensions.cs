@@ -16,7 +16,7 @@ using System.Web;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     public static class RequestContentExtensions
     {

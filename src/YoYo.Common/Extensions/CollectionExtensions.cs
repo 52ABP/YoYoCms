@@ -19,7 +19,7 @@ using System.Text;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     集合扩展方法类

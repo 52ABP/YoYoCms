@@ -15,7 +15,7 @@ using System.Runtime.Caching;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     内存缓存扩展操作类

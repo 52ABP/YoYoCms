@@ -18,7 +18,7 @@ using System.Linq.Expressions;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     Expression表达式扩展操作类

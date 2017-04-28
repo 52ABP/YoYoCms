@@ -15,7 +15,7 @@ using System;
 
 #endregion
 
-namespace Galaxy.Common.UnitConversion
+namespace YoYo.Common.UnitConversion
 {
     /// <summary>
     ///     单位换算帮助类

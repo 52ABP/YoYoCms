@@ -15,7 +15,7 @@ using System;
 
 #endregion
 
-namespace Galaxy.Common.Extensions
+namespace YoYo.Common.Extensions
 {
     /// <summary>
     ///     Try-Catch扩展操作

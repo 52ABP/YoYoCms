@@ -16,7 +16,7 @@ using System.Linq.Expressions;
 
 #endregion
 
-namespace Galaxy.Common.Filter
+namespace YoYo.Common.Filter
 {
     /// <summary>
     ///     <see cref="IQueryable{T}" />类型字符串排序操作类
