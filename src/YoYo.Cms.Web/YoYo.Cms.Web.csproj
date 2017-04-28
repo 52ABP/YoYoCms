@@ -777,16 +777,6 @@
     <Content Include="libs\font-awesome\css\font-awesome.css" />
     <Content Include="libs\font-awesome\css\font-awesome.min.css" />
     <Content Include="libs\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="libs\GalaxyIconfont\demo.css" />
-    <Content Include="libs\GalaxyIconfont\demo_fontclass.html" />
-    <Content Include="libs\GalaxyIconfont\demo_symbol.html" />
-    <Content Include="libs\GalaxyIconfont\demo_unicode.html" />
-    <Content Include="libs\GalaxyIconfont\iconfont.css" />
-    <Content Include="libs\GalaxyIconfont\iconfont.js" />
-    <Content Include="libs\GalaxyIconfont\iconfont.min.css">
-      <DependentUpon>iconfont.css</DependentUpon>
-    </Content>
-    <Content Include="libs\GalaxyIconfont\iconfont.svg" />
     <Content Include="libs\i18n\angular-locale_af-na.js" />
     <Content Include="libs\i18n\angular-locale_af-za.js" />
     <Content Include="libs\i18n\angular-locale_af.js" />
@@ -1884,9 +1874,6 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="libs\GalaxyIconfont\iconfont.eot" />
-    <Content Include="libs\GalaxyIconfont\iconfont.ttf" />
-    <Content Include="libs\GalaxyIconfont\iconfont.woff" />
     <Content Include="creativeTim\assets\fonts\Pe-icon-7-stroke.eot" />
     <Content Include="creativeTim\assets\fonts\Pe-icon-7-stroke.ttf" />
     <Content Include="creativeTim\assets\fonts\Pe-icon-7-stroke.woff" />
@@ -2086,7 +2073,6 @@
     <Content Include="Views\Account\_Layout.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\Account\_Languages.cshtml" />
     <Content Include="Views\Account\FindMyPassword.cshtml" />
     <Content Include="Views\Account\FindMyPasswordTypes.cshtml" />
@@ -2100,7 +2086,7 @@
   <ItemGroup>
     <Folder Include="App\assets\vendor\" />
     <Folder Include="App_Data\" />
-    <Folder Include="libs\GalaxyIconfont\dist\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YoYo.Cms.Application\YoYo.Cms.Application.csproj">

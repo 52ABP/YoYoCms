@@ -21,10 +21,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Cms-@ViewBag.Title</title>
+    <title>YoYoCms-@ViewBag.Title</title>
 
     <link rel="shortcut icon" href="~/favicon.ico">
-    <link href="~/libs/GalaxyIconfont/iconfont.min.css" rel="stylesheet" />
     <link href="~/libs/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="~/libs/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="~/libs/toastr2.1.1/toastr.css" rel="stylesheet" />
@@ -86,9 +85,69 @@
     @RenderSection("Scripts", false)
 </head>
 <body>
+    <body class="signup-page">
+        <nav class="navbar navbar-transparent navbar-absolute">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://www.yoyocms.com">YoYo-Cms</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navigation-example">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="javascript:void(0)" target="_blank">
 
-    @RenderBody()
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="wrapper">
+            <div class="header header-filter" style="background-image: url('/creativeTim/assets/img/city.jpg'); background-size: cover; background-position: top center;">
+                @RenderBody()
+                <footer class="footer">
+                    <div class="container">
+                        @*<nav class="pull-left">
+                                <ul>
+                                    <li>
+                                        <a href="http://www.creative-tim.com">
+                                            Creative Tim
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://presentation.creative-tim.com">
+                                            About Us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://blog.creative-tim.com">
+                                            Blog
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.creative-tim.com/license">
+                                            Licenses
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>*@
+                        <div class="copyright pull-right">
+                            &copy; @DateTime.Now.Year, made with <i class="fa fa-heart heart"></i> by <a href="http://www.yoyocms.com" target="_blank">YoYoCms</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
 
+    </body>
+</body>
 <script type="text/javascript">
     $(function () {
         if (app) {
