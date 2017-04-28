@@ -1,0 +1,2168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{897F6FD8-6F90-48E4-95A5-B4429B896205}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YoYo.Cms.Web</RootNamespace>
+    <AssemblyName>YoYo.Cms.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>ES6</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abp, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.1.5.1\lib\net452\Abp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.AutoMapper, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.1.5.1\lib\net452\Abp.AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Castle.Log4Net, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Castle.Log4Net.1.5.1\lib\net452\Abp.Castle.Log4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.EntityFramework, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.EntityFramework.1.5.1\lib\net452\Abp.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.EntityFramework.Common, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.EntityFramework.Common.1.5.1\lib\net452\Abp.EntityFramework.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.HangFire, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.HangFire.1.5.1\lib\net452\Abp.HangFire.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Owin, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Owin.1.5.1\lib\net452\Abp.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Web, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.1.5.1\lib\net452\Abp.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Web.Api, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Api.1.5.1\lib\net452\Abp.Web.Api.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Web.Common, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Common.1.5.1\lib\net452\Abp.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Web.Mvc, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Mvc.1.5.1\lib\net452\Abp.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Web.SignalR, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.SignalR.1.5.1\lib\net452\Abp.Web.SignalR.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Zero, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.1.5.1\lib\net452\Abp.Zero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Zero.EntityFramework, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.EntityFramework.1.5.1\lib\net452\Abp.Zero.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.LoggingFacility.3.4.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.4.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.DynamicFilters, Version=1.4.11.0, Culture=neutral, PublicKeyToken=146423a1b8d60775, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.DynamicFilters.1.4.11\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.6.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.6.10\lib\net45\Hangfire.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.6.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.6.10\lib\net45\Hangfire.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=10.4.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.10.4.0\lib\net\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.FileSystems.3.0.1\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.StaticFiles, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Concurrent, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Enlightenment, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Abp\Framework\scripts\abp.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.blockUI.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.jquery.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.jtable.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.moment.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.signalr.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.spin.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.sweet-alert.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.toastr.js" />
+    <Content Include="Abp\Framework\scripts\libs\angularjs\abp.ng.js" />
+    <Content Include="Abp\Framework\scripts\libs\requirejs\plugins\service.js" />
+    <Content Include="Abp\Framework\scripts\utils\ie10fix.js" />
+    <Content Include="Abp\Framework\styles\abp.css" />
+    <Content Include="Abp\Framework\styles\abp.min.css" />
+    <Content Include="Abp\Framework\styles\abp.mixings.css" />
+    <Content Include="Abp\Framework\styles\abp.mixings.min.css" />
+    <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
+    <Content Include="App\Admin\app.js" />
+    <Content Include="App\Admin\config\config.js" />
+    <Content Include="App\Admin\config\configProvider.js" />
+    <Content Include="App\Admin\config\constants.js" />
+    <Content Include="App\Admin\config\run.js" />
+    <Content Include="App\Admin\config\service.js" />
+    <Content Include="App\Admin\css\main.css" />
+    <Content Include="App\Admin\css\main.min.css" />
+    <Content Include="App\Admin\directives\autoFocus.js" />
+    <Content Include="App\Admin\directives\busyIf.js" />
+    <Content Include="App\Admin\directives\buttonBusy.js" />
+    <Content Include="App\Admin\directives\enterKey.js" />
+    <Content Include="App\Admin\directives\ng\animatedChange.js" />
+    <Content Include="App\Admin\directives\ng\autoExpand.js" />
+    <Content Include="App\Admin\directives\ng\autoFocus.js" />
+    <Content Include="App\Admin\directives\ng\includeWithScope.js" />
+    <Content Include="App\Admin\directives\ng\ionSlider.js" />
+    <Content Include="App\Admin\directives\ng\ngFileSelect.js" />
+    <Content Include="App\Admin\directives\ng\scrollPosition.js" />
+    <Content Include="App\Admin\directives\ng\trackWidth.js" />
+    <Content Include="App\Admin\directives\ng\zoomIn.js" />
+    <Content Include="App\Admin\filters\image\appImage.js" />
+    <Content Include="App\Admin\filters\image\kameleonImg.js" />
+    <Content Include="App\Admin\filters\image\profilePicture.js" />
+    <Content Include="App\Admin\filters\momentjs-filters.js" />
+    <Content Include="App\Admin\filters\text\removeHtml.js" />
+    <Content Include="App\Admin\services\appSession.js" />
+    <Content Include="App\Admin\services\ng\baProgressModal.js" />
+    <Content Include="App\Admin\services\ng\baUtil.js" />
+    <Content Include="App\Admin\services\ng\fileReader.js" />
+    <Content Include="App\Admin\services\ng\preloader.js" />
+    <Content Include="App\Admin\services\ng\stopableInterval.js" />
+    <Content Include="App\Admin\views\about\about.js" />
+    <Content Include="App\Admin\views\dashboard\index.js" />
+    <Content Include="App\Admin\views\empty\index.js" />
+    <Content Include="App\Admin\views\home\home.js" />
+    <Content Include="App\Admin\views\layout\backTop\backTop.directive.js" />
+    <Content Include="App\Admin\views\layout\backTop\lib\jquery.backTop.min.js" />
+    <Content Include="App\Admin\views\layout\baPanel\baPanel.directive.js" />
+    <Content Include="App\Admin\views\layout\baPanel\baPanel.service.js" />
+    <Content Include="App\Admin\views\layout\baPanel\baPanelBlur.directive.js" />
+    <Content Include="App\Admin\views\layout\baPanel\baPanelBlurHelper.service.js" />
+    <Content Include="App\Admin\views\layout\baPanel\baPanelSelf.directive.js" />
+    <Content Include="App\Admin\views\layout\baSidebar\baSidebar.directive.js" />
+    <Content Include="App\Admin\views\layout\baSidebar\baSidebar.service.js" />
+    <Content Include="App\Admin\views\layout\baSidebar\BaSidebarCtrl.js" />
+    <Content Include="App\Admin\views\layout\baSidebar\baSidebarHelpers.directive.js" />
+    <Content Include="App\Admin\views\layout\baWizard\baWizard.directive.js" />
+    <Content Include="App\Admin\views\layout\baWizard\baWizardCtrl.js" />
+    <Content Include="App\Admin\views\layout\baWizard\baWizardStep.directive.js" />
+    <Content Include="App\Admin\views\layout\contentTop\contentTop.directive.js" />
+    <Content Include="App\Admin\views\layout\layout.css" />
+    <Content Include="App\Admin\views\layout\layout.js" />
+    <Content Include="App\Admin\views\layout\msgCenter\msgCenter.directive.js" />
+    <Content Include="App\Admin\views\layout\msgCenter\MsgCenterCtrl.js" />
+    <Content Include="App\Admin\views\layout\pageTop\pageTop.directive.js" />
+    <Content Include="App\Admin\views\layout\progressBarRound\progressBarRound.directive.js" />
+    <Content Include="App\Admin\views\layout\widgets\widgets.directive.js" />
+    <Content Include="App\Admin\views\tenants\createModal.js" />
+    <Content Include="App\Admin\views\tenants\index.js" />
+    <Content Include="App\Admin\views\userAnalysis\userLoginAttempts.js" />
+    <Content Include="App\Admin\views\users\changeUserPassword.js" />
+    <Content Include="App\Admin\views\users\createOrEditModal.js" />
+    <Content Include="App\Admin\views\users\index.js" />
+    <Content Include="App\Admin\_libconfig.js" />
+    <Content Include="App\assets\fonts\socicon.svg" />
+    <Content Include="App\assets\img\app\browsers\chrome.svg" />
+    <Content Include="App\assets\img\app\browsers\firefox.svg" />
+    <Content Include="App\assets\img\app\browsers\ie.svg" />
+    <Content Include="App\assets\img\app\browsers\opera.svg" />
+    <Content Include="App\assets\img\app\browsers\safari.svg" />
+    <Content Include="App\assets\img\app\feed\genom.png" />
+    <Content Include="App\assets\img\app\feed\my-little-kitten.png" />
+    <Content Include="App\assets\img\app\feed\new-york-location.png" />
+    <Content Include="App\assets\img\app\feed\vader-and-me-preview.png" />
+    <Content Include="App\assets\img\app\my-app-logo.png" />
+    <Content Include="App\assets\img\app\profile\Alexander.png" />
+    <Content Include="App\assets\img\app\profile\Andrey.png" />
+    <Content Include="App\assets\img\app\profile\Kostya.png" />
+    <Content Include="App\assets\img\app\profile\Nasta.png" />
+    <Content Include="App\assets\img\app\profile\Nick.png" />
+    <Content Include="App\assets\img\app\profile\Vlad.png" />
+    <Content Include="App\assets\img\app\skin-thumbnails\01_default.jpg" />
+    <Content Include="App\assets\img\app\skin-thumbnails\02_transparent.jpg" />
+    <Content Include="App\assets\img\app\skin-thumbnails\03_blue.jpg" />
+    <Content Include="App\assets\img\app\skin-thumbnails\04_peachy.jpg" />
+    <Content Include="App\assets\img\app\skin-thumbnails\05_material.jpg" />
+    <Content Include="App\assets\img\app\skin-thumbnails\06_transblue.jpg" />
+    <Content Include="App\assets\img\app\todo\check-icon.png" />
+    <Content Include="App\assets\img\app\typography\banner.png" />
+    <Content Include="App\assets\img\app\typography\typo01.png" />
+    <Content Include="App\assets\img\app\typography\typo03.png" />
+    <Content Include="App\assets\img\app\typography\typo04.png" />
+    <Content Include="App\assets\img\app\typography\typo05.png" />
+    <Content Include="App\assets\img\app\typography\typo06.png" />
+    <Content Include="App\assets\img\app\typography\typo07.png" />
+    <Content Include="App\assets\img\arrow-green-up.svg" />
+    <Content Include="App\assets\img\arrow-red-down.svg" />
+    <Content Include="App\assets\img\blue-bg.jpg" />
+    <Content Include="App\assets\img\blur-bg-blurred.jpg" />
+    <Content Include="App\assets\img\blur-bg-mobile.jpg" />
+    <Content Include="App\assets\img\blur-bg.jpg" />
+    <Content Include="App\assets\img\chernika.png" />
+    <Content Include="App\assets\img\comments.svg" />
+    <Content Include="App\assets\img\face.svg" />
+    <Content Include="App\assets\img\favicon-16x16.png" />
+    <Content Include="App\assets\img\favicon-32x32.png" />
+    <Content Include="App\assets\img\favicon-96x96.png" />
+    <Content Include="App\assets\img\green-bg.jpg" />
+    <Content Include="App\assets\img\money.svg" />
+    <Content Include="App\assets\img\peachy-bg.jpg" />
+    <Content Include="App\assets\img\person.svg" />
+    <Content Include="App\assets\img\refresh.svg" />
+    <Content Include="App\assets\img\shopping-cart.svg" />
+    <Content Include="App\assets\img\theme\icon\feed\feed-image.svg" />
+    <Content Include="App\assets\img\theme\icon\feed\feed-location.svg" />
+    <Content Include="App\assets\img\theme\icon\feed\feed-video.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Alien.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Analytics.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Apartment.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Batman.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Beach.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Bell.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Bonsai.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Boss-3.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Boss-5.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Burglar.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Bus.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Candy.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Checklist.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Cheese.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Chessboard.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Clipboard-Plan.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Desert.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Dna.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Euro-Coin.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Food-Dome.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Hacker.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Images.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Key.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Laptop-Signal.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Locked-Cloud.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Love-Letter.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Magician.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Makeup.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Medal-2.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Microscope.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Mind-Map-Paper.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Money-Increase.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Music-Equalizer.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Ninja.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Online-Shopping.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Pantone.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Party-Poppers.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Phone-Booth.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Programming.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Santa.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Shop.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Street-View.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Student-3.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Surfer.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Surgeon.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Tower.svg" />
+    <Content Include="App\assets\img\theme\icon\kameleon\Vector.svg" />
+    <Content Include="App\assets\img\theme\no-photo.png" />
+    <Content Include="App\assets\img\theme\palette.png" />
+    <Content Include="App\assets\img\transblue-bg.jpg" />
+    <Content Include="App\assets\pictures\pic-andrey.png" />
+    <Content Include="App\assets\pictures\pic-kostia.png" />
+    <Content Include="App\assets\pictures\pic-nasta.png" />
+    <Content Include="App\assets\pictures\pic-profile.png" />
+    <Content Include="App\assets\pictures\pic-vova.png" />
+    <Content Include="App\assets\pictures\tinder-logo.jpg" />
+    <Content Include="Common\Images\default-profile-picture.png" />
+    <Content Include="Common\Images\logo.jpg" />
+    <Content Include="Common\Scripts\consts.js" />
+    <Content Include="Common\Scripts\helpers.js" />
+    <Content Include="Common\Scripts\jquery-custom.js" />
+    <Content Include="Common\Scripts\jquery-validation-custom.js" />
+    <Content Include="Content\bootstrap-cosmo.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\flags\famfamfam-flags.css" />
+    <Content Include="Content\flags\famfamfam-flags.png" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="creativeTim\assets\css\components-md.css" />
+    <Content Include="creativeTim\assets\css\light-bootstrap-dashboard.css" />
+    <Content Include="creativeTim\assets\css\light-bootstrap-dashboard.min.css">
+      <DependentUpon>light-bootstrap-dashboard.css</DependentUpon>
+    </Content>
+    <Content Include="creativeTim\assets\css\loading.css" />
+    <Content Include="creativeTim\assets\css\material-bootstrap-wizard.css" />
+    <Content Include="creativeTim\assets\css\pe-icon-7-stroke.css" />
+    <Content Include="creativeTim\assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="creativeTim\assets\img\default-avatar.png" />
+    <Content Include="creativeTim\assets\img\faces\face-0.jpg" />
+    <Content Include="creativeTim\assets\img\faces\face-1.jpg" />
+    <Content Include="creativeTim\assets\img\faces\face-2.jpg" />
+    <Content Include="creativeTim\assets\img\faces\face-3.jpg" />
+    <Content Include="creativeTim\assets\img\faces\face-4.jpg" />
+    <Content Include="creativeTim\assets\img\faces\face-5.jpg" />
+    <Content Include="creativeTim\assets\img\faces\face-6.jpg" />
+    <Content Include="creativeTim\assets\img\faces\face-7.jpg" />
+    <Content Include="creativeTim\assets\img\faces\tim_vector.jpe" />
+    <Content Include="creativeTim\assets\img\loading-bubbles.svg" />
+    <Content Include="creativeTim\assets\img\Loading\loading-1.gif" />
+    <Content Include="creativeTim\assets\img\Loading\loading-2.gif" />
+    <Content Include="creativeTim\assets\img\Loading\loading-3.gif" />
+    <Content Include="creativeTim\assets\img\mask.png" />
+    <Content Include="creativeTim\assets\img\new_logo.png" />
+    <Content Include="creativeTim\assets\img\sidebar\sidebar-1.jpg" />
+    <Content Include="creativeTim\assets\img\sidebar\sidebar-2.jpg" />
+    <Content Include="creativeTim\assets\img\sidebar\sidebar-3.jpg" />
+    <Content Include="creativeTim\assets\img\sidebar\sidebar-4.jpg" />
+    <Content Include="creativeTim\assets\img\sidebar\sidebar-5.jpg" />
+    <Content Include="creativeTim\assets\img\tim_80x80.png" />
+    <Content Include="creativeTim\assets\js\bootstrap-checkbox-radio-switch.js" />
+    <Content Include="creativeTim\assets\js\bootstrap-notify.js" />
+    <Content Include="creativeTim\assets\js\bootstrap-select.js" />
+    <Content Include="creativeTim\assets\js\bootstrap.min.js" />
+    <Content Include="creativeTim\assets\js\demo.js" />
+    <Content Include="creativeTim\assets\js\jquery-1.10.2.js" />
+    <Content Include="creativeTim\assets\js\light-bootstrap-dashboard.js" />
+    <Content Include="creativeTim\assets\js\material-bootstrap-wizard.js" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="libs\angular-bootstrap\ui-bootstrap-csp.css" />
+    <Content Include="libs\angular-bootstrap\ui-bootstrap-tpls.js" />
+    <Content Include="libs\angular-bootstrap\ui-bootstrap-tpls.min.js" />
+    <Content Include="libs\angular-bootstrap\ui-bootstrap.js" />
+    <Content Include="libs\angular-bootstrap\ui-bootstrap.min.js" />
+    <Content Include="libs\angular-daterangepicker\angular-daterangepicker.js" />
+    <Content Include="libs\angular-daterangepicker\angular-daterangepicker.min.js" />
+    <Content Include="libs\angular-moment\angular-moment.js" />
+    <Content Include="libs\angular-moment\angular-moment.min.js" />
+    <Content Include="libs\angular-ocLazyLoad\ocLazyLoad.min.js" />
+    <Content Include="libs\angular-progress-button-styles\dist\angular-progress-button-styles.css" />
+    <Content Include="libs\angular-progress-button-styles\dist\angular-progress-button-styles.js" />
+    <Content Include="libs\angular-progress-button-styles\dist\angular-progress-button-styles.min.css" />
+    <Content Include="libs\angular-progress-button-styles\dist\angular-progress-button-styles.min.js" />
+    <Content Include="libs\angular-route\angular-route.js" />
+    <Content Include="libs\angular-route\angular-route.min.js" />
+    <Content Include="libs\angular-slimscroll\angular-slimscroll.js" />
+    <Content Include="libs\angular-smart-table\dist\smart-table.js" />
+    <Content Include="libs\angular-smart-table\dist\smart-table.min.js" />
+    <Content Include="libs\angular-toastr\dist\angular-toastr.css" />
+    <Content Include="libs\angular-toastr\dist\angular-toastr.js" />
+    <Content Include="libs\angular-toastr\dist\angular-toastr.min.css" />
+    <Content Include="libs\angular-toastr\dist\angular-toastr.min.js" />
+    <Content Include="libs\angular-toastr\dist\angular-toastr.tpls.js" />
+    <Content Include="libs\angular-toastr\dist\angular-toastr.tpls.min.js" />
+    <Content Include="libs\angular-toastr\gulpfile.js" />
+    <Content Include="libs\angular-toastr\index.js" />
+    <Content Include="libs\angular-touch\angular-touch.js" />
+    <Content Include="libs\angular-touch\angular-touch.min.js" />
+    <Content Include="libs\angular-ui-grid\ui-grid.css" />
+    <Content Include="libs\angular-ui-grid\ui-grid.js" />
+    <Content Include="libs\angular-ui-grid\ui-grid.min.css" />
+    <Content Include="libs\angular-ui-grid\ui-grid.min.js" />
+    <Content Include="libs\angular-ui-grid\ui-grid.svg" />
+    <Content Include="libs\angular-ui-select\dist\select.css" />
+    <Content Include="libs\angular-ui-select\dist\select.js" />
+    <Content Include="libs\angular-ui-select\dist\select.min.css" />
+    <Content Include="libs\angular-ui-select\dist\select.min.js" />
+    <Content Include="libs\angular-ui-select\docs\assets\app.js" />
+    <Content Include="libs\angular-ui-select\docs\assets\demo.js" />
+    <Content Include="libs\angular-ui-select\docs\assets\docs.css" />
+    <Content Include="libs\angular-ui-select\docs\assets\plunkr.js" />
+    <Content Include="libs\angular-ui-select\docs\index.html" />
+    <Content Include="libs\angular-ui-select\docs\partials\_footer.html" />
+    <Content Include="libs\angular-ui-select\docs\partials\_header.html" />
+    <Content Include="libs\angular-ui-select\index.js" />
+    <Content Include="libs\angular-ui-sortable\sortable.js" />
+    <Content Include="libs\angular-ui-sortable\sortable.min.js" />
+    <Content Include="libs\angular-ui\ui-bootstrap-tpls-2.5.0.js" />
+    <Content Include="libs\angular\angular.js" />
+    <Content Include="libs\angular\angular.min.js" />
+    <Content Include="libs\animate\animate.css" />
+    <Content Include="libs\bootstrap-daterangepicker\bootstrap-daterangepicker.zh-cn.js" />
+    <Content Include="libs\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="libs\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="libs\bootstrap-select\css\bootstrap-select.css" />
+    <Content Include="libs\bootstrap-select\css\bootstrap-select.min.css" />
+    <Content Include="libs\bootstrap-select\js\angular-bootstrap-select.js" />
+    <Content Include="libs\bootstrap-select\js\bootstrap-select.js" />
+    <Content Include="libs\bootstrap-select\js\bootstrap-select.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-ar_AR.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-ar_AR.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-bg_BG.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-bg_BG.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-cro_CRO.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-cro_CRO.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-da_DK.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-da_DK.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-de_DE.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-de_DE.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-en_US.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-en_US.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-es_CL.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-es_CL.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-es_ES.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-es_ES.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-eu.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-eu.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-fa_IR.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-fa_IR.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-fi_FI.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-fi_FI.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-fr_FR.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-fr_FR.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-hu_HU.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-hu_HU.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-id_ID.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-id_ID.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-it_IT.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-it_IT.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-ko_KR.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-ko_KR.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-lt_LT.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-lt_LT.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-nb_NO.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-nb_NO.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-nl_NL.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-nl_NL.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-pl_PL.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-pl_PL.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-pt_BR.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-pt_BR.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-pt_PT.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-pt_PT.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-ro_RO.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-ro_RO.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-ru_RU.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-ru_RU.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-sk_SK.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-sk_SK.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-sl_SI.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-sl_SI.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-sv_SE.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-sv_SE.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-tr_TR.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-tr_TR.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-ua_UA.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-ua_UA.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-zh_CN.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-zh_CN.min.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-zh_TW.js" />
+    <Content Include="libs\bootstrap-select\js\i18n\defaults-zh_TW.min.js" />
+    <Content Include="libs\bootstrap-switch\dist\css\bootstrap2\bootstrap-switch.css" />
+    <Content Include="libs\bootstrap-switch\dist\css\bootstrap2\bootstrap-switch.min.css" />
+    <Content Include="libs\bootstrap-switch\dist\css\bootstrap3\bootstrap-switch.css" />
+    <Content Include="libs\bootstrap-switch\dist\css\bootstrap3\bootstrap-switch.min.css" />
+    <Content Include="libs\bootstrap-switch\dist\js\bootstrap-switch.js" />
+    <Content Include="libs\bootstrap-switch\dist\js\bootstrap-switch.min.js" />
+    <Content Include="libs\bootstrap-tagsinput\dist\bootstrap-tagsinput-angular.js" />
+    <Content Include="libs\bootstrap-tagsinput\dist\bootstrap-tagsinput-angular.min.js" />
+    <Content Include="libs\bootstrap-tagsinput\dist\bootstrap-tagsinput-typeahead.css" />
+    <Content Include="libs\bootstrap-tagsinput\dist\bootstrap-tagsinput.css" />
+    <Content Include="libs\bootstrap-tagsinput\dist\bootstrap-tagsinput.js" />
+    <Content Include="libs\bootstrap-tagsinput\dist\bootstrap-tagsinput.min.js" />
+    <Content Include="libs\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="libs\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="libs\bootstrap\css\bootstrap.css" />
+    <Content Include="libs\bootstrap\css\bootstrap.min.css" />
+    <Content Include="libs\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="libs\bootstrap\js\affix.js" />
+    <Content Include="libs\bootstrap\js\alert.js" />
+    <Content Include="libs\bootstrap\js\bootstrap.js" />
+    <Content Include="libs\bootstrap\js\bootstrap.min.js" />
+    <Content Include="libs\bootstrap\js\button.js" />
+    <Content Include="libs\bootstrap\js\carousel.js" />
+    <Content Include="libs\bootstrap\js\collapse.js" />
+    <Content Include="libs\bootstrap\js\dropdown.js" />
+    <Content Include="libs\bootstrap\js\modal.js" />
+    <Content Include="libs\bootstrap\js\popover.js" />
+    <Content Include="libs\bootstrap\js\scrollspy.js" />
+    <Content Include="libs\bootstrap\js\tab.js" />
+    <Content Include="libs\bootstrap\js\tooltip.js" />
+    <Content Include="libs\bootstrap\js\transition.js" />
+    <Content Include="libs\eve-raphael\eve.js" />
+    <Content Include="libs\fastclick\lib\fastclick.js" />
+    <Content Include="libs\flags\famfamfam-flags.css" />
+    <Content Include="libs\flags\famfamfam-flags.png" />
+    <Content Include="libs\font-awesome\css\font-awesome.css" />
+    <Content Include="libs\font-awesome\css\font-awesome.min.css" />
+    <Content Include="libs\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="libs\GalaxyIconfont\demo.css" />
+    <Content Include="libs\GalaxyIconfont\demo_fontclass.html" />
+    <Content Include="libs\GalaxyIconfont\demo_symbol.html" />
+    <Content Include="libs\GalaxyIconfont\demo_unicode.html" />
+    <Content Include="libs\GalaxyIconfont\iconfont.css" />
+    <Content Include="libs\GalaxyIconfont\iconfont.js" />
+    <Content Include="libs\GalaxyIconfont\iconfont.min.css">
+      <DependentUpon>iconfont.css</DependentUpon>
+    </Content>
+    <Content Include="libs\GalaxyIconfont\iconfont.svg" />
+    <Content Include="libs\i18n\angular-locale_af-na.js" />
+    <Content Include="libs\i18n\angular-locale_af-za.js" />
+    <Content Include="libs\i18n\angular-locale_af.js" />
+    <Content Include="libs\i18n\angular-locale_agq-cm.js" />
+    <Content Include="libs\i18n\angular-locale_agq.js" />
+    <Content Include="libs\i18n\angular-locale_ak-gh.js" />
+    <Content Include="libs\i18n\angular-locale_ak.js" />
+    <Content Include="libs\i18n\angular-locale_am-et.js" />
+    <Content Include="libs\i18n\angular-locale_am.js" />
+    <Content Include="libs\i18n\angular-locale_ar-001.js" />
+    <Content Include="libs\i18n\angular-locale_ar-ae.js" />
+    <Content Include="libs\i18n\angular-locale_ar-bh.js" />
+    <Content Include="libs\i18n\angular-locale_ar-dj.js" />
+    <Content Include="libs\i18n\angular-locale_ar-dz.js" />
+    <Content Include="libs\i18n\angular-locale_ar-eg.js" />
+    <Content Include="libs\i18n\angular-locale_ar-eh.js" />
+    <Content Include="libs\i18n\angular-locale_ar-er.js" />
+    <Content Include="libs\i18n\angular-locale_ar-il.js" />
+    <Content Include="libs\i18n\angular-locale_ar-iq.js" />
+    <Content Include="libs\i18n\angular-locale_ar-jo.js" />
+    <Content Include="libs\i18n\angular-locale_ar-km.js" />
+    <Content Include="libs\i18n\angular-locale_ar-kw.js" />
+    <Content Include="libs\i18n\angular-locale_ar-lb.js" />
+    <Content Include="libs\i18n\angular-locale_ar-ly.js" />
+    <Content Include="libs\i18n\angular-locale_ar-ma.js" />
+    <Content Include="libs\i18n\angular-locale_ar-mr.js" />
+    <Content Include="libs\i18n\angular-locale_ar-om.js" />
+    <Content Include="libs\i18n\angular-locale_ar-ps.js" />
+    <Content Include="libs\i18n\angular-locale_ar-qa.js" />
+    <Content Include="libs\i18n\angular-locale_ar-sa.js" />
+    <Content Include="libs\i18n\angular-locale_ar-sd.js" />
+    <Content Include="libs\i18n\angular-locale_ar-so.js" />
+    <Content Include="libs\i18n\angular-locale_ar-ss.js" />
+    <Content Include="libs\i18n\angular-locale_ar-sy.js" />
+    <Content Include="libs\i18n\angular-locale_ar-td.js" />
+    <Content Include="libs\i18n\angular-locale_ar-tn.js" />
+    <Content Include="libs\i18n\angular-locale_ar-xb.js" />
+    <Content Include="libs\i18n\angular-locale_ar-ye.js" />
+    <Content Include="libs\i18n\angular-locale_ar.js" />
+    <Content Include="libs\i18n\angular-locale_as-in.js" />
+    <Content Include="libs\i18n\angular-locale_as.js" />
+    <Content Include="libs\i18n\angular-locale_asa-tz.js" />
+    <Content Include="libs\i18n\angular-locale_asa.js" />
+    <Content Include="libs\i18n\angular-locale_ast-es.js" />
+    <Content Include="libs\i18n\angular-locale_ast.js" />
+    <Content Include="libs\i18n\angular-locale_az-cyrl-az.js" />
+    <Content Include="libs\i18n\angular-locale_az-cyrl.js" />
+    <Content Include="libs\i18n\angular-locale_az-latn-az.js" />
+    <Content Include="libs\i18n\angular-locale_az-latn.js" />
+    <Content Include="libs\i18n\angular-locale_az.js" />
+    <Content Include="libs\i18n\angular-locale_bas-cm.js" />
+    <Content Include="libs\i18n\angular-locale_bas.js" />
+    <Content Include="libs\i18n\angular-locale_be-by.js" />
+    <Content Include="libs\i18n\angular-locale_be.js" />
+    <Content Include="libs\i18n\angular-locale_bem-zm.js" />
+    <Content Include="libs\i18n\angular-locale_bem.js" />
+    <Content Include="libs\i18n\angular-locale_bez-tz.js" />
+    <Content Include="libs\i18n\angular-locale_bez.js" />
+    <Content Include="libs\i18n\angular-locale_bg-bg.js" />
+    <Content Include="libs\i18n\angular-locale_bg.js" />
+    <Content Include="libs\i18n\angular-locale_bm-ml.js" />
+    <Content Include="libs\i18n\angular-locale_bm.js" />
+    <Content Include="libs\i18n\angular-locale_bn-bd.js" />
+    <Content Include="libs\i18n\angular-locale_bn-in.js" />
+    <Content Include="libs\i18n\angular-locale_bn.js" />
+    <Content Include="libs\i18n\angular-locale_bo-cn.js" />
+    <Content Include="libs\i18n\angular-locale_bo-in.js" />
+    <Content Include="libs\i18n\angular-locale_bo.js" />
+    <Content Include="libs\i18n\angular-locale_br-fr.js" />
+    <Content Include="libs\i18n\angular-locale_br.js" />
+    <Content Include="libs\i18n\angular-locale_brx-in.js" />
+    <Content Include="libs\i18n\angular-locale_brx.js" />
+    <Content Include="libs\i18n\angular-locale_bs-cyrl-ba.js" />
+    <Content Include="libs\i18n\angular-locale_bs-cyrl.js" />
+    <Content Include="libs\i18n\angular-locale_bs-latn-ba.js" />
+    <Content Include="libs\i18n\angular-locale_bs-latn.js" />
+    <Content Include="libs\i18n\angular-locale_bs.js" />
+    <Content Include="libs\i18n\angular-locale_ca-ad.js" />
+    <Content Include="libs\i18n\angular-locale_ca-es-valencia.js" />
+    <Content Include="libs\i18n\angular-locale_ca-es.js" />
+    <Content Include="libs\i18n\angular-locale_ca-fr.js" />
+    <Content Include="libs\i18n\angular-locale_ca-it.js" />
+    <Content Include="libs\i18n\angular-locale_ca.js" />
+    <Content Include="libs\i18n\angular-locale_ce-ru.js" />
+    <Content Include="libs\i18n\angular-locale_ce.js" />
+    <Content Include="libs\i18n\angular-locale_cgg-ug.js" />
+    <Content Include="libs\i18n\angular-locale_cgg.js" />
+    <Content Include="libs\i18n\angular-locale_chr-us.js" />
+    <Content Include="libs\i18n\angular-locale_chr.js" />
+    <Content Include="libs\i18n\angular-locale_ckb-arab-iq.js" />
+    <Content Include="libs\i18n\angular-locale_ckb-arab-ir.js" />
+    <Content Include="libs\i18n\angular-locale_ckb-arab.js" />
+    <Content Include="libs\i18n\angular-locale_ckb-iq.js" />
+    <Content Include="libs\i18n\angular-locale_ckb-ir.js" />
+    <Content Include="libs\i18n\angular-locale_ckb-latn-iq.js" />
+    <Content Include="libs\i18n\angular-locale_ckb-latn.js" />
+    <Content Include="libs\i18n\angular-locale_ckb.js" />
+    <Content Include="libs\i18n\angular-locale_cs-cz.js" />
+    <Content Include="libs\i18n\angular-locale_cs.js" />
+    <Content Include="libs\i18n\angular-locale_cu-ru.js" />
+    <Content Include="libs\i18n\angular-locale_cu.js" />
+    <Content Include="libs\i18n\angular-locale_cy-gb.js" />
+    <Content Include="libs\i18n\angular-locale_cy.js" />
+    <Content Include="libs\i18n\angular-locale_da-dk.js" />
+    <Content Include="libs\i18n\angular-locale_da-gl.js" />
+    <Content Include="libs\i18n\angular-locale_da.js" />
+    <Content Include="libs\i18n\angular-locale_dav-ke.js" />
+    <Content Include="libs\i18n\angular-locale_dav.js" />
+    <Content Include="libs\i18n\angular-locale_de-at.js" />
+    <Content Include="libs\i18n\angular-locale_de-be.js" />
+    <Content Include="libs\i18n\angular-locale_de-ch.js" />
+    <Content Include="libs\i18n\angular-locale_de-de.js" />
+    <Content Include="libs\i18n\angular-locale_de-li.js" />
+    <Content Include="libs\i18n\angular-locale_de-lu.js" />
+    <Content Include="libs\i18n\angular-locale_de.js" />
+    <Content Include="libs\i18n\angular-locale_dje-ne.js" />
+    <Content Include="libs\i18n\angular-locale_dje.js" />
+    <Content Include="libs\i18n\angular-locale_dsb-de.js" />
+    <Content Include="libs\i18n\angular-locale_dsb.js" />
+    <Content Include="libs\i18n\angular-locale_dua-cm.js" />
+    <Content Include="libs\i18n\angular-locale_dua.js" />
+    <Content Include="libs\i18n\angular-locale_dyo-sn.js" />
+    <Content Include="libs\i18n\angular-locale_dyo.js" />
+    <Content Include="libs\i18n\angular-locale_dz-bt.js" />
+    <Content Include="libs\i18n\angular-locale_dz.js" />
+    <Content Include="libs\i18n\angular-locale_ebu-ke.js" />
+    <Content Include="libs\i18n\angular-locale_ebu.js" />
+    <Content Include="libs\i18n\angular-locale_ee-gh.js" />
+    <Content Include="libs\i18n\angular-locale_ee-tg.js" />
+    <Content Include="libs\i18n\angular-locale_ee.js" />
+    <Content Include="libs\i18n\angular-locale_el-cy.js" />
+    <Content Include="libs\i18n\angular-locale_el-gr.js" />
+    <Content Include="libs\i18n\angular-locale_el.js" />
+    <Content Include="libs\i18n\angular-locale_en-001.js" />
+    <Content Include="libs\i18n\angular-locale_en-150.js" />
+    <Content Include="libs\i18n\angular-locale_en-ag.js" />
+    <Content Include="libs\i18n\angular-locale_en-ai.js" />
+    <Content Include="libs\i18n\angular-locale_en-as.js" />
+    <Content Include="libs\i18n\angular-locale_en-at.js" />
+    <Content Include="libs\i18n\angular-locale_en-au.js" />
+    <Content Include="libs\i18n\angular-locale_en-bb.js" />
+    <Content Include="libs\i18n\angular-locale_en-be.js" />
+    <Content Include="libs\i18n\angular-locale_en-bi.js" />
+    <Content Include="libs\i18n\angular-locale_en-bm.js" />
+    <Content Include="libs\i18n\angular-locale_en-bs.js" />
+    <Content Include="libs\i18n\angular-locale_en-bw.js" />
+    <Content Include="libs\i18n\angular-locale_en-bz.js" />
+    <Content Include="libs\i18n\angular-locale_en-ca.js" />
+    <Content Include="libs\i18n\angular-locale_en-cc.js" />
+    <Content Include="libs\i18n\angular-locale_en-ch.js" />
+    <Content Include="libs\i18n\angular-locale_en-ck.js" />
+    <Content Include="libs\i18n\angular-locale_en-cm.js" />
+    <Content Include="libs\i18n\angular-locale_en-cx.js" />
+    <Content Include="libs\i18n\angular-locale_en-cy.js" />
+    <Content Include="libs\i18n\angular-locale_en-de.js" />
+    <Content Include="libs\i18n\angular-locale_en-dg.js" />
+    <Content Include="libs\i18n\angular-locale_en-dk.js" />
+    <Content Include="libs\i18n\angular-locale_en-dm.js" />
+    <Content Include="libs\i18n\angular-locale_en-er.js" />
+    <Content Include="libs\i18n\angular-locale_en-fi.js" />
+    <Content Include="libs\i18n\angular-locale_en-fj.js" />
+    <Content Include="libs\i18n\angular-locale_en-fk.js" />
+    <Content Include="libs\i18n\angular-locale_en-fm.js" />
+    <Content Include="libs\i18n\angular-locale_en-gb.js" />
+    <Content Include="libs\i18n\angular-locale_en-gd.js" />
+    <Content Include="libs\i18n\angular-locale_en-gg.js" />
+    <Content Include="libs\i18n\angular-locale_en-gh.js" />
+    <Content Include="libs\i18n\angular-locale_en-gi.js" />
+    <Content Include="libs\i18n\angular-locale_en-gm.js" />
+    <Content Include="libs\i18n\angular-locale_en-gu.js" />
+    <Content Include="libs\i18n\angular-locale_en-gy.js" />
+    <Content Include="libs\i18n\angular-locale_en-hk.js" />
+    <Content Include="libs\i18n\angular-locale_en-ie.js" />
+    <Content Include="libs\i18n\angular-locale_en-il.js" />
+    <Content Include="libs\i18n\angular-locale_en-im.js" />
+    <Content Include="libs\i18n\angular-locale_en-in.js" />
+    <Content Include="libs\i18n\angular-locale_en-io.js" />
+    <Content Include="libs\i18n\angular-locale_en-iso.js" />
+    <Content Include="libs\i18n\angular-locale_en-je.js" />
+    <Content Include="libs\i18n\angular-locale_en-jm.js" />
+    <Content Include="libs\i18n\angular-locale_en-ke.js" />
+    <Content Include="libs\i18n\angular-locale_en-ki.js" />
+    <Content Include="libs\i18n\angular-locale_en-kn.js" />
+    <Content Include="libs\i18n\angular-locale_en-ky.js" />
+    <Content Include="libs\i18n\angular-locale_en-lc.js" />
+    <Content Include="libs\i18n\angular-locale_en-lr.js" />
+    <Content Include="libs\i18n\angular-locale_en-ls.js" />
+    <Content Include="libs\i18n\angular-locale_en-mg.js" />
+    <Content Include="libs\i18n\angular-locale_en-mh.js" />
+    <Content Include="libs\i18n\angular-locale_en-mo.js" />
+    <Content Include="libs\i18n\angular-locale_en-mp.js" />
+    <Content Include="libs\i18n\angular-locale_en-ms.js" />
+    <Content Include="libs\i18n\angular-locale_en-mt.js" />
+    <Content Include="libs\i18n\angular-locale_en-mu.js" />
+    <Content Include="libs\i18n\angular-locale_en-mw.js" />
+    <Content Include="libs\i18n\angular-locale_en-my.js" />
+    <Content Include="libs\i18n\angular-locale_en-na.js" />
+    <Content Include="libs\i18n\angular-locale_en-nf.js" />
+    <Content Include="libs\i18n\angular-locale_en-ng.js" />
+    <Content Include="libs\i18n\angular-locale_en-nl.js" />
+    <Content Include="libs\i18n\angular-locale_en-nr.js" />
+    <Content Include="libs\i18n\angular-locale_en-nu.js" />
+    <Content Include="libs\i18n\angular-locale_en-nz.js" />
+    <Content Include="libs\i18n\angular-locale_en-pg.js" />
+    <Content Include="libs\i18n\angular-locale_en-ph.js" />
+    <Content Include="libs\i18n\angular-locale_en-pk.js" />
+    <Content Include="libs\i18n\angular-locale_en-pn.js" />
+    <Content Include="libs\i18n\angular-locale_en-pr.js" />
+    <Content Include="libs\i18n\angular-locale_en-pw.js" />
+    <Content Include="libs\i18n\angular-locale_en-rw.js" />
+    <Content Include="libs\i18n\angular-locale_en-sb.js" />
+    <Content Include="libs\i18n\angular-locale_en-sc.js" />
+    <Content Include="libs\i18n\angular-locale_en-sd.js" />
+    <Content Include="libs\i18n\angular-locale_en-se.js" />
+    <Content Include="libs\i18n\angular-locale_en-sg.js" />
+    <Content Include="libs\i18n\angular-locale_en-sh.js" />
+    <Content Include="libs\i18n\angular-locale_en-si.js" />
+    <Content Include="libs\i18n\angular-locale_en-sl.js" />
+    <Content Include="libs\i18n\angular-locale_en-ss.js" />
+    <Content Include="libs\i18n\angular-locale_en-sx.js" />
+    <Content Include="libs\i18n\angular-locale_en-sz.js" />
+    <Content Include="libs\i18n\angular-locale_en-tc.js" />
+    <Content Include="libs\i18n\angular-locale_en-tk.js" />
+    <Content Include="libs\i18n\angular-locale_en-to.js" />
+    <Content Include="libs\i18n\angular-locale_en-tt.js" />
+    <Content Include="libs\i18n\angular-locale_en-tv.js" />
+    <Content Include="libs\i18n\angular-locale_en-tz.js" />
+    <Content Include="libs\i18n\angular-locale_en-ug.js" />
+    <Content Include="libs\i18n\angular-locale_en-um.js" />
+    <Content Include="libs\i18n\angular-locale_en-us.js" />
+    <Content Include="libs\i18n\angular-locale_en-vc.js" />
+    <Content Include="libs\i18n\angular-locale_en-vg.js" />
+    <Content Include="libs\i18n\angular-locale_en-vi.js" />
+    <Content Include="libs\i18n\angular-locale_en-vu.js" />
+    <Content Include="libs\i18n\angular-locale_en-ws.js" />
+    <Content Include="libs\i18n\angular-locale_en-xa.js" />
+    <Content Include="libs\i18n\angular-locale_en-za.js" />
+    <Content Include="libs\i18n\angular-locale_en-zm.js" />
+    <Content Include="libs\i18n\angular-locale_en-zw.js" />
+    <Content Include="libs\i18n\angular-locale_en.js" />
+    <Content Include="libs\i18n\angular-locale_eo-001.js" />
+    <Content Include="libs\i18n\angular-locale_eo.js" />
+    <Content Include="libs\i18n\angular-locale_es-419.js" />
+    <Content Include="libs\i18n\angular-locale_es-ar.js" />
+    <Content Include="libs\i18n\angular-locale_es-bo.js" />
+    <Content Include="libs\i18n\angular-locale_es-br.js" />
+    <Content Include="libs\i18n\angular-locale_es-cl.js" />
+    <Content Include="libs\i18n\angular-locale_es-co.js" />
+    <Content Include="libs\i18n\angular-locale_es-cr.js" />
+    <Content Include="libs\i18n\angular-locale_es-cu.js" />
+    <Content Include="libs\i18n\angular-locale_es-do.js" />
+    <Content Include="libs\i18n\angular-locale_es-ea.js" />
+    <Content Include="libs\i18n\angular-locale_es-ec.js" />
+    <Content Include="libs\i18n\angular-locale_es-es.js" />
+    <Content Include="libs\i18n\angular-locale_es-gq.js" />
+    <Content Include="libs\i18n\angular-locale_es-gt.js" />
+    <Content Include="libs\i18n\angular-locale_es-hn.js" />
+    <Content Include="libs\i18n\angular-locale_es-ic.js" />
+    <Content Include="libs\i18n\angular-locale_es-mx.js" />
+    <Content Include="libs\i18n\angular-locale_es-ni.js" />
+    <Content Include="libs\i18n\angular-locale_es-pa.js" />
+    <Content Include="libs\i18n\angular-locale_es-pe.js" />
+    <Content Include="libs\i18n\angular-locale_es-ph.js" />
+    <Content Include="libs\i18n\angular-locale_es-pr.js" />
+    <Content Include="libs\i18n\angular-locale_es-py.js" />
+    <Content Include="libs\i18n\angular-locale_es-sv.js" />
+    <Content Include="libs\i18n\angular-locale_es-us.js" />
+    <Content Include="libs\i18n\angular-locale_es-uy.js" />
+    <Content Include="libs\i18n\angular-locale_es-ve.js" />
+    <Content Include="libs\i18n\angular-locale_es.js" />
+    <Content Include="libs\i18n\angular-locale_et-ee.js" />
+    <Content Include="libs\i18n\angular-locale_et.js" />
+    <Content Include="libs\i18n\angular-locale_eu-es.js" />
+    <Content Include="libs\i18n\angular-locale_eu.js" />
+    <Content Include="libs\i18n\angular-locale_ewo-cm.js" />
+    <Content Include="libs\i18n\angular-locale_ewo.js" />
+    <Content Include="libs\i18n\angular-locale_fa-af.js" />
+    <Content Include="libs\i18n\angular-locale_fa-ir.js" />
+    <Content Include="libs\i18n\angular-locale_fa.js" />
+    <Content Include="libs\i18n\angular-locale_ff-cm.js" />
+    <Content Include="libs\i18n\angular-locale_ff-gn.js" />
+    <Content Include="libs\i18n\angular-locale_ff-mr.js" />
+    <Content Include="libs\i18n\angular-locale_ff-sn.js" />
+    <Content Include="libs\i18n\angular-locale_ff.js" />
+    <Content Include="libs\i18n\angular-locale_fi-fi.js" />
+    <Content Include="libs\i18n\angular-locale_fi.js" />
+    <Content Include="libs\i18n\angular-locale_fil-ph.js" />
+    <Content Include="libs\i18n\angular-locale_fil.js" />
+    <Content Include="libs\i18n\angular-locale_fo-dk.js" />
+    <Content Include="libs\i18n\angular-locale_fo-fo.js" />
+    <Content Include="libs\i18n\angular-locale_fo.js" />
+    <Content Include="libs\i18n\angular-locale_fr-be.js" />
+    <Content Include="libs\i18n\angular-locale_fr-bf.js" />
+    <Content Include="libs\i18n\angular-locale_fr-bi.js" />
+    <Content Include="libs\i18n\angular-locale_fr-bj.js" />
+    <Content Include="libs\i18n\angular-locale_fr-bl.js" />
+    <Content Include="libs\i18n\angular-locale_fr-ca.js" />
+    <Content Include="libs\i18n\angular-locale_fr-cd.js" />
+    <Content Include="libs\i18n\angular-locale_fr-cf.js" />
+    <Content Include="libs\i18n\angular-locale_fr-cg.js" />
+    <Content Include="libs\i18n\angular-locale_fr-ch.js" />
+    <Content Include="libs\i18n\angular-locale_fr-ci.js" />
+    <Content Include="libs\i18n\angular-locale_fr-cm.js" />
+    <Content Include="libs\i18n\angular-locale_fr-dj.js" />
+    <Content Include="libs\i18n\angular-locale_fr-dz.js" />
+    <Content Include="libs\i18n\angular-locale_fr-fr.js" />
+    <Content Include="libs\i18n\angular-locale_fr-ga.js" />
+    <Content Include="libs\i18n\angular-locale_fr-gf.js" />
+    <Content Include="libs\i18n\angular-locale_fr-gn.js" />
+    <Content Include="libs\i18n\angular-locale_fr-gp.js" />
+    <Content Include="libs\i18n\angular-locale_fr-gq.js" />
+    <Content Include="libs\i18n\angular-locale_fr-ht.js" />
+    <Content Include="libs\i18n\angular-locale_fr-km.js" />
+    <Content Include="libs\i18n\angular-locale_fr-lu.js" />
+    <Content Include="libs\i18n\angular-locale_fr-ma.js" />
+    <Content Include="libs\i18n\angular-locale_fr-mc.js" />
+    <Content Include="libs\i18n\angular-locale_fr-mf.js" />
+    <Content Include="libs\i18n\angular-locale_fr-mg.js" />
+    <Content Include="libs\i18n\angular-locale_fr-ml.js" />
+    <Content Include="libs\i18n\angular-locale_fr-mq.js" />
+    <Content Include="libs\i18n\angular-locale_fr-mr.js" />
+    <Content Include="libs\i18n\angular-locale_fr-mu.js" />
+    <Content Include="libs\i18n\angular-locale_fr-nc.js" />
+    <Content Include="libs\i18n\angular-locale_fr-ne.js" />
+    <Content Include="libs\i18n\angular-locale_fr-pf.js" />
+    <Content Include="libs\i18n\angular-locale_fr-pm.js" />
+    <Content Include="libs\i18n\angular-locale_fr-re.js" />
+    <Content Include="libs\i18n\angular-locale_fr-rw.js" />
+    <Content Include="libs\i18n\angular-locale_fr-sc.js" />
+    <Content Include="libs\i18n\angular-locale_fr-sn.js" />
+    <Content Include="libs\i18n\angular-locale_fr-sy.js" />
+    <Content Include="libs\i18n\angular-locale_fr-td.js" />
+    <Content Include="libs\i18n\angular-locale_fr-tg.js" />
+    <Content Include="libs\i18n\angular-locale_fr-tn.js" />
+    <Content Include="libs\i18n\angular-locale_fr-vu.js" />
+    <Content Include="libs\i18n\angular-locale_fr-wf.js" />
+    <Content Include="libs\i18n\angular-locale_fr-yt.js" />
+    <Content Include="libs\i18n\angular-locale_fr.js" />
+    <Content Include="libs\i18n\angular-locale_fur-it.js" />
+    <Content Include="libs\i18n\angular-locale_fur.js" />
+    <Content Include="libs\i18n\angular-locale_fy-nl.js" />
+    <Content Include="libs\i18n\angular-locale_fy.js" />
+    <Content Include="libs\i18n\angular-locale_ga-ie.js" />
+    <Content Include="libs\i18n\angular-locale_ga.js" />
+    <Content Include="libs\i18n\angular-locale_gd-gb.js" />
+    <Content Include="libs\i18n\angular-locale_gd.js" />
+    <Content Include="libs\i18n\angular-locale_gl-es.js" />
+    <Content Include="libs\i18n\angular-locale_gl.js" />
+    <Content Include="libs\i18n\angular-locale_gsw-ch.js" />
+    <Content Include="libs\i18n\angular-locale_gsw-fr.js" />
+    <Content Include="libs\i18n\angular-locale_gsw-li.js" />
+    <Content Include="libs\i18n\angular-locale_gsw.js" />
+    <Content Include="libs\i18n\angular-locale_gu-in.js" />
+    <Content Include="libs\i18n\angular-locale_gu.js" />
+    <Content Include="libs\i18n\angular-locale_guz-ke.js" />
+    <Content Include="libs\i18n\angular-locale_guz.js" />
+    <Content Include="libs\i18n\angular-locale_gv-im.js" />
+    <Content Include="libs\i18n\angular-locale_gv.js" />
+    <Content Include="libs\i18n\angular-locale_ha-gh.js" />
+    <Content Include="libs\i18n\angular-locale_ha-ne.js" />
+    <Content Include="libs\i18n\angular-locale_ha-ng.js" />
+    <Content Include="libs\i18n\angular-locale_ha.js" />
+    <Content Include="libs\i18n\angular-locale_haw-us.js" />
+    <Content Include="libs\i18n\angular-locale_haw.js" />
+    <Content Include="libs\i18n\angular-locale_he-il.js" />
+    <Content Include="libs\i18n\angular-locale_he.js" />
+    <Content Include="libs\i18n\angular-locale_hi-in.js" />
+    <Content Include="libs\i18n\angular-locale_hi.js" />
+    <Content Include="libs\i18n\angular-locale_hr-ba.js" />
+    <Content Include="libs\i18n\angular-locale_hr-hr.js" />
+    <Content Include="libs\i18n\angular-locale_hr.js" />
+    <Content Include="libs\i18n\angular-locale_hsb-de.js" />
+    <Content Include="libs\i18n\angular-locale_hsb.js" />
+    <Content Include="libs\i18n\angular-locale_hu-hu.js" />
+    <Content Include="libs\i18n\angular-locale_hu.js" />
+    <Content Include="libs\i18n\angular-locale_hy-am.js" />
+    <Content Include="libs\i18n\angular-locale_hy.js" />
+    <Content Include="libs\i18n\angular-locale_id-id.js" />
+    <Content Include="libs\i18n\angular-locale_id.js" />
+    <Content Include="libs\i18n\angular-locale_ig-ng.js" />
+    <Content Include="libs\i18n\angular-locale_ig.js" />
+    <Content Include="libs\i18n\angular-locale_ii-cn.js" />
+    <Content Include="libs\i18n\angular-locale_ii.js" />
+    <Content Include="libs\i18n\angular-locale_in.js" />
+    <Content Include="libs\i18n\angular-locale_is-is.js" />
+    <Content Include="libs\i18n\angular-locale_is.js" />
+    <Content Include="libs\i18n\angular-locale_it-ch.js" />
+    <Content Include="libs\i18n\angular-locale_it-it.js" />
+    <Content Include="libs\i18n\angular-locale_it-sm.js" />
+    <Content Include="libs\i18n\angular-locale_it.js" />
+    <Content Include="libs\i18n\angular-locale_iw.js" />
+    <Content Include="libs\i18n\angular-locale_ja-jp.js" />
+    <Content Include="libs\i18n\angular-locale_ja.js" />
+    <Content Include="libs\i18n\angular-locale_jgo-cm.js" />
+    <Content Include="libs\i18n\angular-locale_jgo.js" />
+    <Content Include="libs\i18n\angular-locale_jmc-tz.js" />
+    <Content Include="libs\i18n\angular-locale_jmc.js" />
+    <Content Include="libs\i18n\angular-locale_ka-ge.js" />
+    <Content Include="libs\i18n\angular-locale_ka.js" />
+    <Content Include="libs\i18n\angular-locale_kab-dz.js" />
+    <Content Include="libs\i18n\angular-locale_kab.js" />
+    <Content Include="libs\i18n\angular-locale_kam-ke.js" />
+    <Content Include="libs\i18n\angular-locale_kam.js" />
+    <Content Include="libs\i18n\angular-locale_kde-tz.js" />
+    <Content Include="libs\i18n\angular-locale_kde.js" />
+    <Content Include="libs\i18n\angular-locale_kea-cv.js" />
+    <Content Include="libs\i18n\angular-locale_kea.js" />
+    <Content Include="libs\i18n\angular-locale_khq-ml.js" />
+    <Content Include="libs\i18n\angular-locale_khq.js" />
+    <Content Include="libs\i18n\angular-locale_ki-ke.js" />
+    <Content Include="libs\i18n\angular-locale_ki.js" />
+    <Content Include="libs\i18n\angular-locale_kk-kz.js" />
+    <Content Include="libs\i18n\angular-locale_kk.js" />
+    <Content Include="libs\i18n\angular-locale_kkj-cm.js" />
+    <Content Include="libs\i18n\angular-locale_kkj.js" />
+    <Content Include="libs\i18n\angular-locale_kl-gl.js" />
+    <Content Include="libs\i18n\angular-locale_kl.js" />
+    <Content Include="libs\i18n\angular-locale_kln-ke.js" />
+    <Content Include="libs\i18n\angular-locale_kln.js" />
+    <Content Include="libs\i18n\angular-locale_km-kh.js" />
+    <Content Include="libs\i18n\angular-locale_km.js" />
+    <Content Include="libs\i18n\angular-locale_kn-in.js" />
+    <Content Include="libs\i18n\angular-locale_kn.js" />
+    <Content Include="libs\i18n\angular-locale_ko-kp.js" />
+    <Content Include="libs\i18n\angular-locale_ko-kr.js" />
+    <Content Include="libs\i18n\angular-locale_ko.js" />
+    <Content Include="libs\i18n\angular-locale_kok-in.js" />
+    <Content Include="libs\i18n\angular-locale_kok.js" />
+    <Content Include="libs\i18n\angular-locale_ks-in.js" />
+    <Content Include="libs\i18n\angular-locale_ks.js" />
+    <Content Include="libs\i18n\angular-locale_ksb-tz.js" />
+    <Content Include="libs\i18n\angular-locale_ksb.js" />
+    <Content Include="libs\i18n\angular-locale_ksf-cm.js" />
+    <Content Include="libs\i18n\angular-locale_ksf.js" />
+    <Content Include="libs\i18n\angular-locale_ksh-de.js" />
+    <Content Include="libs\i18n\angular-locale_ksh.js" />
+    <Content Include="libs\i18n\angular-locale_kw-gb.js" />
+    <Content Include="libs\i18n\angular-locale_kw.js" />
+    <Content Include="libs\i18n\angular-locale_ky-kg.js" />
+    <Content Include="libs\i18n\angular-locale_ky.js" />
+    <Content Include="libs\i18n\angular-locale_lag-tz.js" />
+    <Content Include="libs\i18n\angular-locale_lag.js" />
+    <Content Include="libs\i18n\angular-locale_lb-lu.js" />
+    <Content Include="libs\i18n\angular-locale_lb.js" />
+    <Content Include="libs\i18n\angular-locale_lg-ug.js" />
+    <Content Include="libs\i18n\angular-locale_lg.js" />
+    <Content Include="libs\i18n\angular-locale_lkt-us.js" />
+    <Content Include="libs\i18n\angular-locale_lkt.js" />
+    <Content Include="libs\i18n\angular-locale_ln-ao.js" />
+    <Content Include="libs\i18n\angular-locale_ln-cd.js" />
+    <Content Include="libs\i18n\angular-locale_ln-cf.js" />
+    <Content Include="libs\i18n\angular-locale_ln-cg.js" />
+    <Content Include="libs\i18n\angular-locale_ln.js" />
+    <Content Include="libs\i18n\angular-locale_lo-la.js" />
+    <Content Include="libs\i18n\angular-locale_lo.js" />
+    <Content Include="libs\i18n\angular-locale_lrc-iq.js" />
+    <Content Include="libs\i18n\angular-locale_lrc-ir.js" />
+    <Content Include="libs\i18n\angular-locale_lrc.js" />
+    <Content Include="libs\i18n\angular-locale_lt-lt.js" />
+    <Content Include="libs\i18n\angular-locale_lt.js" />
+    <Content Include="libs\i18n\angular-locale_lu-cd.js" />
+    <Content Include="libs\i18n\angular-locale_lu.js" />
+    <Content Include="libs\i18n\angular-locale_luo-ke.js" />
+    <Content Include="libs\i18n\angular-locale_luo.js" />
+    <Content Include="libs\i18n\angular-locale_luy-ke.js" />
+    <Content Include="libs\i18n\angular-locale_luy.js" />
+    <Content Include="libs\i18n\angular-locale_lv-lv.js" />
+    <Content Include="libs\i18n\angular-locale_lv.js" />
+    <Content Include="libs\i18n\angular-locale_mas-ke.js" />
+    <Content Include="libs\i18n\angular-locale_mas-tz.js" />
+    <Content Include="libs\i18n\angular-locale_mas.js" />
+    <Content Include="libs\i18n\angular-locale_mer-ke.js" />
+    <Content Include="libs\i18n\angular-locale_mer.js" />
+    <Content Include="libs\i18n\angular-locale_mfe-mu.js" />
+    <Content Include="libs\i18n\angular-locale_mfe.js" />
+    <Content Include="libs\i18n\angular-locale_mg-mg.js" />
+    <Content Include="libs\i18n\angular-locale_mg.js" />
+    <Content Include="libs\i18n\angular-locale_mgh-mz.js" />
+    <Content Include="libs\i18n\angular-locale_mgh.js" />
+    <Content Include="libs\i18n\angular-locale_mgo-cm.js" />
+    <Content Include="libs\i18n\angular-locale_mgo.js" />
+    <Content Include="libs\i18n\angular-locale_mk-mk.js" />
+    <Content Include="libs\i18n\angular-locale_mk.js" />
+    <Content Include="libs\i18n\angular-locale_ml-in.js" />
+    <Content Include="libs\i18n\angular-locale_ml.js" />
+    <Content Include="libs\i18n\angular-locale_mn-mn.js" />
+    <Content Include="libs\i18n\angular-locale_mn.js" />
+    <Content Include="libs\i18n\angular-locale_mr-in.js" />
+    <Content Include="libs\i18n\angular-locale_mr.js" />
+    <Content Include="libs\i18n\angular-locale_ms-bn.js" />
+    <Content Include="libs\i18n\angular-locale_ms-my.js" />
+    <Content Include="libs\i18n\angular-locale_ms-sg.js" />
+    <Content Include="libs\i18n\angular-locale_ms.js" />
+    <Content Include="libs\i18n\angular-locale_mt-mt.js" />
+    <Content Include="libs\i18n\angular-locale_mt.js" />
+    <Content Include="libs\i18n\angular-locale_mua-cm.js" />
+    <Content Include="libs\i18n\angular-locale_mua.js" />
+    <Content Include="libs\i18n\angular-locale_my-mm.js" />
+    <Content Include="libs\i18n\angular-locale_my.js" />
+    <Content Include="libs\i18n\angular-locale_mzn-ir.js" />
+    <Content Include="libs\i18n\angular-locale_mzn.js" />
+    <Content Include="libs\i18n\angular-locale_naq-na.js" />
+    <Content Include="libs\i18n\angular-locale_naq.js" />
+    <Content Include="libs\i18n\angular-locale_nb-no.js" />
+    <Content Include="libs\i18n\angular-locale_nb-sj.js" />
+    <Content Include="libs\i18n\angular-locale_nb.js" />
+    <Content Include="libs\i18n\angular-locale_nd-zw.js" />
+    <Content Include="libs\i18n\angular-locale_nd.js" />
+    <Content Include="libs\i18n\angular-locale_ne-in.js" />
+    <Content Include="libs\i18n\angular-locale_ne-np.js" />
+    <Content Include="libs\i18n\angular-locale_ne.js" />
+    <Content Include="libs\i18n\angular-locale_nl-aw.js" />
+    <Content Include="libs\i18n\angular-locale_nl-be.js" />
+    <Content Include="libs\i18n\angular-locale_nl-bq.js" />
+    <Content Include="libs\i18n\angular-locale_nl-cw.js" />
+    <Content Include="libs\i18n\angular-locale_nl-nl.js" />
+    <Content Include="libs\i18n\angular-locale_nl-sr.js" />
+    <Content Include="libs\i18n\angular-locale_nl-sx.js" />
+    <Content Include="libs\i18n\angular-locale_nl.js" />
+    <Content Include="libs\i18n\angular-locale_nmg-cm.js" />
+    <Content Include="libs\i18n\angular-locale_nmg.js" />
+    <Content Include="libs\i18n\angular-locale_nn-no.js" />
+    <Content Include="libs\i18n\angular-locale_nn.js" />
+    <Content Include="libs\i18n\angular-locale_nnh-cm.js" />
+    <Content Include="libs\i18n\angular-locale_nnh.js" />
+    <Content Include="libs\i18n\angular-locale_no-no.js" />
+    <Content Include="libs\i18n\angular-locale_no.js" />
+    <Content Include="libs\i18n\angular-locale_nus-ss.js" />
+    <Content Include="libs\i18n\angular-locale_nus.js" />
+    <Content Include="libs\i18n\angular-locale_nyn-ug.js" />
+    <Content Include="libs\i18n\angular-locale_nyn.js" />
+    <Content Include="libs\i18n\angular-locale_om-et.js" />
+    <Content Include="libs\i18n\angular-locale_om-ke.js" />
+    <Content Include="libs\i18n\angular-locale_om.js" />
+    <Content Include="libs\i18n\angular-locale_or-in.js" />
+    <Content Include="libs\i18n\angular-locale_or.js" />
+    <Content Include="libs\i18n\angular-locale_os-ge.js" />
+    <Content Include="libs\i18n\angular-locale_os-ru.js" />
+    <Content Include="libs\i18n\angular-locale_os.js" />
+    <Content Include="libs\i18n\angular-locale_pa-arab-pk.js" />
+    <Content Include="libs\i18n\angular-locale_pa-arab.js" />
+    <Content Include="libs\i18n\angular-locale_pa-guru-in.js" />
+    <Content Include="libs\i18n\angular-locale_pa-guru.js" />
+    <Content Include="libs\i18n\angular-locale_pa.js" />
+    <Content Include="libs\i18n\angular-locale_pl-pl.js" />
+    <Content Include="libs\i18n\angular-locale_pl.js" />
+    <Content Include="libs\i18n\angular-locale_prg-001.js" />
+    <Content Include="libs\i18n\angular-locale_prg.js" />
+    <Content Include="libs\i18n\angular-locale_ps-af.js" />
+    <Content Include="libs\i18n\angular-locale_ps.js" />
+    <Content Include="libs\i18n\angular-locale_pt-ao.js" />
+    <Content Include="libs\i18n\angular-locale_pt-br.js" />
+    <Content Include="libs\i18n\angular-locale_pt-ch.js" />
+    <Content Include="libs\i18n\angular-locale_pt-cv.js" />
+    <Content Include="libs\i18n\angular-locale_pt-gq.js" />
+    <Content Include="libs\i18n\angular-locale_pt-gw.js" />
+    <Content Include="libs\i18n\angular-locale_pt-lu.js" />
+    <Content Include="libs\i18n\angular-locale_pt-mo.js" />
+    <Content Include="libs\i18n\angular-locale_pt-mz.js" />
+    <Content Include="libs\i18n\angular-locale_pt-pt.js" />
+    <Content Include="libs\i18n\angular-locale_pt-st.js" />
+    <Content Include="libs\i18n\angular-locale_pt-tl.js" />
+    <Content Include="libs\i18n\angular-locale_pt.js" />
+    <Content Include="libs\i18n\angular-locale_qu-bo.js" />
+    <Content Include="libs\i18n\angular-locale_qu-ec.js" />
+    <Content Include="libs\i18n\angular-locale_qu-pe.js" />
+    <Content Include="libs\i18n\angular-locale_qu.js" />
+    <Content Include="libs\i18n\angular-locale_rm-ch.js" />
+    <Content Include="libs\i18n\angular-locale_rm.js" />
+    <Content Include="libs\i18n\angular-locale_rn-bi.js" />
+    <Content Include="libs\i18n\angular-locale_rn.js" />
+    <Content Include="libs\i18n\angular-locale_ro-md.js" />
+    <Content Include="libs\i18n\angular-locale_ro-ro.js" />
+    <Content Include="libs\i18n\angular-locale_ro.js" />
+    <Content Include="libs\i18n\angular-locale_rof-tz.js" />
+    <Content Include="libs\i18n\angular-locale_rof.js" />
+    <Content Include="libs\i18n\angular-locale_ru-by.js" />
+    <Content Include="libs\i18n\angular-locale_ru-kg.js" />
+    <Content Include="libs\i18n\angular-locale_ru-kz.js" />
+    <Content Include="libs\i18n\angular-locale_ru-md.js" />
+    <Content Include="libs\i18n\angular-locale_ru-ru.js" />
+    <Content Include="libs\i18n\angular-locale_ru-ua.js" />
+    <Content Include="libs\i18n\angular-locale_ru.js" />
+    <Content Include="libs\i18n\angular-locale_rw-rw.js" />
+    <Content Include="libs\i18n\angular-locale_rw.js" />
+    <Content Include="libs\i18n\angular-locale_rwk-tz.js" />
+    <Content Include="libs\i18n\angular-locale_rwk.js" />
+    <Content Include="libs\i18n\angular-locale_sah-ru.js" />
+    <Content Include="libs\i18n\angular-locale_sah.js" />
+    <Content Include="libs\i18n\angular-locale_saq-ke.js" />
+    <Content Include="libs\i18n\angular-locale_saq.js" />
+    <Content Include="libs\i18n\angular-locale_sbp-tz.js" />
+    <Content Include="libs\i18n\angular-locale_sbp.js" />
+    <Content Include="libs\i18n\angular-locale_se-fi.js" />
+    <Content Include="libs\i18n\angular-locale_se-no.js" />
+    <Content Include="libs\i18n\angular-locale_se-se.js" />
+    <Content Include="libs\i18n\angular-locale_se.js" />
+    <Content Include="libs\i18n\angular-locale_seh-mz.js" />
+    <Content Include="libs\i18n\angular-locale_seh.js" />
+    <Content Include="libs\i18n\angular-locale_ses-ml.js" />
+    <Content Include="libs\i18n\angular-locale_ses.js" />
+    <Content Include="libs\i18n\angular-locale_sg-cf.js" />
+    <Content Include="libs\i18n\angular-locale_sg.js" />
+    <Content Include="libs\i18n\angular-locale_shi-latn-ma.js" />
+    <Content Include="libs\i18n\angular-locale_shi-latn.js" />
+    <Content Include="libs\i18n\angular-locale_shi-tfng-ma.js" />
+    <Content Include="libs\i18n\angular-locale_shi-tfng.js" />
+    <Content Include="libs\i18n\angular-locale_shi.js" />
+    <Content Include="libs\i18n\angular-locale_si-lk.js" />
+    <Content Include="libs\i18n\angular-locale_si.js" />
+    <Content Include="libs\i18n\angular-locale_sk-sk.js" />
+    <Content Include="libs\i18n\angular-locale_sk.js" />
+    <Content Include="libs\i18n\angular-locale_sl-si.js" />
+    <Content Include="libs\i18n\angular-locale_sl.js" />
+    <Content Include="libs\i18n\angular-locale_smn-fi.js" />
+    <Content Include="libs\i18n\angular-locale_smn.js" />
+    <Content Include="libs\i18n\angular-locale_sn-zw.js" />
+    <Content Include="libs\i18n\angular-locale_sn.js" />
+    <Content Include="libs\i18n\angular-locale_so-dj.js" />
+    <Content Include="libs\i18n\angular-locale_so-et.js" />
+    <Content Include="libs\i18n\angular-locale_so-ke.js" />
+    <Content Include="libs\i18n\angular-locale_so-so.js" />
+    <Content Include="libs\i18n\angular-locale_so.js" />
+    <Content Include="libs\i18n\angular-locale_sq-al.js" />
+    <Content Include="libs\i18n\angular-locale_sq-mk.js" />
+    <Content Include="libs\i18n\angular-locale_sq-xk.js" />
+    <Content Include="libs\i18n\angular-locale_sq.js" />
+    <Content Include="libs\i18n\angular-locale_sr-cyrl-ba.js" />
+    <Content Include="libs\i18n\angular-locale_sr-cyrl-me.js" />
+    <Content Include="libs\i18n\angular-locale_sr-cyrl-rs.js" />
+    <Content Include="libs\i18n\angular-locale_sr-cyrl-xk.js" />
+    <Content Include="libs\i18n\angular-locale_sr-cyrl.js" />
+    <Content Include="libs\i18n\angular-locale_sr-latn-ba.js" />
+    <Content Include="libs\i18n\angular-locale_sr-latn-me.js" />
+    <Content Include="libs\i18n\angular-locale_sr-latn-rs.js" />
+    <Content Include="libs\i18n\angular-locale_sr-latn-xk.js" />
+    <Content Include="libs\i18n\angular-locale_sr-latn.js" />
+    <Content Include="libs\i18n\angular-locale_sr.js" />
+    <Content Include="libs\i18n\angular-locale_sv-ax.js" />
+    <Content Include="libs\i18n\angular-locale_sv-fi.js" />
+    <Content Include="libs\i18n\angular-locale_sv-se.js" />
+    <Content Include="libs\i18n\angular-locale_sv.js" />
+    <Content Include="libs\i18n\angular-locale_sw-cd.js" />
+    <Content Include="libs\i18n\angular-locale_sw-ke.js" />
+    <Content Include="libs\i18n\angular-locale_sw-tz.js" />
+    <Content Include="libs\i18n\angular-locale_sw-ug.js" />
+    <Content Include="libs\i18n\angular-locale_sw.js" />
+    <Content Include="libs\i18n\angular-locale_ta-in.js" />
+    <Content Include="libs\i18n\angular-locale_ta-lk.js" />
+    <Content Include="libs\i18n\angular-locale_ta-my.js" />
+    <Content Include="libs\i18n\angular-locale_ta-sg.js" />
+    <Content Include="libs\i18n\angular-locale_ta.js" />
+    <Content Include="libs\i18n\angular-locale_te-in.js" />
+    <Content Include="libs\i18n\angular-locale_te.js" />
+    <Content Include="libs\i18n\angular-locale_teo-ke.js" />
+    <Content Include="libs\i18n\angular-locale_teo-ug.js" />
+    <Content Include="libs\i18n\angular-locale_teo.js" />
+    <Content Include="libs\i18n\angular-locale_th-th.js" />
+    <Content Include="libs\i18n\angular-locale_th.js" />
+    <Content Include="libs\i18n\angular-locale_ti-er.js" />
+    <Content Include="libs\i18n\angular-locale_ti-et.js" />
+    <Content Include="libs\i18n\angular-locale_ti.js" />
+    <Content Include="libs\i18n\angular-locale_tk-tm.js" />
+    <Content Include="libs\i18n\angular-locale_tk.js" />
+    <Content Include="libs\i18n\angular-locale_tl.js" />
+    <Content Include="libs\i18n\angular-locale_to-to.js" />
+    <Content Include="libs\i18n\angular-locale_to.js" />
+    <Content Include="libs\i18n\angular-locale_tr-cy.js" />
+    <Content Include="libs\i18n\angular-locale_tr-tr.js" />
+    <Content Include="libs\i18n\angular-locale_tr.js" />
+    <Content Include="libs\i18n\angular-locale_twq-ne.js" />
+    <Content Include="libs\i18n\angular-locale_twq.js" />
+    <Content Include="libs\i18n\angular-locale_tzm-ma.js" />
+    <Content Include="libs\i18n\angular-locale_tzm.js" />
+    <Content Include="libs\i18n\angular-locale_ug-cn.js" />
+    <Content Include="libs\i18n\angular-locale_ug.js" />
+    <Content Include="libs\i18n\angular-locale_uk-ua.js" />
+    <Content Include="libs\i18n\angular-locale_uk.js" />
+    <Content Include="libs\i18n\angular-locale_ur-in.js" />
+    <Content Include="libs\i18n\angular-locale_ur-pk.js" />
+    <Content Include="libs\i18n\angular-locale_ur.js" />
+    <Content Include="libs\i18n\angular-locale_uz-arab-af.js" />
+    <Content Include="libs\i18n\angular-locale_uz-arab.js" />
+    <Content Include="libs\i18n\angular-locale_uz-cyrl-uz.js" />
+    <Content Include="libs\i18n\angular-locale_uz-cyrl.js" />
+    <Content Include="libs\i18n\angular-locale_uz-latn-uz.js" />
+    <Content Include="libs\i18n\angular-locale_uz-latn.js" />
+    <Content Include="libs\i18n\angular-locale_uz.js" />
+    <Content Include="libs\i18n\angular-locale_vai-latn-lr.js" />
+    <Content Include="libs\i18n\angular-locale_vai-latn.js" />
+    <Content Include="libs\i18n\angular-locale_vai-vaii-lr.js" />
+    <Content Include="libs\i18n\angular-locale_vai-vaii.js" />
+    <Content Include="libs\i18n\angular-locale_vai.js" />
+    <Content Include="libs\i18n\angular-locale_vi-vn.js" />
+    <Content Include="libs\i18n\angular-locale_vi.js" />
+    <Content Include="libs\i18n\angular-locale_vo-001.js" />
+    <Content Include="libs\i18n\angular-locale_vo.js" />
+    <Content Include="libs\i18n\angular-locale_vun-tz.js" />
+    <Content Include="libs\i18n\angular-locale_vun.js" />
+    <Content Include="libs\i18n\angular-locale_wae-ch.js" />
+    <Content Include="libs\i18n\angular-locale_wae.js" />
+    <Content Include="libs\i18n\angular-locale_xog-ug.js" />
+    <Content Include="libs\i18n\angular-locale_xog.js" />
+    <Content Include="libs\i18n\angular-locale_yav-cm.js" />
+    <Content Include="libs\i18n\angular-locale_yav.js" />
+    <Content Include="libs\i18n\angular-locale_yi-001.js" />
+    <Content Include="libs\i18n\angular-locale_yi.js" />
+    <Content Include="libs\i18n\angular-locale_yo-bj.js" />
+    <Content Include="libs\i18n\angular-locale_yo-ng.js" />
+    <Content Include="libs\i18n\angular-locale_yo.js" />
+    <Content Include="libs\i18n\angular-locale_yue-hk.js" />
+    <Content Include="libs\i18n\angular-locale_yue.js" />
+    <Content Include="libs\i18n\angular-locale_zgh-ma.js" />
+    <Content Include="libs\i18n\angular-locale_zgh.js" />
+    <Content Include="libs\i18n\angular-locale_zh-cn.js" />
+    <Content Include="libs\i18n\angular-locale_zh-hans-cn.js" />
+    <Content Include="libs\i18n\angular-locale_zh-hans-hk.js" />
+    <Content Include="libs\i18n\angular-locale_zh-hans-mo.js" />
+    <Content Include="libs\i18n\angular-locale_zh-hans-sg.js" />
+    <Content Include="libs\i18n\angular-locale_zh-hans.js" />
+    <Content Include="libs\i18n\angular-locale_zh-hant-hk.js" />
+    <Content Include="libs\i18n\angular-locale_zh-hant-mo.js" />
+    <Content Include="libs\i18n\angular-locale_zh-hant-tw.js" />
+    <Content Include="libs\i18n\angular-locale_zh-hant.js" />
+    <Content Include="libs\i18n\angular-locale_zh-hk.js" />
+    <Content Include="libs\i18n\angular-locale_zh-tw.js" />
+    <Content Include="libs\i18n\angular-locale_zh.js" />
+    <Content Include="libs\i18n\angular-locale_zu-za.js" />
+    <Content Include="libs\i18n\angular-locale_zu.js" />
+    <Content Include="libs\ionicons\css\ionicons.css" />
+    <Content Include="libs\ionicons\css\ionicons.min.css" />
+    <Content Include="libs\ionicons\fonts\ionicons.svg" />
+    <Content Include="libs\ionrangeslider\css\ion.rangeSlider.css" />
+    <Content Include="libs\ionrangeslider\css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="libs\ionrangeslider\css\ion.rangeSlider.skinHTML5.css" />
+    <Content Include="libs\ionrangeslider\css\ion.rangeSlider.skinModern.css" />
+    <Content Include="libs\ionrangeslider\css\ion.rangeSlider.skinNice.css" />
+    <Content Include="libs\ionrangeslider\css\ion.rangeSlider.skinSimple.css" />
+    <Content Include="libs\ionrangeslider\css\normalize.css" />
+    <Content Include="libs\ionrangeslider\img\sprite-skin-flat.png" />
+    <Content Include="libs\ionrangeslider\img\sprite-skin-modern.png" />
+    <Content Include="libs\ionrangeslider\img\sprite-skin-nice.png" />
+    <Content Include="libs\ionrangeslider\img\sprite-skin-simple.png" />
+    <Content Include="libs\ionrangeslider\js\ion.rangeSlider.js" />
+    <Content Include="libs\ionrangeslider\js\ion.rangeSlider.min.js" />
+    <Content Include="libs\ionrangeslider\_tmp\logo-ion-range-slider.png" />
+    <Content Include="libs\jquery-ui\jquery-ui.js" />
+    <Content Include="libs\jquery-ui\jquery-ui.min.js" />
+    <Content Include="libs\jquery-validation\js\jquery-validation-custom.js" />
+    <Content Include="libs\jquery-validation\js\additional-methods.js" />
+    <Content Include="libs\jquery-validation\js\additional-methods.min.js" />
+    <Content Include="libs\jquery-validation\js\jquery.validate.js" />
+    <Content Include="libs\jquery-validation\js\jquery.validate.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ar.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ar.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_bg.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_bg.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_bn_BD.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_bn_BD.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ca.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ca.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_cs.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_cs.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_da.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_da.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_de.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_de.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_el.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_el.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_es.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_es.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_es_AR.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_es_AR.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_es_PE.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_es_PE.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_et.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_et.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_eu.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_eu.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_fa.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_fa.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_fi.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_fi.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_fr.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_fr.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ge.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ge.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_gl.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_gl.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_he.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_he.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_hr.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_hr.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_hu.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_hu.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_hy_AM.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_hy_AM.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_id.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_id.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_is.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_is.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_it.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_it.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ja.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ja.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ka.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ka.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_kk.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_kk.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ko.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ko.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_lt.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_lt.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_lv.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_lv.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_my.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_my.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_nl.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_nl.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_no.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_no.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_pl.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_pl.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_pt_BR.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_pt_BR.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_pt_PT.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_pt_PT.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ro.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ro.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ru.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_ru.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_si.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_si.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_sk.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_sk.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_sl.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_sl.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_sr.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_sr.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_sr_lat.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_sr_lat.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_sv.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_sv.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_th.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_th.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_tj.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_tj.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_tr.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_tr.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_uk.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_uk.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_vi.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_vi.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_zh.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_zh.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_zh_TW.js" />
+    <Content Include="libs\jquery-validation\js\localization\messages_zh_TW.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\methods_de.js" />
+    <Content Include="libs\jquery-validation\js\localization\methods_de.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\methods_es_CL.js" />
+    <Content Include="libs\jquery-validation\js\localization\methods_es_CL.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\methods_fi.js" />
+    <Content Include="libs\jquery-validation\js\localization\methods_fi.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\methods_nl.js" />
+    <Content Include="libs\jquery-validation\js\localization\methods_nl.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\methods_pt.js" />
+    <Content Include="libs\jquery-validation\js\localization\methods_pt.min.js" />
+    <Content Include="libs\jquery-validation\js\localization\_messages_empty.js" />
+    <Content Include="libs\jquery.blockUI\jquery.blockui.min.js" />
+    <Content Include="libs\jquery.easing\js\jquery.easing.compatibility.js" />
+    <Content Include="libs\jquery.easing\js\jquery.easing.js" />
+    <Content Include="libs\jquery.easing\js\jquery.easing.min.js" />
+    <Content Include="libs\jquery\dist\core.js" />
+    <Content Include="libs\jquery\dist\jquery.js" />
+    <Content Include="libs\jquery\dist\jquery.min.js" />
+    <Content Include="libs\jquery\dist\jquery.slim.js" />
+    <Content Include="libs\jquery\dist\jquery.slim.min.js" />
+    <Content Include="libs\jquery\jquery.min.js" />
+    <Content Include="libs\json2\json2.js" />
+    <Content Include="libs\json2\json2.min.js" />
+    <Content Include="libs\jstree\dist\jstree.js" />
+    <Content Include="libs\jstree\dist\jstree.min.js" />
+    <Content Include="libs\jstree\dist\themes\default-dark\32px.png" />
+    <Content Include="libs\jstree\dist\themes\default-dark\40px.png" />
+    <Content Include="libs\jstree\dist\themes\default-dark\style.css" />
+    <Content Include="libs\jstree\dist\themes\default-dark\style.min.css" />
+    <Content Include="libs\jstree\dist\themes\default-dark\throbber.gif" />
+    <Content Include="libs\jstree\dist\themes\default\32px.png" />
+    <Content Include="libs\jstree\dist\themes\default\40px.png" />
+    <Content Include="libs\jstree\dist\themes\default\style.css" />
+    <Content Include="libs\jstree\dist\themes\default\style.min.css" />
+    <Content Include="libs\jstree\dist\themes\default\throbber.gif" />
+    <Content Include="libs\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="libs\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.css" />
+    <Content Include="libs\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.js" />
+    <Content Include="libs\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.min.css" />
+    <Content Include="libs\malihu-custom-scrollbar-plugin\mCSB_buttons.png" />
+    <Content Include="libs\modernizr\modernizr-2.8.3.js" />
+    <Content Include="libs\moment\moment-timezone-utils.js" />
+    <Content Include="libs\moment\moment-timezone-with-data-2010-2020.js" />
+    <Content Include="libs\moment\moment-timezone-with-data-2010-2020.min.js" />
+    <Content Include="libs\moment\moment-timezone-with-data.js" />
+    <Content Include="libs\moment\moment-timezone-with-data.min.js" />
+    <Content Include="libs\moment\moment-timezone.js" />
+    <Content Include="libs\moment\moment-timezone.min.js" />
+    <Content Include="libs\moment\moment-with-locales.js" />
+    <Content Include="libs\moment\moment-with-locales.min.js" />
+    <Content Include="libs\moment\moment.js" />
+    <Content Include="libs\moment\moment.min.js" />
+    <Content Include="libs\ng-js-tree\dist\ngJsTree.js" />
+    <Content Include="libs\ng-js-tree\dist\ngJsTree.min.js" />
+    <Content Include="libs\nprogress\index.html" />
+    <Content Include="libs\nprogress\nprogress.css" />
+    <Content Include="libs\nprogress\nprogress.js" />
+    <Content Include="libs\nprogress\support\extras.css" />
+    <Content Include="libs\nprogress\support\style.css" />
+    <Content Include="libs\others\html5shiv.js" />
+    <Content Include="libs\others\respond.min.js" />
+    <Content Include="libs\others\respond.src.js" />
+    <Content Include="libs\rangy\rangy-classapplier.js" />
+    <Content Include="libs\rangy\rangy-classapplier.min.js" />
+    <Content Include="libs\rangy\rangy-core.js" />
+    <Content Include="libs\rangy\rangy-core.min.js" />
+    <Content Include="libs\rangy\rangy-highlighter.js" />
+    <Content Include="libs\rangy\rangy-highlighter.min.js" />
+    <Content Include="libs\rangy\rangy-selectionsaverestore.js" />
+    <Content Include="libs\rangy\rangy-selectionsaverestore.min.js" />
+    <Content Include="libs\rangy\rangy-serializer.js" />
+    <Content Include="libs\rangy\rangy-serializer.min.js" />
+    <Content Include="libs\rangy\rangy-textrange.js" />
+    <Content Include="libs\rangy\rangy-textrange.min.js" />
+    <Content Include="libs\raphael\raphael.js" />
+    <Content Include="libs\raphael\raphael.min.js" />
+    <Content Include="libs\raphael\raphael.no-deps.js" />
+    <Content Include="libs\raphael\raphael.no-deps.min.js" />
+    <Content Include="libs\slimScroll\jquery.slimscroll.js" />
+    <Content Include="libs\slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="libs\spinjs\jquery.spin.js" />
+    <Content Include="libs\spinjs\spin.js" />
+    <Content Include="libs\sweetalert\ie9.css" />
+    <Content Include="libs\sweetalert\sweet-alert.css" />
+    <Content Include="libs\sweetalert\sweet-alert.html" />
+    <Content Include="libs\sweetalert\sweet-alert.js" />
+    <Content Include="libs\sweetalert\sweet-alert.min.js" />
+    <Content Include="libs\toastr2.1.1\toastr.css" />
+    <Content Include="libs\toastr2.1.1\toastr.js" />
+    <Content Include="libs\toastr2.1.1\toastr.min.css" />
+    <Content Include="libs\toastr2.1.1\toastr.min.js" />
+    <Content Include="libs\underscore.js" />
+    <Content Include="log4net.config" />
+    <Content Include="libs\angular-animate\angular-animate.js" />
+    <Content Include="libs\angular-animate\angular-animate.min.js" />
+    <Content Include="libs\angular-sanitize\angular-sanitize.js" />
+    <Content Include="libs\angular-sanitize\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-scenario.js" />
+    <Content Include="Scripts\angular-touch.js" />
+    <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="libs\angular-ui-router\angular-ui-router.js" />
+    <Content Include="libs\angular-ui-router\angular-ui-router.min.js" />
+    <Content Include="libs\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="libs\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="libs\angular-ui\ui-bootstrap.js" />
+    <Content Include="libs\angular-ui\ui-bootstrap.min.js" />
+    <Content Include="libs\angular-ui\ui-utils-ieshiv.js" />
+    <Content Include="libs\angular-ui\ui-utils-ieshiv.min.js" />
+    <Content Include="libs\angular-ui\ui-utils.js" />
+    <Content Include="libs\angular-ui\ui-utils.min.js" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\errors.json" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-touch.min.js.map" />
+    <Content Include="libs\angular-sanitize\angular-sanitize.min.js.map" />
+    <Content Include="Abp\Framework\styles\abp.mixings.less" />
+    <Content Include="Abp\Framework\styles\abp.mixings.css.map" />
+    <Content Include="Abp\Framework\styles\abp.less" />
+    <Content Include="Abp\Framework\styles\abp.css.map" />
+    <Content Include="libs\bootstrap\config.json" />
+    <Content Include="libs\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="libs\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="libs\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="libs\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="libs\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="libs\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="libs\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="libs\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="libs\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="libs\toastr2.1.1\toastr.js.map" />
+    <Content Include="libs\sweetalert\sweet-alert.scss" />
+    <Content Include="libs\jquery-validation\README.md" />
+    <Content Include="App\Admin\views\about\about.cshtml" />
+    <Content Include="App\Admin\views\dashboard\index.cshtml" />
+    <Content Include="App\Admin\views\empty\index.cshtml" />
+    <Content Include="App\Admin\views\home\home.cshtml" />
+    <Content Include="App\Admin\views\layout\backTop\backTop.cshtml" />
+    <Content Include="App\Admin\views\layout\baSidebar\ba-sidebar.cshtml" />
+    <Content Include="App\Admin\views\layout\baWizard\baWizard.cshtml" />
+    <Content Include="App\Admin\views\layout\baWizard\baWizardStep.cshtml" />
+    <Content Include="App\Admin\views\layout\contentTop\contentTop.cshtml" />
+    <Content Include="App\Admin\views\layout\layout.cshtml" />
+    <Content Include="App\Admin\views\layout\msgCenter\msgCenter.cshtml" />
+    <Content Include="App\Admin\views\layout\pageTop\pageTop.cshtml" />
+    <Content Include="App\Admin\views\layout\progressBarRound\progressBarRound.cshtml" />
+    <Content Include="App\Admin\views\layout\widgets\widgets.cshtml" />
+    <Content Include="App\Admin\views\tenants\createModal.cshtml" />
+    <Content Include="App\Admin\views\tenants\index.cshtml" />
+    <Content Include="App\Admin\views\userAnalysis\userLoginAttempts.cshtml" />
+    <Content Include="App\Admin\views\users\changeUserPassword.cshtml" />
+    <Content Include="App\Admin\views\users\index.cshtml" />
+    <Content Include="App\Admin\web.config" />
+    <Content Include="App\assets\fonts\socicon.eot" />
+    <Content Include="App\assets\fonts\socicon.ttf" />
+    <Content Include="App\assets\fonts\socicon.woff" />
+    <Content Include="App\assets\fonts\socicon.woff2" />
+    <Content Include="App\sass\404.scss" />
+    <Content Include="App\sass\app\maps\_google-maps.scss" />
+    <Content Include="App\sass\app\maps\_leaflet.scss" />
+    <Content Include="App\sass\app\maps\_map-bubbles.scss" />
+    <Content Include="App\sass\app\maps\_map-lines.scss" />
+    <Content Include="App\sass\app\_alerts.scss" />
+    <Content Include="App\sass\app\_buttonsPage.scss" />
+    <Content Include="App\sass\app\_chartsPage.scss" />
+    <Content Include="App\sass\app\_dashboard.scss" />
+    <Content Include="App\sass\app\_email.scss" />
+    <Content Include="App\sass\app\_form.scss" />
+    <Content Include="App\sass\app\_grid.scss" />
+    <Content Include="App\sass\app\_iconsPage.scss" />
+    <Content Include="App\sass\app\_modalNotifications.scss" />
+    <Content Include="App\sass\app\_modals.scss" />
+    <Content Include="App\sass\app\_notifications.scss" />
+    <Content Include="App\sass\app\_profile.scss" />
+    <Content Include="App\sass\app\_slider.scss" />
+    <Content Include="App\sass\app\_table.scss" />
+    <Content Include="App\sass\app\_tabsPage.scss" />
+    <Content Include="App\sass\app\_tplSkinPanel.scss" />
+    <Content Include="App\sass\app\_tree.scss" />
+    <Content Include="App\sass\app\_typography.scss" />
+    <Content Include="App\sass\auth.scss" />
+    <Content Include="App\sass\common.scss" />
+    <Content Include="App\sass\main.scss" />
+    <Content Include="App\sass\theme\bootstrap-overrides\_panel.scss" />
+    <Content Include="App\sass\theme\bootstrap-overrides\_tabs.scss" />
+    <Content Include="App\sass\theme\components\_accordion.scss" />
+    <Content Include="App\sass\theme\components\_backTop.scss" />
+    <Content Include="App\sass\theme\components\_baWizard.scss" />
+    <Content Include="App\sass\theme\components\_contentTop.scss" />
+    <Content Include="App\sass\theme\components\_msgCenter.scss" />
+    <Content Include="App\sass\theme\components\_pageTop.scss" />
+    <Content Include="App\sass\theme\components\_progressRound.scss" />
+    <Content Include="App\sass\theme\components\_sidebar.scss" />
+    <Content Include="App\sass\theme\components\_widgets.scss" />
+    <Content Include="App\sass\theme\conf\colorScheme\_blur.scss" />
+    <Content Include="App\sass\theme\conf\colorScheme\_mint.scss" />
+    <Content Include="App\sass\theme\conf\_mixins.scss" />
+    <Content Include="App\sass\theme\conf\_variables.scss" />
+    <Content Include="App\sass\theme\dashboard\_amChart.scss" />
+    <Content Include="App\sass\theme\dashboard\_amChartMap.scss" />
+    <Content Include="App\sass\theme\dashboard\_blurFeed.scss" />
+    <Content Include="App\sass\theme\dashboard\_calendar.scss" />
+    <Content Include="App\sass\theme\dashboard\_pieCharts.scss" />
+    <Content Include="App\sass\theme\dashboard\_popularApp.scss" />
+    <Content Include="App\sass\theme\dashboard\_timeline.scss" />
+    <Content Include="App\sass\theme\dashboard\_todo.scss" />
+    <Content Include="App\sass\theme\dashboard\_trafficChart.scss" />
+    <Content Include="App\sass\theme\dashboard\_weather.scss" />
+    <Content Include="App\sass\theme\_blur-admin-theme.scss" />
+    <Content Include="App\sass\theme\_buttons.scss" />
+    <Content Include="App\sass\theme\_datePicker.scss" />
+    <Content Include="App\sass\theme\_icons.scss" />
+    <Content Include="App\sass\theme\_layout.scss" />
+    <Content Include="App\sass\theme\_preloader.scss" />
+    <Content Include="App\sass\theme\_socicon.scss" />
+    <Content Include="App\sass\theme\_table.scss" />
+    <Content Include="App\sass\theme\_tree.scss" />
+    <Content Include="App\Admin\views\users\createOrEditModal.cshtml" />
+    <None Include="bundleconfig.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="libs\GalaxyIconfont\iconfont.eot" />
+    <Content Include="libs\GalaxyIconfont\iconfont.ttf" />
+    <Content Include="libs\GalaxyIconfont\iconfont.woff" />
+    <Content Include="creativeTim\assets\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="creativeTim\assets\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="creativeTim\assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="creativeTim\assets\sass\lbd\.DS_Store" />
+    <Content Include="creativeTim\assets\sass\lbd\mixins\_buttons.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\mixins\_cards.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\mixins\_chartist.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\mixins\_icons.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\mixins\_inputs.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\mixins\_labels.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\mixins\_morphing-buttons.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\mixins\_navbars.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\mixins\_social-buttons.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\mixins\_tabs.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\mixins\_transparency.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\mixins\_vendor-prefixes.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_alerts.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_buttons.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_cards.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_carousel.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_chartist.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_checkbox-radio-switch.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_collapse.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_datepicker.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_dropdown.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_flexisel.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_footers.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_icons.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_inputs.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_labels.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_media.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_misc.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_mixins.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_modal.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_morphing-buttons.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_navbars.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_progress-bars.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_responsive.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_sections.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_sidebar-and-main-panel.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_sliders.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_social-buttons.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_tables.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_tabs-navs-pagination.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_tags.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_tooltips-and-popovers.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_typography.scss" />
+    <Content Include="creativeTim\assets\sass\lbd\_variables.scss" />
+    <Content Include="creativeTim\assets\sass\light-bootstrap-dashboard.scss" />
+    <Content Include="libs\ionicons\fonts\ionicons.eot" />
+    <Content Include="libs\ionicons\fonts\ionicons.ttf" />
+    <Content Include="libs\ionicons\fonts\ionicons.woff" />
+    <Content Include="libs\angular-moment\angular-moment.min.js.map" />
+    <Content Include="libs\angular-moment\LICENSE" />
+    <Content Include="libs\angular-moment\README.md" />
+    <Content Include="libs\angular-ui-grid\ui-grid.eot" />
+    <Content Include="libs\angular-ui-grid\ui-grid.ttf" />
+    <Content Include="libs\angular-ui-grid\ui-grid.woff" />
+    <Content Include="libs\bootstrap-select\css\bootstrap-select.css.map" />
+    <Content Include="libs\bootstrap-select\js\bootstrap-select.js.map" />
+    <Content Include="libs\angular-touch\angular-touch.min.js.map" />
+    <Content Include="libs\nprogress\.bower.json" />
+    <Content Include="libs\nprogress\bower.json" />
+    <Content Include="libs\nprogress\component.json" />
+    <Content Include="libs\nprogress\History.md" />
+    <Content Include="libs\nprogress\License.md" />
+    <Content Include="libs\nprogress\Notes.md" />
+    <Content Include="libs\nprogress\Readme.md" />
+    <Content Include="libs\malihu-custom-scrollbar-plugin\.bower.json" />
+    <Content Include="libs\malihu-custom-scrollbar-plugin\bower.json" />
+    <Content Include="libs\fastclick\.bower.json" />
+    <Content Include="libs\fastclick\bower.json" />
+    <Content Include="libs\fastclick\LICENSE" />
+    <Content Include="libs\fastclick\README.md" />
+    <Content Include="libs\angular-toastr\.bower.json" />
+    <Content Include="libs\angular-toastr\.npmignore" />
+    <Content Include="libs\angular-toastr\bower.json" />
+    <Content Include="libs\angular-toastr\CONTRIBUTING.md" />
+    <Content Include="libs\angular-toastr\LICENSE" />
+    <Content Include="libs\angular-toastr\README.md" />
+    <Content Include="libs\bootstrap-tagsinput\dist\bootstrap-tagsinput-angular.min.js.map" />
+    <Content Include="libs\bootstrap-tagsinput\dist\bootstrap-tagsinput.less" />
+    <Content Include="libs\bootstrap-tagsinput\dist\bootstrap-tagsinput.min.js.map" />
+    <Content Include="libs\bootstrap-tagsinput\dist\bootstrap-tagsinput.zip" />
+    <Content Include="libs\angular-ui-select\.bower.json" />
+    <Content Include="libs\angular-ui-select\bower.json" />
+    <Content Include="libs\angular-ui-select\CHANGELOG.md" />
+    <Content Include="libs\angular-ui-select\composer.json" />
+    <Content Include="libs\angular-ui-select\CONTRIBUTING.md" />
+    <Content Include="libs\angular-ui-select\deploy-docs.sh" />
+    <Content Include="libs\angular-ui-select\dist\select.min.css.map" />
+    <Content Include="libs\angular-ui-select\dist\select.min.js.map" />
+    <Content Include="libs\angular-ui-select\LICENSE" />
+    <Content Include="libs\angular-ui-select\package.json" />
+    <Content Include="libs\angular-ui-select\README.md" />
+    <Content Include="libs\angular-route\angular-route.min.js.map" />
+    <Content Include="libs\angular-smart-table\dist\smart-table.min.js.map" />
+    <Content Include="libs\jquery\dist\jquery.min.map" />
+    <Content Include="libs\jquery\dist\jquery.slim.min.map" />
+    <Content Include="libs\bootstrap\js\.jscsrc" />
+    <Content Include="libs\bootstrap\js\.jshintrc" />
+    <Content Include="libs\angular-daterangepicker\angular-daterangepicker.min.map" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <None Include="Scripts\jquery-2.2.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-2.2.0.js" />
+    <Content Include="Scripts\jquery-2.2.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery-2.2.0.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="libs\signalR\jquery.signalR-2.2.1.js" />
+    <Content Include="libs\signalR\jquery.signalR-2.2.1.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\json2.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\others\html5shiv.js" />
+    <Content Include="Scripts\others\respond.min.js" />
+    <Content Include="Scripts\others\respond.src.js" />
+    <Content Include="Scripts\others\spinjs\jquery.spin.js" />
+    <Content Include="Scripts\others\spinjs\spin.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Views\Account\css\font.css" />
+    <Content Include="creativeTim\assets\css\material-kit.css" />
+    <Content Include="creativeTim\assets\img\city.jpg" />
+    <Content Include="Views\Account\findmypassword.css" />
+    <Content Include="Views\Account\FindMyPasswordTypes.js" />
+    <Content Include="Views\Account\img\login.png" />
+    <Content Include="Views\Account\img\verifyCode.png" />
+    <Content Include="creativeTim\assets\js\material-kit.js" />
+    <Content Include="creativeTim\assets\js\material.min.js" />
+    <Content Include="Views\Account\FindMyPassword.js" />
+    <Content Include="Views\Account\Register.css" />
+    <Content Include="Views\Account\_Layout.css" />
+    <Content Include="Views\Account\login.css" />
+    <Content Include="Views\Account\js\jquery-validation-custom.js" />
+    <Content Include="Views\Account\js\jquery.min.js" />
+    <Content Include="Views\Account\js\jquery.validate.min.js" />
+    <Content Include="Views\Account\js\login.js" />
+    <Content Include="Views\Account\js\messages_cn.js" />
+    <Content Include="Views\Account\js\register.js" />
+    <Content Include="Views\Account\js\resetByEmail.js" />
+    <Content Include="Views\Account\js\resetByPhone.js" />
+    <Content Include="Views\Account\Login.js" />
+    <Content Include="Views\Account\Register.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\Startup\AdminNavigationProvider.cs" />
+    <Compile Include="App\Startup\AppBundleConfig.cs" />
+    <Compile Include="App_Start\Bundles\AsIsBundleOrderer.cs" />
+    <Compile Include="App_Start\Bundles\BundleConfig.cs" />
+    <Compile Include="App_Start\Bundles\BundleExtensions.cs" />
+    <Compile Include="App_Start\Bundles\CommonBundleConfig.cs" />
+    <Compile Include="App_Start\CmsWebModule.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\CmsControllerBase.cs" />
+    <Compile Include="Controllers\Results\ChallengeResult.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Account\LanguagesViewModel.cs" />
+    <Compile Include="Models\Account\LoginFormViewModel.cs" />
+    <Compile Include="Models\Account\LoginViewModel.cs" />
+    <Compile Include="Models\Account\RegisterResultViewModel.cs" />
+    <Compile Include="Models\Account\RegisterViewModel.cs" />
+    <Compile Include="Models\Account\TenantSelectionViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\CmsWebViewPageBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\sweetalert\sweet-alert.scss" />
+    <Content Include="Views\Account\RegisterResult.cshtml" />
+    <Content Include="Views\Account\TenantSelection.cshtml" />
+    <Content Include="Scripts\version.json" />
+    <Content Include="Views\Account\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_Layout.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Account\_Languages.cshtml" />
+    <Content Include="Views\Account\FindMyPassword.cshtml" />
+    <Content Include="Views\Account\FindMyPasswordTypes.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App\assets\vendor\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="libs\GalaxyIconfont\dist\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YoYo.Cms.Application\YoYo.Cms.Application.csproj">
+      <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
+      <Name>YoYo.Cms.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YoYo.Cms.Core\YoYo.Cms.Core.csproj">
+      <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
+      <Name>YoYo.Cms.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YoYo.Cms.EntityFramework\YoYo.Cms.EntityFramework.csproj">
+      <Project>{3979f157-deb0-4878-ab1d-4cef6b5a1300}</Project>
+      <Name>YoYo.Cms.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YoYo.Cms.WebApi\YoYo.Cms.WebApi.csproj">
+      <Project>{5eb52d3d-09fd-463a-b02a-8d9856bd3724}</Project>
+      <Name>YoYo.Cms.WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6234</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:16634/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

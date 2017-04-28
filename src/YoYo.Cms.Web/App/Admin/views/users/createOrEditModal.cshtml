@@ -1,0 +1,104 @@
+﻿@using Abp.Authorization.Users
+<div>
+    <form name="userCreateOrEditForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span ng-if="vm.user.id">@L("EditUser"): {{vm.user.userName}}</span>
+                <span ng-if="!vm.user.id">@L("CreateNewUser")</span>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <uib-tabset class="tab-container tabbable-line">
+                <uib-tab heading="@L("UserInformations")">
+                    
+                    <div class="form-horizontal  ng-valid">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">@L("EmailAddress")</label>
+                            <div class="col-sm-10">
+                                <input type="email" name="EmailAddress" class="form-control" ng-class="{'edited':vm.user.emailAddress}" ng-model="vm.user.emailAddress" required maxlength="@AbpUserBase.MaxEmailAddressLength">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">@L("UserPhoneNumber")</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="PhoneNumber" class="form-control" ng-class="{'edited':vm.user.phoneNumber}" ng-model="vm.user.phoneNumber">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">@L("UserName")</label>
+                            <div class="col-sm-10">
+                                <input type="text" ng-disabled="!vm.canChangeUserName" ng-class="{'edited':vm.user.userName}" name="UserName" class="form-control input-ltr" ng-model="vm.user.userName" required maxlength="@AbpUserBase.MaxUserNameLength">
+                            </div>
+                            <!--<span class="help-block" ng-show="!vm.canChangeUserName">@L("CanNotChangeAdminUserName")</span>-->
+                        </div>
+                    </div>
+
+                    <div class="has-success ng-scope">
+                        <div ng-if="vm.user.id" class="checkbox">
+                            <label class="custom-checkbox">
+                                <input id="ShouldResetPassword" class="" type="checkbox" name="ShouldChangePasswordOnNextLogin" ng-model="vm.user.shouldResetPassword">
+                                <span>
+                                    @L("ShouldResetPassword")
+                                </span>
+                            </label>
+                        </div>
+                        <div  class="checkbox">
+                            <label class="custom-checkbox">
+                                <input id="EditUser_ShouldChangePasswordOnNextLogin" class="" type="checkbox" name="ShouldChangePasswordOnNextLogin" ng-model="vm.user.shouldChangePasswordOnNextLogin">
+                                <span>
+                                    @L("ShouldChangePasswordOnNextLogin")
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="custom-checkbox">
+                                <input id="EditUser_IsActive" class="md-check" type="checkbox" name="IsActive" ng-model="vm.user.isActive">
+                                <span for="EditUser_IsActive">
+                                    @L("Active")
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox" ng-if="vm.isTwoFactorEnabled">
+                            <label class="custom-checkbox">
+                                <input id="EditUser_IsTwoFactorEnabled" class="md-check" type="checkbox" name="IsTwoFactorEnabled" ng-model="vm.user.isTwoFactorEnabled">
+                                <span>
+                                    @L("IsTwoFactorEnabled")
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox" ng-if="vm.isLockoutEnabled">
+                            <label class="custom-checkbox">
+                                <input id="EditUser_IsLockoutEnabled" class="md-check" type="checkbox" name="IsLockoutEnabled" ng-model="vm.user.isLockoutEnabled">
+                                <span uib-tooltip="@L("IsLockoutEnabled_Hint")">
+                                    @L("IsLockoutEnabled")
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </uib-tab>
+                <uib-tab>
+                    <uib-tab-heading>
+                        @L("Roles") <b class="badge badge-primary">{{vm.getAssignedRoleCount()}}</b>
+                    </uib-tab-heading>
+                    <div class="md-checkbox-list">
+                        <div class="md-checkbox" ng-repeat="role in vm.roles">
+                            <input id="EditUser_{{role.roleName}}" class="md-check" type="checkbox" name="{{role.roleName}}" ng-model="role.isAssigned">
+                            <label for="EditUser_{{role.roleName}}">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                {{role.roleDisplayName}}
+                            </label>
+                        </div>
+                    </div>
+                </uib-tab>
+            </uib-tabset>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="userCreateOrEditForm.$invalid"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        </div>
+    </form>
+</div>

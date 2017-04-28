@@ -1,0 +1,102 @@
+﻿@using Abp.Extensions
+@using Abp.Timing
+@using Abp.Web.Mvc.Extensions
+@*
+    IMPORTANT NOTES FROM ASP.NET BOILERPLATE:
+
+    This _Layout.cshtml is not used actually. It's left here if you want to add some classic style (MPA)
+    pages to your application.
+
+    See App/Main/views/layout/layout.cshtml for Angular application's layout page.
+*@
+@{
+    SetAntiForgeryCookie();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cms-@ViewBag.Title</title>
+
+    <link rel="shortcut icon" href="~/favicon.ico">
+    <link href="~/libs/GalaxyIconfont/iconfont.min.css" rel="stylesheet" />
+    <link href="~/libs/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/libs/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/libs/toastr2.1.1/toastr.css" rel="stylesheet" />
+    <link href="~/libs/flags/famfamfam-flags.css" rel="stylesheet" />
+    <link href="~/libs/sweetalert/sweet-alert.css" rel="stylesheet" />
+    @Html.IncludeStyle("http://fonts.lug.ustc.edu.cn/css?family=Roboto:400,700,300")
+    @Html.IncludeStyle("/creativeTim/assets/css/material-kit.css")
+    <link href="~/Views/Account/_Layout.css" rel="stylesheet" />
+    @RenderSection("Styles", false)
+
+    <script type="text/javascript">
+        //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {}; abp.appPath = '@ApplicationPath';
+    </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="~/libs/others/html5shiv.js"></script>
+    <script src="~/libs/others/respond.min.js"></script>
+        <![endif]-->
+
+    @Html.IncludeScript("~/Abp/Framework/scripts/utils/ie10fix.js")
+    
+ 
+    
+
+    <script src="~/libs/jquery/jquery.min.js"></script>
+    <script src="~/libs/bootstrap/js/bootstrap.js"></script>
+    <script src="~/libs/jquery-validation/js/jquery.validate.js"></script>
+    
+    
+  
+    <script src="~/libs/jquery-validation/js/localization/messages_@(UICulture.Left(2)).js"></script>
+    <script src="~/libs/toastr2.1.1/toastr.js"></script>
+    <script src="~/libs/spinjs/spin.js"></script>
+    <script src="~/libs/jquery.blockUI/jquery.blockui.min.js"></script>
+    <script src="~/libs/spinjs/jquery.spin.js"></script>
+    <script src="~/libs/sweetalert/sweet-alert.js"></script>
+
+    @Html.IncludeScript("~/Abp/Framework/scripts/abp.js")
+    @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.jquery.js")
+    @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.toastr.js")
+     @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.spin.js")
+     @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.blockUI.js")
+    @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.sweet-alert.js")
+    
+    
+    @*<script src="~/Common/Scripts/jquery-custom.js"></script>*@
+    <script src="~/Common/Scripts/jquery-validation-custom.js"></script>
+
+    
+
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    @* ReSharper disable once Html.PathError *@
+    <script src="~/api/AbpServiceProxies/GetAll?v=@(Clock.Now.Ticks)"></script>
+    @* ReSharper disable once Html.PathError *@
+    <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
+
+    @RenderSection("Scripts", false)
+</head>
+<body>
+
+    @RenderBody()
+
+<script type="text/javascript">
+    $(function () {
+        if (app) {
+            app.init();
+        }
+    });
+
+</script>
+
+</body>
+</html>
