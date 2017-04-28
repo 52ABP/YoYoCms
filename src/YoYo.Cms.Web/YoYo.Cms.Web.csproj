@@ -612,6 +612,7 @@
     <Content Include="creativeTim\assets\js\jquery-1.10.2.js" />
     <Content Include="creativeTim\assets\js\light-bootstrap-dashboard.js" />
     <Content Include="creativeTim\assets\js\material-bootstrap-wizard.js" />
+    <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
