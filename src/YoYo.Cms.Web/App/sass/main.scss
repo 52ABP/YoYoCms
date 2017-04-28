@@ -1,0 +1,38 @@
+@import 'common';
+
+@import 'app/form.scss';
+
+.ui-grid {
+    min-height: 480px;
+    height: auto;
+}
+
+.ui-grid-menu-button {
+    height: 31px;
+}
+
+.ui-grid .dropdown.open {
+    position: fixed;
+    z-index: 10;
+}
+
+.ui-grid-row .ui-grid-cell {
+    height: 39px !important;
+    line-height: 29px;
+}
+
+.ui-grid-cell-contents > button.btn-xs {
+    padding: 3px 10px;
+    /*border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    padding: 0;*/
+}
+
+.grid {
+    width: auto;
+    min-width: 400px;
+    height: 100%;
+}
+// injector
+// endinjector

@@ -1,0 +1,90 @@
+﻿@using Abp.Authorization.Users
+@using Abp.MultiTenancy
+@using Abp.Web.Mvc.Extensions
+@model YoYo.Cms.Web.Models.Account.LoginFormViewModel
+@{
+    ViewBag.Title = "登录";
+}
+@section Styles
+{
+    @Html.IncludeStyle("~/Views/Account/login.css")
+}
+@section Scripts
+{
+
+    @Html.IncludeScript("~/creativeTim/assets/js/material.min.js")
+    @Html.IncludeScript("~/creativeTim/assets/js/material-kit.js")
+    @Html.IncludeScript("~/Views/Account/Login.js")
+}
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                        <div class="card card-signup">
+                            <form class="form" id="loginFormData" name="loginFormData" novalidate>
+                                <div class="header header-primary text-center">
+                                    <h4>@L("LogIn")</h4>
+                                    <div class="social-line">
+                                        <a href="#pablo" class="btn btn-simple btn-just-icon">
+                                            <i class="fa fa-facebook-square"></i>
+                                        </a>
+                                        <a href="#pablo" class="btn btn-simple btn-just-icon">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="#pablo" class="btn btn-simple btn-just-icon">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <p class="text-divider">@L("OrBeClassical")</p>
+                                @if (Model.IsMultiTenancyEnabled)
+                                {
+                                    <div class="form-group">
+                                        <input placeholder="@L("TenancyName")" id="TenancyName" class="form-control" type="text" name="TenancyName" required maxlength="@AbpTenantBase.MaxTenancyNameLength">
+                                        <i class="icon iconfont icon-zu"></i>
+                                        <span class="text-muted">@L("CanBeEmptyToLoginAsHost")</span>
+
+                                    </div>
+                                }
+                                else
+                                {
+                                    <input type="hidden" id="TenancyName" name="TenancyName" value="">
+                                }
+                                <div class="content">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-user-o"></i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="@L("UserNameOrEmail")" autocomplete="off" id="EmailAddressInput" name="EmailAddressInput"  required  maxlength="@AbpUserBase.MaxEmailAddressLength" aria-required="true">
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-unlock-alt"></i>
+                                        </span>
+                                        <input type="password" class="form-control" placeholder="@L("Password")" autocomplete="off" name="PasswordInput" id="PasswordInput" required  maxlength="@YoYo.Cms.UserManagerment.Users.User.MaxPlainPasswordLength">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsCheckboxes" checked="">
+                                            <span class="checkbox-material">
+                                                <span>@L("RememberMe")</span>
+                                             
+                                            </span>
+                                         
+                                        </label>
+                                        <a class="pull-right" style="text-decoration:none" href="/Account/Register"><small>账号注册</small></a>
+                                        <a class="pull-right" style="text-decoration:none" href="/Account/FindMyPassword"><small>忘记密码&#12288;&#12288;</small></a>
+                                        
+                                    </div> 
+                                </div>
+                                <div class="footer text-center">
+                                    <button type="submit" href="#pablo" class="btn btn-simple btn-primary btn-lg loginButton">登录</button>
+                                </div>
+                                <div class="language-container">@Html.Action("Languages","Account")</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       

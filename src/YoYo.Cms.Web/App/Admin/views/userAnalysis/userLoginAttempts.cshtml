@@ -1,0 +1,79 @@
+﻿<div>
+    <div class="x_panel">
+        <div class="nav navbar-right">
+            
+            <a ng-click="vm.close()" class=""><i class="fa fa-close"></i></a>
+        </div>
+      
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <strong>@L("UsersLoginAttempts")</strong>
+            </h4>
+        </div>
+        <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12" ng-repeat="item in vm.loginAttemptRecords">
+                        <div class="alert bg-gray">
+                            <div class="row">
+                               
+                                <div class="col-xs-12">
+                                    <div class="row" ng-if="item.clientIpAddress">
+                                        <label class="control-label col-sm-4 text-right">@L("IpAddress")</label>
+                                        <div class="col-sm-8">
+                                            <p>
+                                                {{item.clientIpAddress}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row" ng-if="item.clientName">
+                                        <label class="control-label col-sm-4 text-right">@L("Client")</label>
+                                        <div class="col-sm-8">
+                                            <p >
+                                                {{item.clientName}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row" ng-if="item.browserInfo">
+                                        <label class="control-label col-sm-4 text-right">@L("Browser")</label>
+                                        <div class="col-sm-8">
+                                            <p >
+                                                {{item.browserInfo}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row" ng-if="item.creationTime">
+                                        <label class="control-label col-sm-4 text-right">@L("Time")</label>
+                                        <div class="col-sm-8">
+                                            <p >
+                                                {{vm.getCreationTime(item)}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                            <label class="control-label col-sm-4 text-right">@L("LoginState")</label>
+                                        <div class="col-sm-8">
+                                            <span class="label" ng-class="vm.getLoginAttemptClass(item)"> {{vm.formatLoginAttemptResult(item)}} </span>
+                                        </div>
+                                       
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-xs-3 text-center">
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="vm.close()">@L("Close")</button>
+        </div>
+
+
+
+    </div>
+
+  

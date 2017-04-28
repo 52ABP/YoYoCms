@@ -1,0 +1,55 @@
+﻿@using YoYo.Cms.Localization
+<div ng-controller="app.views.users.index as vm">
+    <div class="panel">
+        <div class="panel-heading clearfix align-right">
+            <button class="btn btn-default" ng-click="vm.exportToExcel()"><i class="fa fa-file-excel-o"></i> @L("ExportToExcel")</button>
+            <button ng-if="vm.permissions.create" class="btn btn-primary" ng-click="vm.createUser()"><i class="fa fa-plus"></i> @L("CreateNewUser")</button>
+        </div>
+        <div class="panel-body">
+            <div class="form">
+                <form class="">
+                    <div class="" enter-key="vm.getUsers()">
+                        <div class="row" >
+                            <div class="col-md-12">
+                                <div class="">
+                                    <div class="input-group">
+                                        <input ng-model="vm.filterText" auto-focus class="form-control" placeholder="@L("SearchWithThreeDot")" type="text">
+                                        <span class="input-group-btn">
+                                            <button ng-click="vm.getUsers()" class="btn btn-default" type="submit"><i class="fa fa-refresh"></i>刷新</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row margin-bottom-10" ng-if="vm.advancedFiltersAreShown">
+                            <div ng-class="{'col-md-6': vm.permissions.roles, 'col-md-12':!vm.permissions.roles}">
+                                <div class="form-group">
+                                    <permission-combo selected-permission="vm.requestParams.permission"></permission-combo>
+                                </div>
+                            </div>
+                            <div class="col-md-6" ng-if="vm.permissions.roles">
+                                <div class="form-group">
+                                    <role-combo selected-role="vm.requestParams.role" empty-text="@L("FilterByRole")"></role-combo>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" ng-if="vm.advancedFiltersAreShown">
+                        <div class="col-sm-12 text-right">
+                            <button class="btn blue" ng-click="vm.getUsers()"><i class="fa fa-refresh"></i> @L("Refresh")</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <span class="text-muted" ng-if="!vm.advancedFiltersAreShown" ng-click="vm.advancedFiltersAreShown=!vm.advancedFiltersAreShown"><i class="fa fa-angle-down"></i> @L("ShowAdvancedFilters")</span>
+                            <span class=" text-muted" ng-if="vm.advancedFiltersAreShown" ng-click="vm.advancedFiltersAreShown=!vm.advancedFiltersAreShown"><i class="fa fa-angle-up"></i> @L("HideAdvancedFilters")</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div busy-if="vm.loading">
+                <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns dir=@(CultureHelper.IsRtl ? "rtl" : "")></div>
+            </div>
+        </div>
+    </div>
+</div>
