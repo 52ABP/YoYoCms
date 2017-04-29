@@ -9,13 +9,14 @@
         <div class="al-user-profile" uib-dropdown>
             <a uib-dropdown-toggle class="profile-toggle-link">
                 <img ng-src="{{::( 'Nasta' | profilePicture )}}">
-                <span ng-click="vm.con()">dddd</span>
+                <span ng-bind="vm.getUserName" ></span>
             </a>
             <ul class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
                 <li><i class="dropdown-arr"></i></li>
-                <li><a ng-click="vm.con()" ><i class="fa fa-user"></i>个人资料</a></li>
-                <li><a data-ng-click="vm.con()" ><i class="fa fa-cog"></i>Settings</a></li>
-                <li><a href class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
+                @*<li><a ng-click="vm.con()" ><i class="fa fa-user"></i>个人资料</a></li>
+                <li><a ><i class="fa fa-cog"></i>Settings</a></li>*@
+                      
+                <li><a href="@Url.Action("Logout", "Account")" class="signout"><i class="fa fa-power-off"></i>@L("Logout")</a></li>
             </ul>
         </div>
 
