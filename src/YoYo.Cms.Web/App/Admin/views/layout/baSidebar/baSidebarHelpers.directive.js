@@ -124,7 +124,8 @@ yoyocmsModule
       require: '^baSidebarTogglingItem',
       link: function(scope, el, attrs, baSidebarTogglingItem) {
           el.on('click', function () {
-              console.log(baSidebarTogglingItem);
+             
+             
           if (baSidebarService.isMenuCollapsed()) {
             // If the whole sidebar is collapsed and this item has submenu. We need to open sidebar.
             // This should not affect mobiles, because on mobiles sidebar should be hidden at all

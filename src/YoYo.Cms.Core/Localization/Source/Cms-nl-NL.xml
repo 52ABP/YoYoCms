@@ -3,7 +3,7 @@
   <texts>
     <text name="HomePage" value="Startpagina" />
     <text name="About" value="Over" />
-    <text name="WellcomeMessage" value="Welkom bij Cms!" />
+    <text name="WelcomeMessage" value="Welkom bij Cms!" />
     
     <text name="FormIsNotValidMessage" value="Formulier is onjuist ingevuld. Controleer en herstel de fouten." />
     <text name="TenantNameCanNotBeEmpty" value="Naam van de klant mag niet leeg zijn" />

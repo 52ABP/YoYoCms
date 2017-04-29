@@ -157,7 +157,10 @@
 <main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
     
     <ba-sidebar></ba-sidebar>
-    <page-top></page-top>
+   
+
+    <div data-ng-include="'~/App/Admin/views/layout/pageTop/pageTop.cshtml'" data-ng-controller="app.pageTopCtrl"></div>
+    @*<page-top></page-top>*@
     <div class="al-main">
         <div class="al-content">
             <content-top></content-top>
@@ -185,44 +188,7 @@
     <div id="preloader" ng-show="!$pageFinishedLoading">
         <div></div>
     </div>
-
-@*<!-- page container -->
-<div class="container body">
-    <!-- Main content -->
-    <div class="main_container">
-
-        
-        <div class="col-md-3 left_col">
-            <div class="left_col scroll-view" data-ng-include="'/App/admin/views/layout/_main_sidebar.cshtml'" data-ng-controller="app.views.layout._main_sidebar as vm"></div>
-        </div>
-
-        <!-- top navigation -->
-        <div class="top_nav">
-            <div class="nav_menu" data-ng-include="'/App/admin/views/layout/_header.cshtml'" data-ng-controller="app.views.layout.header as vm">
-
-            </div>
-        </div>
-        <!-- /top navigation -->
-
-        <!-- page content -->
-        <div class="right_col" role="main">
-
-            <div ui-view></div>
-
-        </div>
-        <!-- /page content -->
-    </div>
-    <!-- /main content -->
-</div>
-
-
-<!-- /page container -->
-<!-- Footer -->
-<div class="page-header " data-ng-include="'/App/admin/views/layout/_footer.cshtml'"></div>
-<!-- /Footer -->*@
-
-
-
+     
 
 
 </body>

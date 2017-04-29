@@ -4,7 +4,7 @@
   <texts>
     <text name="HomePage" value="Trang chủ" />
     <text name="About" value="Giới thiệu" />
-    <text name="WellcomeMessage" value="Chào mừng đến với ABPnetcore!" />
+    <text name="WelcomeMessage" value="Chào mừng đến với ABPnetcore!" />
 
     <text name="FormIsNotValidMessage" value="Mẫu là không hợp lệ. Vui lòng kiểm tra và sửa lỗi." />
     <text name="TenantNameCanNotBeEmpty" value="Tên tenant không được để trống" />

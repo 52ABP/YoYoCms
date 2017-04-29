@@ -33,13 +33,13 @@ namespace YoYo.Cms.Web.App.Startup
 
             var dashboard = new MenuItemDefinition(
                 "Dashboard",
-                new FixedLocalizableString("工作台"),
+              L("Dashboard"),
                 url: "dashboard",
                 icon: "fa fa-tachometer"
             );
             var about = new MenuItemDefinition(
                 "About",
-                new FixedLocalizableString("About"),
+                    L("About"),
                 url: "about",
                 icon: "fa fa-tachometer"
             );

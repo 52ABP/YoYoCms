@@ -3,19 +3,19 @@
     
     <ul class="al-sidebar-list" slimscroll="{height: '{{menuHeight}}px'}" slimscroll-watch="menuHeight">
         <li ng-repeat="menu in MainMenu.items" class="al-sidebar-list-item" ng-class="::{'with-sub-menu': menu.items.length>0}" ui-sref-active="selected" ba-sidebar-toggling-item="menu">
-            <a  ng-mouseenter="hoverItem($event, menu)"  ui-sref="{{menu.url}}" ng-if="!menu.items.length" class="al-sidebar-list-link">
+            <a ng-mouseenter="hoverItem($event, menu)"  ui-sref="{{menu.url}}" ng-if="!menu.items.length" class="al-sidebar-list-link">
                 <i ng-class="menu.icon"></i><span ng-bind="menu.displayName"></span>
             </a>
             <a ng-mouseenter="hoverItem($event, menu)" ng-if="menu.items.length" class="al-sidebar-list-link" ba-ui-sref-toggler>
                  <i ng-class="menu.icon"></i>
-                <span ng-bind="menu.displayName"></span>
+                <span   ng-bind="menu.displayName"></span>
                 <b class="fa fa-angle-down" ui-sref-active="fa-angle-up"
                    ng-if="menu.items.length"></b>
             </a>
             <ul ng-if="menu.items.length" class="al-sidebar-sublist" ng-class="{'slide-right': menu.slideRight}" ba-ui-sref-toggling-submenu>
                 
                 <li ng-repeat="subitem in menu.items" ng-class="::{'with-sub-menu': subitem.items.length>0}" ui-sref-active="selected" ba-sidebar-toggling-item="subitem" class="ba-sidebar-sublist-item">
-                    <a ng-mouseenter="hoverItem($event, subitem)" ng-if="subitem.items.length" ba-ui-sref-toggler
+                    <a ng-click="con()" ng-mouseenter="hoverItem($event, subitem)" ng-if="subitem.items.length" ba-ui-sref-toggler
                        class="al-sidebar-list-link subitem-submenu-link">
                         <i ng-class="subitem.icon"></i>
                         <span ng-bind="subitem.displayName"></span>

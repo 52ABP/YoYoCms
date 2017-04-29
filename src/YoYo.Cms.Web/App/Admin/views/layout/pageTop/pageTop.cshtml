@@ -9,56 +9,32 @@
         <div class="al-user-profile" uib-dropdown>
             <a uib-dropdown-toggle class="profile-toggle-link">
                 <img ng-src="{{::( 'Nasta' | profilePicture )}}">
-                <span></span>
+                <span ng-click="vm.con()">dddd</span>
             </a>
             <ul class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
                 <li><i class="dropdown-arr"></i></li>
-                <li><a href="#/profile"><i class="fa fa-user"></i>个人资料</a></li>
-                <li><a href><i class="fa fa-cog"></i>Settings</a></li>
+                <li><a ng-click="vm.con()" ><i class="fa fa-user"></i>个人资料</a></li>
+                <li><a data-ng-click="vm.con()" ><i class="fa fa-cog"></i>Settings</a></li>
                 <li><a href class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
             </ul>
         </div>
 
-        <div class="al-user-profile selectLanguage" uib-dropdown>
+        <div class="al-user-profile selectLanguage" uib-dropdown ng-if="vm.languages.length">
             <a uib-dropdown-toggle class="profile-toggle-link">
-                <i class="famfamfam-flag-cn"></i>
-                <span class="langname">
-                    简体中文
+                <i ng-class="vm.currentLanguage.icon"></i>
+                <span >
+                    {{vm.currentLanguage.displayName}}
                 </span>
                 <i class="fa fa-angle-down"></i>
             </a>
             
                 <ul class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
-                    <li>
-                        <a href="/AbpLocalization/ChangeCulture?cultureName=en&amp;returnUrl=http://xh.ddxc.org/Mpa/Dashboard">
-                            <i class="famfamfam-flag-gb"></i> English
+                    <li ng-repeat="language in vm.languages" ng-if="vm.currentLanguage.name !== language.name">
+                        <a  ng-click="changeLanguage(language.name)" >
+                            <i ng-class="language.icon"></i> <span ng-bind="language.displayName"></span>
                         </a>
                     </li>
-                    <li>
-                        <a href="/AbpLocalization/ChangeCulture?cultureName=de&amp;returnUrl=http://xh.ddxc.org/Mpa/Dashboard">
-                            <i class="famfamfam-flag-de"></i> German
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/AbpLocalization/ChangeCulture?cultureName=it&amp;returnUrl=http://xh.ddxc.org/Mpa/Dashboard">
-                            <i class="famfamfam-flag-it"></i> Italiano
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/AbpLocalization/ChangeCulture?cultureName=pt-BR&amp;returnUrl=http://xh.ddxc.org/Mpa/Dashboard">
-                            <i class="famfamfam-flag-br"></i> Portuguese
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/AbpLocalization/ChangeCulture?cultureName=tr&amp;returnUrl=http://xh.ddxc.org/Mpa/Dashboard">
-                            <i class="famfamfam-flag-tr"></i> Türkçe
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/AbpLocalization/ChangeCulture?cultureName=ar&amp;returnUrl=http://xh.ddxc.org/Mpa/Dashboard">
-                            <i class="famfamfam-flag-sa"></i> العربية
-                        </a>
-                    </li>
+                 
                 </ul>
              
         </div>

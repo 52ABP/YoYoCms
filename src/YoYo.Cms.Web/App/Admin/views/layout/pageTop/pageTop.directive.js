@@ -11,9 +11,9 @@
   /** @ngInject */
   function pageTop() {
     return {
-        restrict: 'E',
-        replace: true,
-        templateUrl: '/app/admin/views/layout/pageTop/pageTop.cshtml'
+        restrict: 'AE',
+        templateUrl: '/app/admin/views/layout/pageTop/pageTop.cshtml',
+        controller: 'app.pageTopCtrl'
     };
   }
 

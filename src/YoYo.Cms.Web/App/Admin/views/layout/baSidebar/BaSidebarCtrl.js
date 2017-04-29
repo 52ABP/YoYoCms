@@ -19,7 +19,9 @@ yoyocmsModule
    //   console.log($scope.MainMenu);
     //  console.log(abp.nav.menus.MainMenu);
 
-
+      $scope.con= function() {
+          console.log("abp");
+      }
 
     $scope.hoverItem = function ($event) {
       $scope.showHoverElem = true;

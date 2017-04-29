@@ -405,6 +405,7 @@
     <Content Include="App\Admin\views\layout\msgCenter\msgCenter.directive.js" />
     <Content Include="App\Admin\views\layout\msgCenter\MsgCenterCtrl.js" />
     <Content Include="App\Admin\views\layout\pageTop\pageTop.directive.js" />
+    <Content Include="App\Admin\views\layout\pageTop\pageTopCtrl.js" />
     <Content Include="App\Admin\views\layout\progressBarRound\progressBarRound.directive.js" />
     <Content Include="App\Admin\views\layout\widgets\widgets.directive.js" />
     <Content Include="App\Admin\views\tenants\createModal.js" />

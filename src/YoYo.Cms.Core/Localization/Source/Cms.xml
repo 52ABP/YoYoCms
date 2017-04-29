@@ -3,7 +3,7 @@
   <texts>
     <text name="HomePage" value="Home page" />
     <text name="About" value="About" />
-    <text name="WellcomeMessage" value="Welcome to Cms!" />
+    <text name="WelcomeMessage" value="Welcome to YoYoCms!" />
     
     <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
     <text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
