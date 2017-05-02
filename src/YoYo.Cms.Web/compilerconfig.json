@@ -1,7 +1,14 @@
 ﻿[
-
   {
     "outputFile": "App/Admin/css/main.css",
     "inputFile": "App/sass/main.scss"
+  },
+  {
+    "outputFile": "Abp/Framework/scripts/abp.es5.js",
+    "inputFile": "Abp/Framework/scripts/abp.js"
+  },
+  {
+    "outputFile": "Abp/Framework/scripts/libs/angularjs/abp.ng.es5.js",
+    "inputFile": "Abp/Framework/scripts/libs/angularjs/abp.ng.js"
   }
 ]

@@ -6,19 +6,20 @@
   'use strict';
 
  yoyocmsModule
-      .directive('contentTop', contentTop);
+     .directive('contentTop', ['$state', function ($state) {
 
-  /** @ngInject */
-  function contentTop($location, $state) {
-    return {
-      restrict: 'E',
-      templateUrl: '/app/admin/views/layout/contentTop/contentTop.cshtml',
-      link: function($scope) {
-        $scope.$watch(function () {
-          $scope.activePageTitle = $state.current.title;
-        });
-      }
-    };
-  }
+          return {
+              restrict: 'E',
+              templateUrl: '/app/admin/views/layout/contentTop/contentTop.cshtml',
+              link: function ($scope) {
+                  $scope.$watch(function () {
+                      $scope.activePageTitle = $state.current.title;
+                  });
+              }
+          };
 
+
+     }]);
+
+ 
 })();

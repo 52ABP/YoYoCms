@@ -1,3 +1,54 @@
 [
- 
+  {
+    "outputFileName": "Abp/Framework/scripts/libs/bundle.js",
+    "inputFiles": [
+      "Abp/Framework/scripts/libs/abp.blockUI.js",
+      "Abp/Framework/scripts/libs/abp.jquery.js",
+      "Abp/Framework/scripts/libs/abp.jtable.js",
+      "Abp/Framework/scripts/libs/abp.moment.js",
+      "Abp/Framework/scripts/libs/abp.signalr.js",
+      "Abp/Framework/scripts/libs/abp.spin.js",
+      "Abp/Framework/scripts/libs/abp.sweet-alert.js",
+      "Abp/Framework/scripts/libs/abp.toastr.js"
+    ]
+  },
+  {
+    "outputFileName": "Abp/Framework/scripts/libs/abp.libs.js",
+    "inputFiles": [
+      "Abp/Framework/scripts/libs/abp.blockUI.js",
+      "Abp/Framework/scripts/libs/abp.jquery.js",
+      "Abp/Framework/scripts/libs/abp.jtable.js",
+      "Abp/Framework/scripts/libs/abp.moment.js",
+      "Abp/Framework/scripts/libs/abp.signalr.js",
+      "Abp/Framework/scripts/libs/abp.spin.js",
+      "Abp/Framework/scripts/libs/abp.sweet-alert.js",
+      "Abp/Framework/scripts/libs/abp.toastr.js"
+    ]
+  },
+  {
+    "outputFileName": "App/Admin/releases/js/app.js",
+    "inputFiles": [
+      "App/Admin/app.js",
+      "App/Admin/_libconfig.js"
+    ]
+  },
+  {
+    "outputFileName": "App/Admin/config/bundle.js",
+    "inputFiles": [
+      "App/Admin/config/config.js",
+      "App/Admin/config/configProvider.js",
+      "App/Admin/config/constants.js",
+      "App/Admin/config/run.js",
+      "App/Admin/config/service.js"
+    ]
+  },
+  {
+    "outputFileName": "App/Admin/config/baSidebar/bundle.js",
+    "inputFiles": [
+      "App/Admin/config/baSidebar/baSidebar.directive.js",
+      "App/Admin/config/baSidebar/baSidebar.service.js",
+      "App/Admin/config/baSidebar/BaSidebarCtrl.js",
+      "App/Admin/config/baSidebar/baSidebarHelpers.directive.js"
+    ]
+  }
 ]

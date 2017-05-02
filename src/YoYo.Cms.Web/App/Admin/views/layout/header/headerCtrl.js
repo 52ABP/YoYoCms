@@ -1,9 +1,8 @@
 ﻿(function() {
 
     'use strict';
-    yoyocmsModule.controller('app.layout.header',header);
+    yoyocmsModule.controller('app.layout.header', ["$scope", "appSession", function ($scope, appSession) {
 
-    function header($scope, appSession) {
         var vm = this;
 
         vm.languages = abp.localization.languages;
@@ -16,6 +15,10 @@
         vm.getUserName = appSession.user.userName;
 
 
-    }
+
+
+        }
+    ]);
+ 
 
 })();

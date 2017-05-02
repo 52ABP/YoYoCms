@@ -9,7 +9,7 @@
         .run(themeRun);
 
     /** @ngInject */
-    function themeRun($timeout, $rootScope, layoutPaths, preloader, $q,  baSidebarService,themeLayoutSettings) {
+    function themeRun($timeout, $rootScope, layoutPaths, preloader, $q,  themeLayoutSettings) {
         var whatToWait = [
          //   preloader.loadAmCharts(),
             $timeout(3000)
@@ -35,7 +35,7 @@
             }
         }, 7000);
 
-        $rootScope.$baSidebarService = baSidebarService;
+      //  $rootScope.$baSidebarService = baSidebarService;
     }
 
 })();

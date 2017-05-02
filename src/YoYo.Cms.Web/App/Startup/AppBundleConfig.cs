@@ -19,17 +19,26 @@ namespace YoYo.Cms.Web.App.Startup
             bundles.Add(
                 new StyleBundle("~/Bundles/App/Main/css")
                      .IncludeDirectory("~/Common/Scripts", "*.css", true)
-                    .IncludeDirectory("~/APP/Admin", "*.css", true)
-                 
+               
                 );
 
             //~/Bundles/App/Main/js
             bundles.Add(
-                new ScriptBundle("~/Bundles/App/Main/js")
+                new ScriptBundle("~/Bundles/App/Common/js")
                     .IncludeDirectory("~/Common/Scripts", "*.js", true)
-                    .IncludeDirectory("~/APP/Admin", "*.js", true)
-                   
                 );
+
+            bundles.Add(
+               new ScriptBundle("~/Bundles/App/directives/js")
+                   .IncludeDirectory("~/App/Admin/directives", "*.js", true)
+                   .IncludeDirectory("~/App/Admin/filters", "*.js", true)
+                   .IncludeDirectory("~/App/Admin/services", "*.js", true)
+               );
+            bundles.Add(
+            new ScriptBundle("~/Bundles/App/views/js")
+                .IncludeDirectory("~/App/Admin/views", "*.js", true)
+            
+            );
         }
 
 

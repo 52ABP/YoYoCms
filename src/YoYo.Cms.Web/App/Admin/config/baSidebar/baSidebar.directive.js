@@ -13,7 +13,7 @@ yoyocmsModule
     var jqWindow = $(window);
     return {
       restrict: 'E',
-      templateUrl: '/app/admin/views/layout/baSidebar/ba-sidebar.cshtml',
+      templateUrl: '/app/admin/config/baSidebar/ba-sidebar.cshtml',
       controller: 'BaSidebarCtrl',
       link: function(scope, el) {
 

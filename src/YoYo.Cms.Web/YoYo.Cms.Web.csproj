@@ -332,16 +332,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Abp\Framework\scripts\abp.es5.js">
+      <DependentUpon>abp.js</DependentUpon>
+    </Content>
+    <Content Include="Abp\Framework\scripts\abp.es5.min.js">
+      <DependentUpon>abp.es5.js</DependentUpon>
+    </Content>
     <Content Include="Abp\Framework\scripts\abp.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.blockUI.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.jquery.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.jtable.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.libs.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.libs.min.js">
+      <DependentUpon>abp.libs.js</DependentUpon>
+    </Content>
     <Content Include="Abp\Framework\scripts\libs\abp.moment.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.signalr.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.spin.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.sweet-alert.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.toastr.js" />
+    <Content Include="Abp\Framework\scripts\libs\angularjs\abp.ng.es5.js">
+      <DependentUpon>abp.ng.js</DependentUpon>
+    </Content>
+    <Content Include="Abp\Framework\scripts\libs\angularjs\abp.ng.es5.min.js">
+      <DependentUpon>abp.ng.es5.js</DependentUpon>
+    </Content>
     <Content Include="Abp\Framework\scripts\libs\angularjs\abp.ng.js" />
+    <Content Include="Abp\Framework\scripts\libs\bundle.js" />
+    <Content Include="Abp\Framework\scripts\libs\bundle.min.js">
+      <DependentUpon>bundle.js</DependentUpon>
+    </Content>
     <Content Include="Abp\Framework\scripts\libs\requirejs\plugins\service.js" />
     <Content Include="Abp\Framework\scripts\utils\ie10fix.js" />
     <Content Include="Abp\Framework\styles\abp.css" />
@@ -350,6 +370,14 @@
     <Content Include="Abp\Framework\styles\abp.mixings.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
     <Content Include="App\Admin\app.js" />
+    <Content Include="App\Admin\config\baSidebar\bundle.js" />
+    <Content Include="App\Admin\config\baSidebar\bundle.min.js">
+      <DependentUpon>bundle.js</DependentUpon>
+    </Content>
+    <Content Include="App\Admin\config\bundle.js" />
+    <Content Include="App\Admin\config\bundle.min.js">
+      <DependentUpon>bundle.js</DependentUpon>
+    </Content>
     <Content Include="App\Admin\config\config.js" />
     <Content Include="App\Admin\config\configProvider.js" />
     <Content Include="App\Admin\config\constants.js" />
@@ -363,7 +391,6 @@
     <Content Include="App\Admin\directives\enterKey.js" />
     <Content Include="App\Admin\directives\ng\animatedChange.js" />
     <Content Include="App\Admin\directives\ng\autoExpand.js" />
-    <Content Include="App\Admin\directives\ng\autoFocus.js" />
     <Content Include="App\Admin\directives\ng\includeWithScope.js" />
     <Content Include="App\Admin\directives\ng\ionSlider.js" />
     <Content Include="App\Admin\directives\ng\ngFileSelect.js" />
@@ -375,6 +402,10 @@
     <Content Include="App\Admin\filters\image\profilePicture.js" />
     <Content Include="App\Admin\filters\momentjs-filters.js" />
     <Content Include="App\Admin\filters\text\removeHtml.js" />
+    <Content Include="App\Admin\releases\js\app.js" />
+    <Content Include="App\Admin\releases\js\app.min.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
     <Content Include="App\Admin\services\appSession.js" />
     <Content Include="App\Admin\services\ng\baProgressModal.js" />
     <Content Include="App\Admin\services\ng\baUtil.js" />
@@ -392,10 +423,10 @@
     <Content Include="App\Admin\views\layout\baPanel\baPanelBlur.directive.js" />
     <Content Include="App\Admin\views\layout\baPanel\baPanelBlurHelper.service.js" />
     <Content Include="App\Admin\views\layout\baPanel\baPanelSelf.directive.js" />
-    <Content Include="App\Admin\views\layout\baSidebar\baSidebar.directive.js" />
-    <Content Include="App\Admin\views\layout\baSidebar\baSidebar.service.js" />
-    <Content Include="App\Admin\views\layout\baSidebar\BaSidebarCtrl.js" />
-    <Content Include="App\Admin\views\layout\baSidebar\baSidebarHelpers.directive.js" />
+    <Content Include="App\Admin\config\baSidebar\baSidebar.directive.js" />
+    <Content Include="App\Admin\config\baSidebar\baSidebar.service.js" />
+    <Content Include="App\Admin\config\baSidebar\BaSidebarCtrl.js" />
+    <Content Include="App\Admin\config\baSidebar\baSidebarHelpers.directive.js" />
     <Content Include="App\Admin\views\layout\baWizard\baWizard.directive.js" />
     <Content Include="App\Admin\views\layout\baWizard\baWizardCtrl.js" />
     <Content Include="App\Admin\views\layout\baWizard\baWizardStep.directive.js" />
@@ -1778,7 +1809,7 @@
     <Content Include="App\Admin\views\empty\index.cshtml" />
     <Content Include="App\Admin\views\home\home.cshtml" />
     <Content Include="App\Admin\views\layout\backTop\backTop.cshtml" />
-    <Content Include="App\Admin\views\layout\baSidebar\ba-sidebar.cshtml" />
+    <Content Include="App\Admin\config\baSidebar\ba-sidebar.cshtml" />
     <Content Include="App\Admin\views\layout\baWizard\baWizard.cshtml" />
     <Content Include="App\Admin\views\layout\baWizard\baWizardStep.cshtml" />
     <Content Include="App\Admin\views\layout\contentTop\contentTop.cshtml" />
