@@ -2037,6 +2037,7 @@
     <Content Include="Views\Account\_Languages.cshtml" />
     <Content Include="Views\Account\FindMyPassword.cshtml" />
     <Content Include="Views\Account\FindMyPasswordTypes.cshtml" />
+    <None Include="Properties\PublishProfiles\正式环境.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

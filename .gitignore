@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /Galaxy.CMS.Web/App_Data/Logs
 /src/YoYo.Cms.Web/App_Data/Logs
+/src/YoYo.Cms.Web/Properties/PublishProfiles
