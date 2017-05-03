@@ -18,6 +18,8 @@
         'abp'
     ]);
 
+
+
     //Configuration for Angular UI routing.
     yoyocmsModule.config([
         '$stateProvider', '$urlRouterProvider', '$locationProvider', '$qProvider',

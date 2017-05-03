@@ -118,16 +118,9 @@
 
     <script src="~/Abp/Framework/scripts/abp.es5.min.js"></script>
     <script src="~/Abp/Framework/scripts/libs/abp.libs.min.js"></script>
-
-
- 
     <script src="~/Abp/Framework/scripts/libs/angularjs/abp.ng.es5.min.js"></script>
-     
         <script src="~/libs/signalR/jquery.signalR-2.2.1.min.js"></script>
-     
-    <!-- Theme JS files -->
-    
-    <!-- /theme JS files -->
+  
     @* 多语言处理 *@
 
     <script>
@@ -151,8 +144,10 @@
     @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.signalr.js")
     @Scripts.Render("~/Bundles/App/Common/js")
 
-    
-    <script src="~/App/Admin/releases/js/app.min.js"></script>
+
+    <script src="~/App/Admin/app.js"></script>
+    <script src="~/App/Admin/_libconfig.js"></script>
+
 
 <script src="~/App/Admin/config/bundle.js"></script>
 
@@ -168,7 +163,7 @@
     
     <div class="body-bg"></div>
 <main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
-    
+ 
     <ba-sidebar></ba-sidebar>
      
 

@@ -25,13 +25,7 @@
       "Abp/Framework/scripts/libs/abp.toastr.js"
     ]
   },
-  {
-    "outputFileName": "App/Admin/releases/js/app.js",
-    "inputFiles": [
-      "App/Admin/app.js",
-      "App/Admin/_libconfig.js"
-    ]
-  },
+
   {
     "outputFileName": "App/Admin/config/bundle.js",
     "inputFiles": [

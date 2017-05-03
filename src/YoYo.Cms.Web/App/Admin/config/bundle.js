@@ -1,7 +1,3 @@
-/**
- * Created by k.danovsky on 13.05.2016.
- */
-
 (function () {
     'use strict';
 
@@ -34,10 +30,7 @@
     }
 })();
 
-/**
- * Created by k.danovsky on 13.05.2016.
- */
-
+ 
 (function () {
  
 
@@ -125,10 +118,7 @@
   }
 })();
 
-/**
- * @author v.lugovsky
- * created on 15.12.2015
- */
+ 
 (function () {
     'use strict';
 
@@ -186,10 +176,7 @@
     }
 })();
 
-/**
- * @author v.lugovksy
- * created on 15.12.2015
- */
+ 
 (function () {
     'use strict';
 
@@ -227,10 +214,7 @@
     }
 
 })();
-/**
- * Created by k.danovsky on 12.05.2016.
- */
-
+ 
 (function () {
   'use strict';
 
