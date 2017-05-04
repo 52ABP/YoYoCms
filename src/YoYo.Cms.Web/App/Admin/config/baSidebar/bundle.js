@@ -62,100 +62,99 @@ yoyocmsModule
   'use strict';
 
   yoyocmsModule
-      .provider('baSidebarService', baSidebarServiceProvider);
+      .provider('baSidebarService', [function () {
+          var staticMenuItems = [];
 
-  /** @ngInject */
-  function baSidebarServiceProvider() {
-    var staticMenuItems = [];
+          this.addStaticItem = function () {
+              staticMenuItems.push.apply(staticMenuItems, arguments);
+          };
 
-    this.addStaticItem = function() {
-      staticMenuItems.push.apply(staticMenuItems, arguments);
-    };
+          /** @ngInject */
+          this.$get = function ($state, layoutSizes) {
+              return new factory();
 
-    /** @ngInject */
-    this.$get = function($state, layoutSizes) {
-      return new _factory();
+              function factory() {
+                  var isMenuCollapsed = shouldMenuBeCollapsed();
 
-      function _factory() {
-        var isMenuCollapsed = shouldMenuBeCollapsed();
+                  this.getMenuItems = function () {
+                      var states = defineMenuItemStates();
+                      var menuItems = states.filter(function (item) {
+                          return item.level == 0;
+                      });
 
-        this.getMenuItems = function() {
-          var states = defineMenuItemStates();
-          var menuItems = states.filter(function(item) {
-            return item.level == 0;
-          });
+                      menuItems.forEach(function (item) {
+                          var children = states.filter(function (child) {
+                              return child.level == 1 && child.name.indexOf(item.name) === 0;
+                          });
+                          item.subMenu = children.length ? children : null;
+                      });
 
-          menuItems.forEach(function(item) {
-            var children = states.filter(function(child) {
-              return child.level == 1 && child.name.indexOf(item.name) === 0;
-            });
-            item.subMenu = children.length ? children : null;
-          });
+                      return menuItems.concat(staticMenuItems);
+                  };
 
-          return menuItems.concat(staticMenuItems);
-        };
+                  this.shouldMenuBeCollapsed = shouldMenuBeCollapsed;
+                  this.canSidebarBeHidden = canSidebarBeHidden;
 
-        this.shouldMenuBeCollapsed = shouldMenuBeCollapsed;
-        this.canSidebarBeHidden = canSidebarBeHidden;
+                  this.setMenuCollapsed = function (isCollapsed) {
+                      isMenuCollapsed = isCollapsed;
+                  };
 
-        this.setMenuCollapsed = function(isCollapsed) {
-          isMenuCollapsed = isCollapsed;
-        };
+                  this.isMenuCollapsed = function () {
+                      return isMenuCollapsed;
+                  };
 
-        this.isMenuCollapsed = function() {
-          return isMenuCollapsed;
-        };
+                  this.toggleMenuCollapsed = function () {
+                      isMenuCollapsed = !isMenuCollapsed;
+                  };
 
-        this.toggleMenuCollapsed = function() {
-          isMenuCollapsed = !isMenuCollapsed;
-        };
+                  this.getAllStateRefsRecursive = function (item) {
+                      var result = [];
+                      _iterateSubItems(item);
+                      return result;
 
-        this.getAllStateRefsRecursive = function(item) {
-          var result = [];
-          _iterateSubItems(item);
-          return result;
+                      function _iterateSubItems(currentItem) {
+                          currentItem.items && currentItem.items.forEach(function (subItem) {
+                              subItem.url && result.push(subItem.url);
+                              _iterateSubItems(subItem);
+                          });
+                      }
+                  };
 
-          function _iterateSubItems(currentItem) {
-            currentItem.items && currentItem.items.forEach(function(subItem) {
-              subItem.url && result.push(subItem.url);
-              _iterateSubItems(subItem);
-            });
-          }
-        };
+                  function defineMenuItemStates() {
+                      return $state.get()
+                          .filter(function (s) {
+                              return s.sidebarMeta;
+                          })
+                          .map(function (s) {
+                              var meta = s.sidebarMeta;
+                              return {
+                                  name: s.name,
+                                  title: s.title,
+                                  level: (s.name.match(/\./g) || []).length,
+                                  order: meta.order,
+                                  icon: meta.icon,
+                                  stateRef: s.name,
+                              };
+                          })
+                          .sort(function (a, b) {
+                              return (a.level - b.level) * 100 + a.order - b.order;
+                          });
+                  }
 
-        function defineMenuItemStates() {
-          return $state.get()
-              .filter(function(s) {
-                return s.sidebarMeta;
-              })
-              .map(function(s) {
-                var meta = s.sidebarMeta;
-                return {
-                  name: s.name,
-                  title: s.title,
-                  level: (s.name.match(/\./g) || []).length,
-                  order: meta.order,
-                  icon: meta.icon,
-                  stateRef: s.name,
-                };
-              })
-              .sort(function(a, b) {
-                return (a.level - b.level) * 100 + a.order - b.order;
-              });
-        }
+                  function shouldMenuBeCollapsed() {
+                      return window.innerWidth <= layoutSizes.resWidthCollapseSidebar;
+                  }
 
-        function shouldMenuBeCollapsed() {
-          return window.innerWidth <= layoutSizes.resWidthCollapseSidebar;
-        }
+                  function canSidebarBeHidden() {
+                      return window.innerWidth <= layoutSizes.resWidthHideSidebar;
+                  }
+              }
 
-        function canSidebarBeHidden() {
-          return window.innerWidth <= layoutSizes.resWidthHideSidebar;
-        }
-      }
+          };
 
-    };
+      }]);
 
-  }
+ 
 })();
 
 /**
@@ -166,36 +165,36 @@ yoyocmsModule
   'use strict';
 
 yoyocmsModule
-    .controller('BaSidebarCtrl', baSidebarCtrl);
+    .controller('BaSidebarCtrl', ["$scope", "baSidebarService", function ($scope, baSidebarService) {
+
+
+        $scope.MainMenu = abp.nav.menus.MainMenu;
+        //$scope.defaultSidebarState = $scope.menuItems[0].stateRef ;
+        //$scope.defaultSidebarState = "dashboard";
+
+        //   console.log($scope.MainMenu);
+        //  console.log(abp.nav.menus.MainMenu);
+
+        $scope.con = function () {
+            console.log("abp");
+        }
+
+        $scope.hoverItem = function ($event) {
+            $scope.showHoverElem = true;
+            $scope.hoverElemHeight = $event.currentTarget.clientHeight;
+            var menuTopValue = 66;
+            $scope.hoverElemTop = $event.currentTarget.getBoundingClientRect().top - menuTopValue;
+        };
+
+        $scope.$on('$stateChangeSuccess', function () {
+            if (baSidebarService.canSidebarBeHidden()) {
+                baSidebarService.setMenuCollapsed(true);
+            }
+        });
+    }]);
 
   /** @ngInject */
-  function baSidebarCtrl($scope, baSidebarService) {
-
-
-      $scope.MainMenu = abp.nav.menus.MainMenu;
-    //$scope.defaultSidebarState = $scope.menuItems[0].stateRef ;
-      //$scope.defaultSidebarState = "dashboard";
-
-   //   console.log($scope.MainMenu);
-    //  console.log(abp.nav.menus.MainMenu);
-
-      $scope.con= function() {
-          console.log("abp");
-      }
-
-    $scope.hoverItem = function ($event) {
-      $scope.showHoverElem = true;
-      $scope.hoverElemHeight =  $event.currentTarget.clientHeight;
-      var menuTopValue = 66;
-      $scope.hoverElemTop = $event.currentTarget.getBoundingClientRect().top - menuTopValue;
-    };
-
-    $scope.$on('$stateChangeSuccess', function () {
-      if (baSidebarService.canSidebarBeHidden()) {
-        baSidebarService.setMenuCollapsed(true);
-      }
-    });
-  }
+  
 })();
 /**
  * @author v.lugovsky
@@ -205,139 +204,133 @@ yoyocmsModule
   'use strict';
 
 yoyocmsModule
-      .directive('baSidebarToggleMenu', baSidebarToggleMenu)
-      .directive('baSidebarCollapseMenu', baSidebarCollapseMenu)
-      .directive('baSidebarTogglingItem', baSidebarTogglingItem)
-      .controller('BaSidebarTogglingItemCtrl', BaSidebarTogglingItemCtrl)
-      .directive('baUiSrefTogglingSubmenu', baUiSrefTogglingSubmenu)
-      .directive('baUiSrefToggler', baUiSrefToggler);
-
-  /** @ngInject */
-  function baSidebarToggleMenu(baSidebarService) {
-    return {
-      restrict: 'A',
-      link: function(scope, elem) {
-        elem.on('click', function($evt) {
-          $evt.originalEvent.$sidebarEventProcessed = true;
-          scope.$apply(function() {
-            baSidebarService.toggleMenuCollapsed();
-          });
-        });
-      }
-    };
-  }
-
-  /** @ngInject */
-  function baSidebarCollapseMenu(baSidebarService) {
-    return {
-      restrict: 'A',
-      link: function(scope, elem) {
-        elem.on('click', function($evt) {
-          $evt.originalEvent.$sidebarEventProcessed = true;
-          if (!baSidebarService.isMenuCollapsed()) {
-            scope.$apply(function() {
-              baSidebarService.setMenuCollapsed(true);
-            });
-          }
-        });
-      }
-    };
-  }
-
-  /** @ngInject */
-  function baSidebarTogglingItem() {
-    return {
-      restrict: 'A',
-      controller: 'BaSidebarTogglingItemCtrl'
-    };
-  }
-
-  /** @ngInject */
-  function BaSidebarTogglingItemCtrl($scope, $element, $attrs, $state, baSidebarService) {
-    var vm = this;
-    var menuItem = vm.$$menuItem = $scope.$eval($attrs.baSidebarTogglingItem);
-    if (menuItem && menuItem.items && menuItem.items.length) {
-      vm.$$expandSubmenu = function() { console.warn('$$expandMenu should be overwritten by baUiSrefTogglingSubmenu') };
-      vm.$$collapseSubmenu = function() { console.warn('$$collapseSubmenu should be overwritten by baUiSrefTogglingSubmenu') };
-
-      var subItemsStateRefs = baSidebarService.getAllStateRefsRecursive(menuItem);
-
-      vm.$expand = function() {
-        vm.$$expandSubmenu();
-        $element.addClass('ba-sidebar-item-expanded');
-      };
-
-      vm.$collapse = function() {
-        vm.$$collapseSubmenu();
-        $element.removeClass('ba-sidebar-item-expanded');
-      };
-
-      vm.$toggle = function() {
-        $element.hasClass('ba-sidebar-item-expanded') ?
-            vm.$collapse() :
-            vm.$expand();
-      };
-
-      if (_isState($state.current)) {
-        $element.addClass('ba-sidebar-item-expanded');
-      }
-
-      $scope.$on('$stateChangeStart', function (event, toState) {
-        if (!_isState(toState) && $element.hasClass('ba-sidebar-item-expanded')) {
-          vm.$collapse();
-          $element.removeClass('ba-sidebar-item-expanded');
-        }
-      });
-
-      $scope.$on('$stateChangeSuccess', function (event, toState) {
-        if (_isState(toState) && !$element.hasClass('ba-sidebar-item-expanded')) {
-          vm.$expand();
-          $element.addClass('ba-sidebar-item-expanded');
-        }
-      });
+    .directive('baSidebarToggleMenu', [
+        "baSidebarService",
+        function (baSidebarService) {
+        return {
+            restrict: 'A',
+            link: function (scope, elem) {
+                elem.on('click', function ($evt) {
+                    $evt.originalEvent.$sidebarEventProcessed = true;
+                    scope.$apply(function () {
+                        baSidebarService.toggleMenuCollapsed();
+                    });
+                });
+            }
+        };
     }
-
-    function _isState(state) {
-      return state && subItemsStateRefs.some(function(subItemState) {
-            return state.name.indexOf(subItemState) == 0;
-          });
+])
+    .directive('baSidebarCollapseMenu', ["baSidebarService", function (baSidebarService) {
+        return {
+            restrict: 'A',
+            link: function (scope, elem) {
+                elem.on('click', function ($evt) {
+                    $evt.originalEvent.$sidebarEventProcessed = true;
+                    if (!baSidebarService.isMenuCollapsed()) {
+                        scope.$apply(function () {
+                            baSidebarService.setMenuCollapsed(true);
+                        });
+                    }
+                });
+            }
+        };
+    }])
+    .directive('baSidebarTogglingItem', ["baSidebarService", function () {
+        return {
+            restrict: 'A',
+            controller: 'BaSidebarTogglingItemCtrl'
+        };
     }
-  }
+])
+    .controller('BaSidebarTogglingItemCtrl', ["$scope", "$element", "$attrs", "$state", "baSidebarService", function ($scope, $element, $attrs, $state, baSidebarService) {
+        var vm = this;
+        var menuItem = vm.$$menuItem = $scope.$eval($attrs.baSidebarTogglingItem);
+        if (menuItem && menuItem.items && menuItem.items.length) {
+            vm.$$expandSubmenu = function () { console.warn('$$expandMenu should be overwritten by baUiSrefTogglingSubmenu') };
+            vm.$$collapseSubmenu = function () { console.warn('$$collapseSubmenu should be overwritten by baUiSrefTogglingSubmenu') };
 
-  /** @ngInject */
-  function baUiSrefTogglingSubmenu($state) {
-    return {
-      restrict: 'A',
-      require: '^baSidebarTogglingItem',
-      link: function(scope, el, attrs, baSidebarTogglingItem) {
-        baSidebarTogglingItem.$$expandSubmenu = function() { el.slideDown(); };
-        baSidebarTogglingItem.$$collapseSubmenu = function() { el.slideUp(); };
-      }
-    };
-  }
+            var subItemsStateRefs = baSidebarService.getAllStateRefsRecursive(menuItem);
 
-  /** @ngInject */
-  function baUiSrefToggler(baSidebarService) {
-    return {
-      restrict: 'A',
-      require: '^baSidebarTogglingItem',
-      link: function(scope, el, attrs, baSidebarTogglingItem) {
-          el.on('click', function () {
-             
-             
-          if (baSidebarService.isMenuCollapsed()) {
-            // If the whole sidebar is collapsed and this item has submenu. We need to open sidebar.
-            // This should not affect mobiles, because on mobiles sidebar should be hidden at all
-            scope.$apply(function() {
-              baSidebarService.setMenuCollapsed(false);
+            vm.$expand = function () {
+                vm.$$expandSubmenu();
+                $element.addClass('ba-sidebar-item-expanded');
+            };
+
+            vm.$collapse = function () {
+                vm.$$collapseSubmenu();
+                $element.removeClass('ba-sidebar-item-expanded');
+            };
+
+            vm.$toggle = function () {
+                $element.hasClass('ba-sidebar-item-expanded') ?
+                    vm.$collapse() :
+                    vm.$expand();
+            };
+
+            if (_isState($state.current)) {
+                $element.addClass('ba-sidebar-item-expanded');
+            }
+
+            $scope.$on('$stateChangeStart', function (event, toState) {
+                if (!_isState(toState) && $element.hasClass('ba-sidebar-item-expanded')) {
+                    vm.$collapse();
+                    $element.removeClass('ba-sidebar-item-expanded');
+                }
             });
-            baSidebarTogglingItem.$expand();
-          } else {
-            baSidebarTogglingItem.$toggle();
-          }
-        });
-      }
-    };
-  }
+
+            $scope.$on('$stateChangeSuccess', function (event, toState) {
+                if (_isState(toState) && !$element.hasClass('ba-sidebar-item-expanded')) {
+                    vm.$expand();
+                    $element.addClass('ba-sidebar-item-expanded');
+                }
+            });
+        }
+
+        function _isState(state) {
+            return state && subItemsStateRefs.some(function (subItemState) {
+                return state.name.indexOf(subItemState) == 0;
+            });
+        }
+    }])
+    .directive('baUiSrefTogglingSubmenu', ["$state", function ($state) {
+        return {
+            restrict: 'A',
+            require: '^baSidebarTogglingItem',
+            link: function (scope, el, attrs, baSidebarTogglingItem) {
+                baSidebarTogglingItem.$$expandSubmenu = function () { el.slideDown(); };
+                baSidebarTogglingItem.$$collapseSubmenu = function () { el.slideUp(); };
+            }
+        };
+    }])
+    .directive('baUiSrefToggler', ["baSidebarService", function (baSidebarService) {
+        return {
+            restrict: 'A',
+            require: '^baSidebarTogglingItem',
+            link: function (scope, el, attrs, baSidebarTogglingItem) {
+                el.on('click', function () {
+
+
+                    if (baSidebarService.isMenuCollapsed()) {
+                        // If the whole sidebar is collapsed and this item has submenu. We need to open sidebar.
+                        // This should not affect mobiles, because on mobiles sidebar should be hidden at all
+                        scope.$apply(function () {
+                            baSidebarService.setMenuCollapsed(false);
+                        });
+                        baSidebarTogglingItem.$expand();
+                    } else {
+                        baSidebarTogglingItem.$toggle();
+                    }
+                });
+            }
+        };
+    }
+]);
+
+  
+
+  /** @ngInject */
+ 
+
+  /** @ngInject */
 
 })();

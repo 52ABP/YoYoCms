@@ -5,6 +5,9 @@
 
         var vm = this;
 
+
+
+
         vm.languages = abp.localization.languages;
         vm.currentLanguage = abp.localization.currentLanguage;
         vm.changeLanguage = function (languageName) {
@@ -14,8 +17,21 @@
 
         vm.getUserName = appSession.user.userName;
 
+ //       sidebar - toggle - menu
+        vm.toggleSidebarMenu= function() {
+            if ($("body > main").hasClass("menu-collapsed")) {
+                $("body > main").removeClass("menu-collapsed");
+            } else {
+
+                $("body > main").addClass("menu-collapsed");
 
 
+            }
+         
+
+
+
+        }
 
         }
     ]);
