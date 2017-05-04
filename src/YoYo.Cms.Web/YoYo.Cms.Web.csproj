@@ -402,10 +402,6 @@
     <Content Include="App\Admin\filters\image\profilePicture.js" />
     <Content Include="App\Admin\filters\momentjs-filters.js" />
     <Content Include="App\Admin\filters\text\removeHtml.js" />
-    <Content Include="App\Admin\releases\js\app.js" />
-    <Content Include="App\Admin\releases\js\app.min.js">
-      <DependentUpon>app.js</DependentUpon>
-    </Content>
     <Content Include="App\Admin\services\appSession.js" />
     <Content Include="App\Admin\services\ng\baProgressModal.js" />
     <Content Include="App\Admin\services\ng\baUtil.js" />
@@ -2077,6 +2073,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App\Admin\releases\" />
     <Folder Include="App\assets\vendor\" />
     <Folder Include="App_Data\" />
     <Folder Include="Views\Home\" />
