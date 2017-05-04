@@ -39,8 +39,16 @@
 
 
         }
-
-
+        /// <summary>
+        /// 通知系统的常量管理
+        /// </summary>
+        public static class NotificationConstNames
+        {
+            /// <summary>
+            /// 欢迎语
+            /// </summary>
+            public const string WelcomeToCms = "App.WelcomeToCms";
+        }
 
 
 

@@ -1,7 +1,9 @@
 ﻿(function() {
 
     'use strict';
-    yoyocmsModule.controller('app.layout.header', ["$scope", "appSession", function ($scope, appSession) {
+    yoyocmsModule.controller('app.layout.header', [
+        "$scope", "appSession",
+        function ($scope, appSession) {
 
         var vm = this;
 
@@ -9,6 +11,7 @@
 
 
         vm.languages = abp.localization.languages;
+      
         vm.currentLanguage = abp.localization.currentLanguage;
         vm.changeLanguage = function (languageName) {
             console.log($scope.languages);
@@ -17,7 +20,7 @@
 
         vm.getUserName = appSession.user.userName;
 
- //       sidebar - toggle - menu
+ //  菜单伸缩管理
         vm.toggleSidebarMenu= function() {
             if ($("body > main").hasClass("menu-collapsed")) {
                 $("body > main").removeClass("menu-collapsed");
@@ -32,6 +35,9 @@
 
 
         }
+
+            vm.unReadUserNotificationCount = 0;
+
 
         }
     ]);

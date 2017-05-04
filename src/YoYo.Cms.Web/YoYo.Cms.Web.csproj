@@ -49,6 +49,8 @@
     <TypeScriptSourceMap>True</TypeScriptSourceMap>
     <TypeScriptMapRoot />
     <TypeScriptSourceRoot />
+    <NoWarn>
+    </NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -472,6 +474,7 @@
     <Content Include="App\assets\img\app\typography\typo07.png" />
     <Content Include="App\assets\img\arrow-green-up.svg" />
     <Content Include="App\assets\img\arrow-red-down.svg" />
+    <Content Include="App\assets\img\avatars\no-photo.png" />
     <Content Include="App\assets\img\blue-bg.jpg" />
     <Content Include="App\assets\img\blur-bg-blurred.jpg" />
     <Content Include="App\assets\img\blur-bg-mobile.jpg" />
@@ -1884,6 +1887,7 @@
     <Content Include="App\sass\theme\_table.scss" />
     <Content Include="App\sass\theme\_tree.scss" />
     <Content Include="App\Admin\views\users\createOrEditModal.cshtml" />
+    <Content Include="App\sass\views\user.scss" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">

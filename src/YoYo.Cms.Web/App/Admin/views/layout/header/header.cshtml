@@ -1,6 +1,6 @@
 ﻿<div class="page-top clearfix" scroll-position="scrolled" max-height="50" ng-class="{'scrolled': scrolled}">
     <a ui-sref="dashboard" ui-sref-active="active" class="al-logo clearfix"><span>YoYoCms</span>Admin</a>
-    <a class="collapse-menu-link ion-navicon" ng-click="vm.toggleSidebarMenu()" ></a>
+    <a class="collapse-menu-link ion-navicon" ng-click="vm.toggleSidebarMenu()"></a>
     <div class="search">
         <i class="ion-ios-search-strong" ng-click="startSearch()"></i>
         <input id="searchInput" type="text" placeholder="Search for...">
@@ -8,18 +8,25 @@
     <div class="user-profile clearfix">
         <div class="al-user-profile" uib-dropdown>
             <a uib-dropdown-toggle class="profile-toggle-link">
-                @*<img ng-src="{{::( 'Nasta' | profilePicture )}}">*@
-                <span ng-bind="vm.getUserName" ></span>
+
+                <img src="~/App/assets/img/avatars/no-photo.png"/>
+
+                <span ng-bind="vm.getUserName"></span>
             </a>
             <ul class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
-                <li><i class="dropdown-arr"></i></li>
+                <li>
+                    <i class="dropdown-arr"></i>
+                </li>
                 @*<li><a ng-click="vm.con()" ><i class="fa fa-user"></i>个人资料</a></li>
                 <li><a ><i class="fa fa-cog"></i>Settings</a></li>*@
-                      
-                <li><a href="@Url.Action("Logout", "Account")" class="signout"><i class="fa fa-power-off"></i>@L("Logout")</a></li>
+
+                <li>
+                    <a href="@Url.Action("Logout", "Account")" class="signout">
+                        <i class="fa fa-power-off"></i>@L("Logout")</a>
+                </li>
             </ul>
         </div>
-
+        @* 语言管理 *@
         <div class="al-user-profile selectLanguage" uib-dropdown ng-if="vm.languages.length">
             <a uib-dropdown-toggle class="profile-toggle-link">
                 <i ng-class="vm.currentLanguage.icon"></i>
@@ -28,28 +35,25 @@
                 </span>
                 <i class="fa fa-angle-down"></i>
             </a>
-            
-                <ul class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
-                    <li ng-repeat="language in vm.languages" ng-if="vm.currentLanguage.name !== language.name">
-                        <a  ng-click="vm.changeLanguage(language.name)" href="" >
-                            <i ng-class="language.icon"></i> <span ng-bind="language.displayName"></span>
-                        </a>
-                    </li>
-                 
-                </ul>
-             
-        </div>
-         
 
-      
+            <ul class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
+                <li ng-repeat="language in vm.languages" ng-if="vm.currentLanguage.name !== language.name">
+                    <a ng-click="vm.changeLanguage(language.name)" href="">
+                        <i ng-class="language.icon"></i> <span ng-bind="language.displayName"></span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
         <ul class="al-msg-center clearfix">
 
-
-
+            @* 通知管理 *@
             <li uib-dropdown>
-                <a href uib-dropdown-toggle>
-                    <i class="fa fa-bell-o"></i><span>5</span>
-
+                <a href="javascript:void(0)" uib-dropdown-toggle>
+                    <i class="fa fa-bell-o"></i><span ng-if="vm.unReadUserNotificationCount" ng-bind="vm.unReadUserNotificationCount">5</span>
                     <div class="notification-ring"></div>
                 </a>
 
@@ -57,11 +61,13 @@
                     <i class="dropdown-arr"></i>
 
                     <div class="header clearfix">
-                        <strong>Notifications</strong>
-                        <a ng-click="vm.ddd()">Mark All as Read</a>
-                        <a href>Settings</a>
+                        <strong>@L("Notifications")</strong>
+                        <a href="javascript:void(0)" ng-click="vm.ddd()">@L("MakeAllAsRead")</a>
+                        <a href="javascript:void(0)" ng-click="vm.ddd()">@L("Settings")</a>
                     </div>
+
                     <div class="msg-list">
+                        <a class="text-center" ng-if="!vm.notifications.length">@L("IsNotUserNotifications")</a>
                         <a href class="clearfix" ng-repeat="msg in notifications">
                             <div class="img-area">
                                 <img ng-class="{'photo-msg-item' : !msg.image}" ng-src="{{::( msg.image ||  (users[msg.userId].name | profilePicture) )}}">
@@ -72,10 +78,12 @@
                             </div>
                         </a>
                     </div>
-                    <a href>See all notifications</a>
+                    <a href="javascript:void(0)">See all notifications</a>
                 </div>
             </li>
-            <li uib-dropdown>
+            
+            @* 短消息管理 *@
+            @*<li uib-dropdown>
                 <a href class="msg" uib-dropdown-toggle>
                     <i class="fa fa-envelope-o"></i><span>5</span>
                     <div class="notification-ring"></div>
@@ -100,9 +108,8 @@
                     </div>
                     <a data-ng-click="vm.ddd()" href>See all messages</a>
                 </div>
-            </li>
+            </li>*@
         </ul>
-
 
 
     </div>
