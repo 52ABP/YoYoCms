@@ -1,0 +1,54 @@
+﻿<!-- Content Wrapper. Contains page content -->
+<div  ng-controller="app.views.natifications.index as vm">
+
+
+    <div class="panel">
+ 
+                 
+                <div class="content panel-body">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <select class="bootstrap-select" data-width="100%" ng-model="vm.isread" ui-jq="selectpicker">
+                                    <option value="ALL">@L("All")</option>
+                                    <option value="UNREAD">@L("Unread")</option>
+                                </select>
+                                @*<select id="TargetValueFilterSelectionCombobox"
+                        class="form-control bs-select"
+                        ng-model="vm.readStateFilter"
+                        ui-jq="selectpicker"
+                        ng-change="vm.getNotifications()"
+                        ui-options='{ iconBase: "fa", tickIcon: "fa fa-check" }'>
+                    <option value="ALL">@L("All")</option>
+                    <option value="UNREAD">@L("Unread")</option>
+                </select>*@
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <button ng-click="vm.getNotifications()" type="button" class="btn btn-primary  btn-block">
+                                    <b>
+                                        <i class="fa fa-refresh"></i>
+                                    </b>@L("Refresh")
+                                </button>
+                                @*<button id="RefreshNotificationGridButton" class="btn btn-default" style="display: block; width: 100%" ng-click="vm.getNotifications()"><i class="fa fa-refresh"></i> @L("Refresh")</button>*@
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-12">
+
+                        <div busy-if="vm.loading">
+                            <div id="NotificationGrid" class="grid" ui-grid="vm.gridOptions" ui-grid-pagination ui-grid-resize-columns></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+         
+    </div>
+
+
+    <!-- /content area -->
+
+ 
