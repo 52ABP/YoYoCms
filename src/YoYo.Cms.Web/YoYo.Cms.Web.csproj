@@ -412,6 +412,7 @@
     <Content Include="App\Admin\services\ng\preloader.js" />
     <Content Include="App\Admin\services\ng\stopableInterval.js" />
     <Content Include="App\Admin\views\about\about.js" />
+    <Content Include="App\Admin\views\auditlog\index.js" />
     <Content Include="App\Admin\views\dashboard\index.js" />
     <Content Include="App\Admin\views\empty\index.js" />
     <Content Include="App\Admin\views\home\home.js" />
@@ -1916,6 +1917,7 @@
     <Content Include="App\Admin\views\users\createOrEditModal.cshtml" />
     <Content Include="App\sass\views\user.scss" />
     <Content Include="App\Admin\views\notifications\index.cshtml" />
+    <Content Include="App\Admin\views\auditlog\index.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
