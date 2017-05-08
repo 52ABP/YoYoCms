@@ -345,6 +345,7 @@
     <text name="MakeAllAsRead" value="标记所有为已读" />
     <text name="IsNotUserNotifications" value="没有用户通知信息" />
     <text name="MakeAsRead" value="设为已读" />
+    <text name="SeeAllNotifications" value="查看全部消息" />
 
 
 

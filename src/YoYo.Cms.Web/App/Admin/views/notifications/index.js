@@ -5,8 +5,8 @@
         .controller("app.views.natifications.index",
         [
             "$scope", "$state",'appSession',  "uiGridConstants", 
-            "abp.services.app.notification",
-            function ($scope, $state, appSession,  uiGridConstants,  notificationService) {
+            "abp.services.app.notification",  "appUserNotificationService",
+            function ($scope, $state, appSession, uiGridConstants, notificationService, appUserNotificationService) {
                 var vm = this;
              //   console.log($state.current);
                 $state.current.title = $state.current.displayName;
@@ -95,47 +95,14 @@
 
                 //设置消息为已读
                 vm.makeNotificationAsRead = function (userNotification) {
-                    notificationService.makeNotificationAsRead({ id: userNotification.id }).
-                        then(function () {
-                            for (var i = 0; i < vm.userNotifications.length; i++) {
-                                if (vm.userNotifications[i].id == userNotification.id) {
-                                    vm.userNotifications[i].state = 'READ';
-                                }
-                            }
-                            vm.unReadUserNotificationCount -= 1;
+                    appUserNotificationService.makeNotificationAsReadService(userNotification,
+                        function() {
+                            userNotification.state = 'READ';
 
                         });
                 }
-                //格式化消息
-                var formattedMessage = function (item) {
-
-                    var message = {
-                        id: item.id,
-                        text: abp.notifications.getFormattedMessageFromUserNotification(item),
-                        time: item.notification.creationTime,
-                        image: getNotificationImgBySeverity(item.notification.severity),
-                        state: abp.notifications.getUserNotificationStateAsString(item.state),
-                    }
-
-                    return message;
-
-                }
-                //获取图片路径
-                function getNotificationImgBySeverity(severity) {
-                    switch (severity) {
-                        case abp.notifications.severity.SUCCESS:
-                            return '/App/assets/yoyocms/notification/1.png';
-                        case abp.notifications.severity.WARN:
-                            return '/App/assets/yoyocms/notification/2.png';
-                        case abp.notifications.severity.ERROR:
-                            return '/App/assets/yoyocms/notification/3.png';
-                        case abp.notifications.severity.FATAL:
-                            return '/App/assets/yoyocms/notification/4.png';
-                        case abp.notifications.severity.INFO:
-                        default:
-                            return '/App/assets/yoyocms/notification/0.png';
-                    }
-                }
+                
+               
                 vm.getNotifications = function() {
 
                     var state = null;
@@ -153,7 +120,7 @@
                         vm.gridOptions.totalItems = result.data.totalCount;
                         vm.gridOptions.data = _.map(result.data.items,
                             function(item) {
-                                return formattedMessage(item, false);
+                                return appUserNotificationService.formattedMessage(item, false);
                             });
                         //   console.log(vm.gridOptions.data);
                     }).finally(function() {

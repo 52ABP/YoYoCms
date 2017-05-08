@@ -90,7 +90,11 @@ namespace YoYo.Cms.Notifications
 
             return output;
         }
-
+        /// <summary>
+        /// 更新消息设置
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async Task UpdateNotificationSettings(UpdateNotificationSettingsInput input)
         {
             await SettingManager.ChangeSettingForUserAsync(AbpSession.ToUserIdentifier(), NotificationSettingNames.ReceiveNotifications, input.ReceiveNotifications.ToString());

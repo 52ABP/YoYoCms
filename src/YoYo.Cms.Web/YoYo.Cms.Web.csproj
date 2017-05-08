@@ -405,7 +405,7 @@
     <Content Include="App\Admin\filters\momentjs-filters.js" />
     <Content Include="App\Admin\filters\text\removeHtml.js" />
     <Content Include="App\Admin\services\appSession.js" />
-    <Content Include="App\Admin\services\appUserNotificationHelper.js" />
+    <Content Include="App\Admin\services\appUserNotificationService.js" />
     <Content Include="App\Admin\services\ng\baProgressModal.js" />
     <Content Include="App\Admin\services\ng\baUtil.js" />
     <Content Include="App\Admin\services\ng\fileReader.js" />
