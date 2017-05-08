@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Abp;
 using Abp.Notifications;
 using YoYo.Cms.UserManagerment.Users;
 
@@ -28,7 +29,11 @@ namespace YoYo.Cms.Notifications
 
         }
 
-       
- 
+        public async Task SendMessageAsync(UserIdentifier user, string messager, NotificationSeverity severity = NotificationSeverity.Info)
+        {
+            await _notificationPublisher.PublishAsync(
+                CmsConsts.NotificationConstNames.SendMessageAsync,
+                new MessageNotificationData(messager),severity:severity,userIds:new []{user});
+        }
     }
 }

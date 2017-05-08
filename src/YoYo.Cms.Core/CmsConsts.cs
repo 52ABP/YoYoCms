@@ -48,6 +48,10 @@
             /// 欢迎语
             /// </summary>
             public const string WelcomeToCms = "App.WelcomeToCms";
+            /// <summary>
+            /// 发送消息信息
+            /// </summary>
+            public const string SendMessageAsync = "App.SendMessageAsync";
         }
 
 

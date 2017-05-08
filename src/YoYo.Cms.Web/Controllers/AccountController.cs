@@ -587,13 +587,13 @@ namespace YoYo.Cms.Web.Controllers
 
 
         [AbpMvcAuthorize]
-        public async Task<ActionResult> TestNotification(string message = "", string severity = "info")
+        public async Task<ActionResult> TestNotification( string message = "" , NotificationSeverity severity = NotificationSeverity.Info)
         {
             if (message.IsNullOrEmpty())
             {
                 message = "这是一条测试消息 " + Clock.Now;
             }
-
+            await _notificationManager.SendMessageAsync(AbpSession.ToUserIdentifier(), message, severity: severity);
           
 
             return Content("发送提示信息: " + message);

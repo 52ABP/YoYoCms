@@ -8,10 +8,9 @@
     <div class="user-profile clearfix">
         <div class="al-user-profile" uib-dropdown>
             <a uib-dropdown-toggle class="profile-toggle-link">
-
-                <img src="~/App/assets/img/avatars/no-photo.png"/>
-
-                <span ng-bind="vm.getUserName"></span>
+                
+                <img alt="头像" ng-src="{{vm.userAvatarUrl}}"/>
+                 <span ng-bind="vm.getUserName"></span>
             </a>
             <ul class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
                 <li>
@@ -62,23 +61,26 @@
 
                     <div class="header clearfix">
                         <strong>@L("Notifications")</strong>
-                        <a href="javascript:void(0)" ng-click="vm.ddd()">@L("MakeAllAsRead")</a>
-                        <a href="javascript:void(0)" ng-click="vm.ddd()">@L("Settings")</a>
+                        <a href="javascript:void(0)"  ng-if="vm.unReadUserNotificationCount" ng-click="vm.ddd(); $event.preventDefault(); $event.stopPropagation();">@L("MakeAllAsRead")</a>
+                        <a href="javascript:void(0)" ng-click="vm.ddd()">@L("Settings") </a>
                     </div>
 
                     <div class="msg-list">
-                        <a class="text-center" ng-if="!vm.notifications.length">@L("IsNotUserNotifications")</a>
-                        <a href class="clearfix" ng-repeat="msg in notifications">
+                        <a class="text-center" ng-if="!vm.userNotifications.length">@L("IsNotUserNotifications")</a>
+                        <a href="javascript:void(0)" class="clearfix" ng-repeat="msg in vm.userNotifications" ng-if="vm.userNotifications.length">
                             <div class="img-area">
-                                <img ng-class="{'photo-msg-item' : !msg.image}" ng-src="{{::( msg.image ||  (users[msg.userId].name | profilePicture) )}}">
+                                <i ng-class="msg.icon"></i> 
+                                <img ng-class="{'photo-msg-item' : !msg.image}" ng-src="{{msg.image}}" >
+                               
                             </div>
                             <div class="msg-area">
-                                <div ng-bind-html="getMessage(msg)"></div>
-                                <span>{{ msg.time }}</span>
+                                <div ng-bind="msg.text"></div>
+                                <span   title="{{msg.time | momentFormat:'YYYY-MM-DD HH:mm:ss'}}" am-time-ago="msg.time"></span>
+                               
                             </div>
                         </a>
                     </div>
-                    <a href="javascript:void(0)">See all notifications</a>
+                    <a  ng-if="vm.userNotifications.length" ui-sref="notifications" href="javascript:void(0)">See all notifications</a>
                 </div>
             </li>
             
