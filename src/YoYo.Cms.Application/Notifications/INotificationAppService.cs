@@ -21,7 +21,7 @@ namespace YoYo.Cms.Notifications
         /// 设置所有通知为已阅读状态
         /// </summary>
         /// <returns></returns>
-        Task SetAllNotificationsAsRead();
+        Task MakeAllUserNotificationsAsRead();
         /// <summary>
         /// 标记某条通知为已读
         /// </summary>

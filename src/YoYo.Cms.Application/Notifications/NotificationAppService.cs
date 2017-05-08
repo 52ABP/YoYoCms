@@ -49,8 +49,9 @@ namespace YoYo.Cms.Notifications
             return new GetNotificationsOutput(totalCount, unreadCount, notifications);
         }
 
-        public async Task SetAllNotificationsAsRead()
+        public async Task MakeAllUserNotificationsAsRead()
         {
+
             await _userNotificationManager.UpdateAllUserNotificationStatesAsync(AbpSession.ToUserIdentifier(), UserNotificationState.Read);
         }
 

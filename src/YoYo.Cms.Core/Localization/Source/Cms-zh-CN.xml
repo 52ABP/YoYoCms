@@ -340,7 +340,11 @@
     <text name="User" value="用户管理" />
     <text name="RoleManage" value="角色管理" />
     <text name="AuditLog" value="审计日志" />
-    
+
+    <!--消息通知管理-->
+    <text name="MakeAllAsRead" value="标记所有为已读" />
+
+
 
   </texts>
 </localizationDictionary>

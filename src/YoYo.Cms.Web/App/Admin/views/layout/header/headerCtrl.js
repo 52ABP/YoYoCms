@@ -25,13 +25,10 @@
          }
         var randomId = Math.floor((Math.random() * 10) + 1);
             vm.userAvatarUrl = "/App/assets/yoyocms/avatar/"+randomId+".png";
-
           
 
             vm.unReadUserNotificationCount = 0;
             vm.userNotifications = [];
-
-
             //格式化消息
             var formattedMessage = function (item) {
 
@@ -46,7 +43,6 @@
                 return message;
 
             }
-
             //获取图片路径
             function getNotificationImgBySeverity(severity) {
                 switch (severity) {
@@ -63,12 +59,7 @@
                           return '/App/assets/yoyocms/notification/0.png';
                 }
             }
-
-
-
-
-
-
+            
 
             vm.getUserNotificationsAsync= function() {
 
@@ -79,18 +70,23 @@
                     vm.userNotifications = [];
                     $.each(result.data.items,
                         function (index, item) {
-                            console.log(item);
+                         
                             vm.userNotifications.push(formattedMessage(item));
                         });
-
-                    console.log(vm.userNotifications);
-                    console.log(vm.userNotifications.length);
-                    console.log(vm.userNotifications.count);
+                
                 });
 
             }
         
+            vm.makeAllAsRead= function() {
+                notificationService.makeAllUserNotificationsAsRead().then(function() {
+                    vm.getUserNotificationsAsync();
 
+
+                });
+
+
+            }
 
 
 
