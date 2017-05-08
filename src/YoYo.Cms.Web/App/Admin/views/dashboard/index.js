@@ -1,10 +1,11 @@
 ﻿(function() {
 
     yoyocmsModule.controller('app.views.dashboard.index',
-        ['$scope', '$uibModal', 'abp.services.app.user',
-            function ($scope, $uibModal, userService) {
+        ['$scope','$state', '$uibModal', 'abp.services.app.user',
+            function ($scope, $state, $uibModal, userService) {
 
                 var vm = this;
+                $state.current.title = $state.current.displayName;
 
                 vm.users = [];
 

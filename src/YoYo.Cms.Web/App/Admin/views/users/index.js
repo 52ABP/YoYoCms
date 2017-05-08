@@ -4,7 +4,7 @@
         function ($scope, $state, $uibModal, $stateParams, uiGridConstants, userService) {
             var vm = this;
 
-            $state.current.title = abp.localization.values.Cms.Users;
+            $state.current.title = $state.current.displayName;
 
             $scope.$on('$viewContentLoaded', function () {
             

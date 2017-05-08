@@ -71,7 +71,7 @@
                         function (index, item) {
                             vm.userNotifications.push(formattedMessage(item));
                         });
-                    console.log(vm.userNotifications);
+                    //console.log(vm.userNotifications);
                 });
 
             }

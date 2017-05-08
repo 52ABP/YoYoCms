@@ -3,6 +3,10 @@
 
         ['$rootScope', '$scope', '$state', 'appSession', function ($rootScope, $scope, $state, appSession) {
             var vm = this;
+            $state.current.title = $state.current.displayName;
+
+
+
             }
         ]);
 })();
