@@ -3,6 +3,9 @@ using YoYo.Cms.Dto;
 
 namespace YoYo.Cms.Notifications.Dto
 {
+    /// <summary>
+    /// 获取通知信息的参数
+    /// </summary>
     public class GetUserNotificationsInput : PagedInputDto
     {
         /// <summary>

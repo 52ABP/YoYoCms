@@ -59,7 +59,8 @@ namespace YoYo.Cms.Notifications
             var userNotification = await _userNotificationManager.GetUserNotificationAsync(AbpSession.TenantId, input.Id);
             if (userNotification.UserId != AbpSession.GetUserId())
             {
-                throw new ApplicationException(string.Format("Given user notification id ({0}) is not belong to the current user ({1})", input.Id, AbpSession.GetUserId()));
+                throw new ApplicationException(
+                    $"Given user notification id ({input.Id}) is not belong to the current user ({AbpSession.GetUserId()})");
             }
 
             await _userNotificationManager.UpdateUserNotificationStateAsync(AbpSession.TenantId, input.Id, UserNotificationState.Read);

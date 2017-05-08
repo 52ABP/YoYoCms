@@ -30,6 +30,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using YoYo.Cms.Notifications;
 using YoYo.Cms.UserManagerment.Users;
 
 namespace YoYo.Cms.Web.Controllers
@@ -44,6 +45,7 @@ namespace YoYo.Cms.Web.Controllers
         private readonly LogInManager _logInManager;
         private readonly ILanguageManager _languageManager;
 
+        private readonly INotificationManager _notificationManager;
     
         //短信验证
         private readonly IBackgroundJobManager _backgroundJobManager;
@@ -69,8 +71,7 @@ namespace YoYo.Cms.Web.Controllers
             LogInManager logInManager,
             ILanguageManager languageManager,
             IBackgroundJobManager backgroundJobManager,
-            IRepository<User, long> userRepository
-       )
+            IRepository<User, long> userRepository, INotificationManager notificationManager)
         {
             _tenantManager = tenantManager;
             _userManager = userManager;
@@ -82,7 +83,7 @@ namespace YoYo.Cms.Web.Controllers
         
             _backgroundJobManager = backgroundJobManager;
             _userRepository = userRepository;
-      
+            _notificationManager = notificationManager;
         }
 
         #region Login / Logout
@@ -310,7 +311,7 @@ namespace YoYo.Cms.Web.Controllers
                 {
                     CheckErrors(await _userManager.CreateAsync(user));
                     await _unitOfWorkManager.Current.SaveChangesAsync();
-
+                    await _notificationManager.WelcomeToCmsAsync(user);
                 }
                 catch (Exception e)
                 {

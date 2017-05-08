@@ -14,7 +14,7 @@
       
         vm.currentLanguage = abp.localization.currentLanguage;
         vm.changeLanguage = function (languageName) {
-            console.log($scope.languages);
+         //   console.log($scope.languages);
             location.href = abp.appPath + 'AbpLocalization/ChangeCulture?cultureName=' + languageName + '&returnUrl=' + window.location.pathname + window.location.hash;
         };
 
@@ -25,16 +25,9 @@
             if ($("body > main").hasClass("menu-collapsed")) {
                 $("body > main").removeClass("menu-collapsed");
             } else {
-
                 $("body > main").addClass("menu-collapsed");
-
-
             }
-         
-
-
-
-        }
+         }
 
             vm.unReadUserNotificationCount = 0;
 
