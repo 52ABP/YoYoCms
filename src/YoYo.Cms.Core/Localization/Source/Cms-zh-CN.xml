@@ -343,6 +343,7 @@
 
     <!--消息通知管理-->
     <text name="MakeAllAsRead" value="标记所有为已读" />
+    <text name="MakeAsRead" value="设为已读" />
 
 
 

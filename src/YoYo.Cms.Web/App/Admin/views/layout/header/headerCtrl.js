@@ -60,46 +60,54 @@
                 }
             }
             
-
+            //获取所有的消息信息
             vm.getUserNotificationsAsync= function() {
-
                 notificationService.getPagedUserNotificationsAsync({
-                    maxResultCount: 10
+                    maxResultCount: 5
                 }).then(function(result) {
                     vm.unReadUserNotificationCount = result.data.unreadCount;
                     vm.userNotifications = [];
                     $.each(result.data.items,
                         function (index, item) {
-                         
                             vm.userNotifications.push(formattedMessage(item));
                         });
-                
+                    console.log(vm.userNotifications);
                 });
 
             }
-        
+        //标记所有为已读
             vm.makeAllAsRead= function() {
                 notificationService.makeAllUserNotificationsAsRead().then(function() {
                     vm.getUserNotificationsAsync();
-
+                });
+            }
+            //设置消息为已读
+            vm.makeNotificationAsRead = function (userNotification) {
+                notificationService.makeNotificationAsRead({ id: userNotification.id }).
+                    then(function () {
+                        for (var i = 0; i < vm.userNotifications.length; i++) {
+                            if (vm.userNotifications[i].id == userNotification.id) {
+                                vm.userNotifications[i].state = 'READ';
+                            }
+                        }
+                        vm.unReadUserNotificationCount -= 1;
 
                 });
-
-
             }
-
 
 
             //初始化方法
             function init() {
                 vm.getUserNotificationsAsync();
-             
+              
             }
 
             init();
 
+            //测试为领域事件的一个例子
             abp.event.on('abp.notifications.received', function (userNotification) {
                 abp.notifications.showUiNotifyForUserNotification(userNotification);
+                vm.getUserNotificationsAsync();
             });
         }
 

@@ -21,3 +21,9 @@
 @import "theme/_layout.scss";
 @import "theme/preloader";
 @import 'theme/buttons.scss';
+
+body a {
+    color: #209e91;
+    -webkit-transition: color .2s ease;
+    transition: color .2s ease;
+}

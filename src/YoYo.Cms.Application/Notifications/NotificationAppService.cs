@@ -55,13 +55,13 @@ namespace YoYo.Cms.Notifications
             await _userNotificationManager.UpdateAllUserNotificationStatesAsync(AbpSession.ToUserIdentifier(), UserNotificationState.Read);
         }
 
-        public async Task SetNotificationAsRead(EntityDto<Guid> input)
+        public async Task MakeNotificationAsRead(EntityDto<Guid> input)
         {
             var userNotification = await _userNotificationManager.GetUserNotificationAsync(AbpSession.TenantId, input.Id);
-            if (userNotification.UserId != AbpSession.GetUserId())
-            {
-                throw new ApplicationException(
-                    $"Given user notification id ({input.Id}) is not belong to the current user ({AbpSession.GetUserId()})");
+            if (userNotification.UserId != AbpSession.GetUserId()){
+
+                throw new ApplicationException($"消息Id为{input.Id}的信息，不属于当前的用户，用户id：{AbpSession.UserId}");
+              
             }
 
             await _userNotificationManager.UpdateUserNotificationStateAsync(AbpSession.TenantId, input.Id, UserNotificationState.Read);

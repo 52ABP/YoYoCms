@@ -27,7 +27,7 @@ namespace YoYo.Cms.Notifications
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        Task SetNotificationAsRead(EntityDto<Guid> input);
+        Task MakeNotificationAsRead(EntityDto<Guid> input);
         /// <summary>
         /// 获取消息设置
         /// </summary>

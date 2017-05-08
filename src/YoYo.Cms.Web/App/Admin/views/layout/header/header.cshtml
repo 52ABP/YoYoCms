@@ -75,8 +75,8 @@
                             </div>
                             <div class="msg-area">
                                 <div ng-bind="msg.text"></div>
-                                <span   title="{{msg.time | momentFormat:'YYYY-MM-DD HH:mm:ss'}}" am-time-ago="msg.time"></span>
-                               
+                                <span title="{{msg.time | momentFormat:'YYYY-MM-DD HH:mm:ss'}}" am-time-ago="msg.time"></span>
+                                <span ng-if="msg.state=='UNREAD'"> - <span class="makeasread-text" ng-click="vm.makeNotificationAsRead(msg); $event.preventDefault(); $event.stopPropagation();">@L("MakeAsRead")</span></span>
                             </div>
                         </a>
                     </div>

@@ -258,8 +258,10 @@ h1.al-title {
         .top-dropdown-menu .msg-list > a .msg-area span {
           font-style: italic;
           text-align: right;
-          display: block;
           font-size: 11px; }
+        .top-dropdown-menu .msg-list > a .msg-area .makeasread-text {
+          color: #209e91;
+          cursor: pointer; }
       .top-dropdown-menu .msg-list > a:hover {
         background: #E2F0FF; }
   .top-dropdown-menu > a {
@@ -1695,6 +1697,11 @@ button.progress-button.btn.btn-danger {
 
 .bootstrap-select .btn {
   transition: none; }
+
+body a {
+  color: #209e91;
+  -webkit-transition: color .2s ease;
+  transition: color .2s ease; }
 
 .label {
   border-radius: 0; }
