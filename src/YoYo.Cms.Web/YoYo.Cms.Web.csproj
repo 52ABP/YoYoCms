@@ -467,7 +467,6 @@
     <Content Include="App\assets\img\app\typography\typo07.png" />
     <Content Include="App\assets\img\arrow-green-up.svg" />
     <Content Include="App\assets\img\arrow-red-down.svg" />
-    <Content Include="App\assets\img\avatars\no-photo.png" />
     <Content Include="App\assets\img\blue-bg.jpg" />
     <Content Include="App\assets\img\blur-bg-blurred.jpg" />
     <Content Include="App\assets\img\blur-bg-mobile.jpg" />
