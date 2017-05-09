@@ -2,8 +2,8 @@
 
     'use strict';
     yoyocmsModule.controller('app.layout.header', [
-        "$scope", "appSession","abp.services.app.notification",
-        function ($scope, appSession,notificationService) {
+        "$scope", "appSession", "abp.services.app.notification","appUserNotificationService",
+        function ($scope, appSession, notificationService, appUserNotificationService) {
 
         var vm = this;
         vm.languages = abp.localization.languages;
@@ -29,37 +29,8 @@
 
             vm.unReadUserNotificationCount = 0;
             vm.userNotifications = [];
-            //格式化消息
-            var formattedMessage = function (item) {
-
-                var message = {
-                    id: item.id,
-                    text: abp.notifications.getFormattedMessageFromUserNotification(item),
-                    time: item.notification.creationTime,
-                    image: getNotificationImgBySeverity(item.notification.severity),
-                    state: abp.notifications.getUserNotificationStateAsString(item.state),
-                }
-
-                return message;
-
-            }
-            //获取图片路径
-            function getNotificationImgBySeverity(severity) {
-                switch (severity) {
-                    case abp.notifications.severity.SUCCESS:
-                        return '/App/assets/yoyocms/notification/1.png';
-                    case abp.notifications.severity.WARN:
-                        return '/App/assets/yoyocms/notification/2.png';
-                    case abp.notifications.severity.ERROR:
-                        return '/App/assets/yoyocms/notification/3.png';
-                    case abp.notifications.severity.FATAL:
-                        return '/App/assets/yoyocms/notification/4.png';
-                    case abp.notifications.severity.INFO:
-                    default:
-                          return '/App/assets/yoyocms/notification/0.png';
-                }
-            }
-            
+         
+         
             //获取所有的消息信息
             vm.getUserNotificationsAsync= function() {
                 notificationService.getPagedUserNotificationsAsync({
@@ -69,30 +40,19 @@
                     vm.userNotifications = [];
                     $.each(result.data.items,
                         function (index, item) {
-                            vm.userNotifications.push(formattedMessage(item));
+                            vm.userNotifications.push(appUserNotificationService.formattedMessage(item));
                         });
-                    console.log(vm.userNotifications);
+                    //console.log(vm.userNotifications);
                 });
 
             }
         //标记所有为已读
             vm.makeAllAsRead= function() {
-                notificationService.makeAllUserNotificationsAsRead().then(function() {
-                    vm.getUserNotificationsAsync();
-                });
+                appUserNotificationService.makeAllAsReadService();
             }
             //设置消息为已读
             vm.makeNotificationAsRead = function (userNotification) {
-                notificationService.makeNotificationAsRead({ id: userNotification.id }).
-                    then(function () {
-                        for (var i = 0; i < vm.userNotifications.length; i++) {
-                            if (vm.userNotifications[i].id == userNotification.id) {
-                                vm.userNotifications[i].state = 'READ';
-                            }
-                        }
-                        vm.unReadUserNotificationCount -= 1;
-
-                });
+                appUserNotificationService.makeNotificationAsReadService(userNotification);
             }
 
 
@@ -109,6 +69,20 @@
                 abp.notifications.showUiNotifyForUserNotification(userNotification);
                 vm.getUserNotificationsAsync();
             });
+            //定义个刷新事件
+            abp.event.on('abp.notifications.refresh', function (){
+                vm.getUserNotificationsAsync();
+            });
+            //定义一个阅读事件，目的是全局处理消息
+            abp.event.on('app.notifications.read', function (userNotification) {
+                for (var i = 0; i < vm.userNotifications.length; i++) {
+                    if (vm.userNotifications[i].id == userNotification.id) {
+                        vm.userNotifications[i].state = 'READ';
+                    }
+                }
+                vm.unReadUserNotificationCount -= 1;
+            });
+
         }
 
     ]);

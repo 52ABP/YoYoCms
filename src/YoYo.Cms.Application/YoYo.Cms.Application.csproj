@@ -135,6 +135,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auditing\AuditLogAppService.cs" />
+    <Compile Include="Auditing\Dto\AuditLogListDto.cs" />
+    <Compile Include="Auditing\Dto\GetAuditLogsInput.cs" />
+    <Compile Include="Auditing\IAuditLogAppService.cs" />
     <Compile Include="CmsApplicationModule.cs" />
     <Compile Include="CmsAppServiceBase.cs" />
     <Compile Include="Dto\FileDto.cs" />

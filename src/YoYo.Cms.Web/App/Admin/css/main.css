@@ -2280,3 +2280,6 @@ label.custom-input-danger > span:hover:before {
   min-width: 400px;
   height: 100%; }
 
+.clickable-item {
+  cursor: pointer; }
+

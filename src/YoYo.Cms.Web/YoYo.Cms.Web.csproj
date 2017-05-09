@@ -405,13 +405,14 @@
     <Content Include="App\Admin\filters\momentjs-filters.js" />
     <Content Include="App\Admin\filters\text\removeHtml.js" />
     <Content Include="App\Admin\services\appSession.js" />
-    <Content Include="App\Admin\services\appUserNotificationHelper.js" />
+    <Content Include="App\Admin\services\appUserNotificationService.js" />
     <Content Include="App\Admin\services\ng\baProgressModal.js" />
     <Content Include="App\Admin\services\ng\baUtil.js" />
     <Content Include="App\Admin\services\ng\fileReader.js" />
     <Content Include="App\Admin\services\ng\preloader.js" />
     <Content Include="App\Admin\services\ng\stopableInterval.js" />
     <Content Include="App\Admin\views\about\about.js" />
+    <Content Include="App\Admin\views\auditlog\index.js" />
     <Content Include="App\Admin\views\dashboard\index.js" />
     <Content Include="App\Admin\views\empty\index.js" />
     <Content Include="App\Admin\views\home\home.js" />
@@ -435,6 +436,7 @@
     <Content Include="App\Admin\views\layout\header\headerCtrl.js" />
     <Content Include="App\Admin\views\layout\progressBarRound\progressBarRound.directive.js" />
     <Content Include="App\Admin\views\layout\widgets\widgets.directive.js" />
+    <Content Include="App\Admin\views\notifications\index.js" />
     <Content Include="App\Admin\views\tenants\createModal.js" />
     <Content Include="App\Admin\views\tenants\index.js" />
     <Content Include="App\Admin\views\userAnalysis\userLoginAttempts.js" />
@@ -1904,6 +1906,8 @@
     <Content Include="App\sass\theme\_tree.scss" />
     <Content Include="App\Admin\views\users\createOrEditModal.cshtml" />
     <Content Include="App\sass\views\user.scss" />
+    <Content Include="App\Admin\views\notifications\index.cshtml" />
+    <Content Include="App\Admin\views\auditlog\index.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">

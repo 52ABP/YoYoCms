@@ -69,15 +69,18 @@ namespace YoYo.Cms.Notifications
 
         public async Task<GetNotificationSettingsOutput> GetNotificationSettings()
         {
-            var output = new GetNotificationSettingsOutput();
-            
-            output.ReceiveNotifications = await SettingManager.GetSettingValueAsync<bool>(NotificationSettingNames.ReceiveNotifications);
-            
-            output.Notifications = (await _notificationDefinitionManager
-                .GetAllAvailableAsync(AbpSession.ToUserIdentifier()))
-                .Where(nd => nd.EntityType == null) //Get general notifications, not entity related notifications.
-                .MapTo<List<NotificationSubscriptionWithDisplayNameDto>>();
-            
+            var output = new GetNotificationSettingsOutput
+            {
+                ReceiveNotifications =
+                    await SettingManager.GetSettingValueAsync<bool>(NotificationSettingNames.ReceiveNotifications),
+                Notifications = (await _notificationDefinitionManager
+                        .GetAllAvailableAsync(AbpSession.ToUserIdentifier()))
+                    .Where(nd => nd.EntityType == null) //Get general notifications, not entity related notifications.
+                    .MapTo<List<NotificationSubscriptionWithDisplayNameDto>>()
+            };
+
+
+
             var subscribedNotifications = (await _notificationSubscriptionManager
                 .GetSubscribedNotificationsAsync(AbpSession.ToUserIdentifier()))
                 .Select(ns => ns.NotificationName)
@@ -87,7 +90,11 @@ namespace YoYo.Cms.Notifications
 
             return output;
         }
-
+        /// <summary>
+        /// 更新消息设置
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async Task UpdateNotificationSettings(UpdateNotificationSettingsInput input)
         {
             await SettingManager.ChangeSettingForUserAsync(AbpSession.ToUserIdentifier(), NotificationSettingNames.ReceiveNotifications, input.ReceiveNotifications.ToString());
@@ -105,12 +112,6 @@ namespace YoYo.Cms.Notifications
             }
         }
 
-        [ContractInvariantMethod]
-        private void ObjectInvariant()
-        {
-            Contract.Invariant(_notificationDefinitionManager != null);
-            Contract.Invariant(_userNotificationManager != null);
-            Contract.Invariant(_notificationSubscriptionManager != null);
-        }
+       
     }
 }
