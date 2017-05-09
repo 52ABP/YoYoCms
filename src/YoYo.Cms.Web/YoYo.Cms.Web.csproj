@@ -448,17 +448,7 @@
     <Content Include="App\assets\img\app\browsers\ie.svg" />
     <Content Include="App\assets\img\app\browsers\opera.svg" />
     <Content Include="App\assets\img\app\browsers\safari.svg" />
-    <Content Include="App\assets\img\app\feed\genom.png" />
-    <Content Include="App\assets\img\app\feed\my-little-kitten.png" />
-    <Content Include="App\assets\img\app\feed\new-york-location.png" />
-    <Content Include="App\assets\img\app\feed\vader-and-me-preview.png" />
     <Content Include="App\assets\img\app\my-app-logo.png" />
-    <Content Include="App\assets\img\app\profile\Alexander.png" />
-    <Content Include="App\assets\img\app\profile\Andrey.png" />
-    <Content Include="App\assets\img\app\profile\Kostya.png" />
-    <Content Include="App\assets\img\app\profile\Nasta.png" />
-    <Content Include="App\assets\img\app\profile\Nick.png" />
-    <Content Include="App\assets\img\app\profile\Vlad.png" />
     <Content Include="App\assets\img\app\skin-thumbnails\01_default.jpg" />
     <Content Include="App\assets\img\app\skin-thumbnails\02_transparent.jpg" />
     <Content Include="App\assets\img\app\skin-thumbnails\03_blue.jpg" />
