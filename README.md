@@ -8,8 +8,14 @@ YoYoCms 会持续将一些通用的功能组件释放出来给大家使用和参
 也希望有更多的人能参与进来。
 
 网址：http://www.yoyocms.com/
+
 项目地址：https://github.com/ltm0203/YoYoCms
 
+文章合集： 
+
+简书地址： http://www.jianshu.com/p/f0f35e821cbf 
+
+博客园地址： http://www.cnblogs.com/wer-ltm/p/6824716.html
 
 
 开发工具：建议使用Visual Studio 2017 。也可以使用 Visual Studio 2015Update 3
