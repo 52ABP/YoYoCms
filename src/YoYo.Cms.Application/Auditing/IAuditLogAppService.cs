@@ -10,6 +10,6 @@ namespace YoYo.Cms.Auditing
     /// </summary>
     public interface IAuditLogAppService:IApplicationService
     {
-        Task<PagedResultDto<AuditLogListDto>> GetAuditLogs(GetAuditLogsInput input);
+        Task<PagedResultDto<AuditLogListDto>> GetPagedAuditLogsAsync(GetAuditLogsInput input);
     }
 }

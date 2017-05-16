@@ -9,12 +9,21 @@ namespace YoYo.Cms.Auditing.Dto
 /// </summary>
     public class GetAuditLogsInput : PagedAndSortedInputDto, IShouldNormalize
     {
+        /// <summary>
+        /// 开始时间
+        /// </summary>
         public DateTime StartDate { get; set; }
-
+        /// <summary>
+        /// 结束时间
+        /// </summary>
         public DateTime EndDate { get; set; }
-
+        /// <summary>
+        /// 用户名
+        /// </summary>
         public string UserName { get; set; }
-
+        /// <summary>
+        /// 服务名称
+        /// </summary>
         public string ServiceName { get; set; }
 
         public string MethodName { get; set; }

@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auditing\AuditLogAppService.cs" />
+    <Compile Include="Auditing\Dto\AuditLogAndUser.cs" />
     <Compile Include="Auditing\Dto\AuditLogListDto.cs" />
     <Compile Include="Auditing\Dto\GetAuditLogsInput.cs" />
     <Compile Include="Auditing\IAuditLogAppService.cs" />
