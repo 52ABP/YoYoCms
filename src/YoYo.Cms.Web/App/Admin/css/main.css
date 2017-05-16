@@ -2283,3 +2283,9 @@ label.custom-input-danger > span:hover:before {
 .clickable-item {
   cursor: pointer; }
 
+.font-green {
+  color: #32c5d2; }
+
+.font-yellow-gold {
+  color: #e87e04; }
+

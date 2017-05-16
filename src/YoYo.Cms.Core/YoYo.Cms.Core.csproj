@@ -135,6 +135,7 @@
     <Compile Include="Localization\CultureHelper.cs" />
     <Compile Include="MultiTenancy\Tenant.cs" />
     <Compile Include="MultiTenancy\TenantManager.cs" />
+    <Compile Include="NamespaceHelper\NamespaceHelperManager.cs" />
     <Compile Include="Notifications\INotificationManager.cs" />
     <Compile Include="Notifications\NotificationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

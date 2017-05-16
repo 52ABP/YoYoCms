@@ -25,11 +25,17 @@ namespace YoYo.Cms.Auditing.Dto
         /// 服务名称
         /// </summary>
         public string ServiceName { get; set; }
-
+        /// <summary>
+        /// 方法名称
+        /// </summary>
         public string MethodName { get; set; }
-
+        /// <summary>
+        /// 浏览器信息
+        /// </summary>
         public string BrowserInfo { get; set; }
-
+        /// <summary>
+        /// 是否包含异常
+        /// </summary>
         public bool? HasException { get; set; }
 
         public int? MinExecutionDuration { get; set; }
@@ -45,11 +51,11 @@ namespace YoYo.Cms.Auditing.Dto
 
             if (Sorting.IndexOf("UserName", StringComparison.InvariantCultureIgnoreCase) >= 0)
             {
-                Sorting = "User." + Sorting;
+                Sorting = "UserInfo." + Sorting;
             }
             else
             {
-                Sorting = "AuditLog." + Sorting;
+                Sorting = "AuditLogInfo." + Sorting;
             }
         }
     }

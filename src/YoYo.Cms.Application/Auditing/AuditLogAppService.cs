@@ -1,14 +1,17 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Dynamic;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.Auditing;
+using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
 using YoYo.Cms.Auditing.Dto;
 using YoYo.Cms.UserManagerment.Users;
 using Abp.Extensions;
+using YoYo.Cms.NamespaceHelper;
 
 namespace YoYo.Cms.Auditing
 {
@@ -18,11 +21,12 @@ namespace YoYo.Cms.Auditing
     {
         private readonly IRepository<AuditLog, long> _auditLogRepository;
         private readonly IRepository<User, long> _userRepository;
-
-        public AuditLogAppService(IRepository<AuditLog, long> auditLogRepository, IRepository<User, long> userRepository)
+        private readonly NamespaceHelperManager _namespaceHelperManager;
+        public AuditLogAppService(IRepository<AuditLog, long> auditLogRepository, IRepository<User, long> userRepository, NamespaceHelperManager namespaceHelperManager)
         {
             _auditLogRepository = auditLogRepository;
             _userRepository = userRepository;
+            _namespaceHelperManager = namespaceHelperManager;
         }
 
       
@@ -38,11 +42,17 @@ namespace YoYo.Cms.Auditing
                 .PageBy(input)
                 .ToListAsync();
 
+            var auditLogListDtos = ConvertToAuditLogListDtos(results);
+
+            return new PagedResultDto<AuditLogListDto>(resultCount, auditLogListDtos);
 
 
-
-            throw new System.NotImplementedException();
+          
         }
+
+        #region 审计日志私有服务
+
+
 
         /// <summary>
         /// 创建审计日志用户的查询服务
@@ -68,6 +78,22 @@ namespace YoYo.Cms.Auditing
                 .WhereIf(input.HasException == false, item => item.AuditLogInfo.Exception == null || item.AuditLogInfo.Exception == "");
             return query;
         }
+
+        private List<AuditLogListDto> ConvertToAuditLogListDtos(List<AuditLogAndUser> results)
+        {
+            return results.Select(
+                result =>
+                {
+                    var auditLogListDto = result.AuditLogInfo.MapTo<AuditLogListDto>();
+                    auditLogListDto.UserName = result.UserInfo == null ? null : result.UserInfo.UserName;
+                    auditLogListDto.ServiceName = _namespaceHelperManager.SplitNameSpace(auditLogListDto.ServiceName);
+                    return auditLogListDto;
+                }).ToList();
+        }
+        #endregion
+
+
+
 
 
     }
