@@ -19,10 +19,15 @@
                 sorting: null
             };
             vm.dateRangeOptions = app.createDateRangePickerOptions();
-            vm.dateRangeModel = {
+
+            vm.dateRangeTime = {
                 startDate: moment().startOf('day'),
                 endDate: moment().endOf('day')
             };
+
+           
+
+
 
             vm.auditlogGridOptions = {
                 enableHorizontalScrollbar: uiGridConstants.scrollbars.WHEN_NEEDED,
@@ -129,9 +134,15 @@
 
             vm.getAuditLogs = function () {
                 vm.loading = true;
-              
+                if ((typeof vm.dateRangeTime) =="number") {
+                    vm.dateRangeTime = {
+                        startDate: moment().startOf('day'),
+                        endDate: moment().endOf('day')
+                    };
+                }
                 
-                auditLogService.getPagedAuditLogsAsync($.extend({}, vm.requestParams, vm.dateRangeModel))
+                
+                auditLogService.getPagedAuditLogsAsync($.extend({}, vm.requestParams, vm.dateRangeTime))
                     .then(function (result) {
                         vm.auditlogGridOptions.totalItems = result.data.totalCount;
                         vm.auditlogGridOptions.data = result.data.items;
@@ -139,6 +150,22 @@
                         vm.loading = false;
                     });
             };
+
+
+            vm.showDetails = function (auditLog) {
+                $uibModal.open({
+                    templateUrl: '~/App/Admin/views/auditlog/detailModal.cshtml',
+                    controller: 'app.views.auditLogs.detailModal as vm',
+                    backdrop: 'static',
+                    resolve: {
+                        auditLog: function () {
+                            return auditLog;
+                        }
+                    }
+                });
+            };
+
+
 
             vm.getAuditLogs();
 

@@ -1,10 +1,10 @@
 @import 'common';
 
 @import 'app/form.scss';
-
-
+@import 'app/_modals.scss';
+@import 'app/_alerts.scss';
 @import 'views/user.scss';
-
+@import 'views/auditlog.scss';
 .ui-grid {
     min-height: 480px;
     height: auto;

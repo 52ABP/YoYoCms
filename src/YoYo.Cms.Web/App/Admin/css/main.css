@@ -1,4 +1,5 @@
-﻿/*
+﻿@charset "UTF-8";
+/*
 .panel-group {
   > .panel {
     > .panel-heading {
@@ -2252,6 +2253,158 @@ label.custom-input-danger > span:hover:before {
 
 .sub-little-text {
   font-size: 12px; }
+
+.modal-content {
+  border-radius: 5px;
+  border: none;
+  color: #7d7d7d; }
+
+.modal-header {
+  color: #ffffff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px; }
+  .modal-header .modal-title {
+    color: #7d7d7d; }
+
+.modal-buttons {
+  margin-top: -12px;
+  margin-right: -22px; }
+  .modal-buttons button {
+    float: left;
+    margin-right: 24px;
+    margin-top: 12px; }
+  .modal-buttons.same-width button {
+    width: 160px;
+    text-align: center; }
+
+.modal {
+  text-align: center; }
+  .modal .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto; }
+    .modal .modal-dialog .form-control {
+      color: #6b6b6b;
+      background-color: transparent;
+      border: 1px solid #e7e7e7; }
+      .modal .modal-dialog .form-control::-webkit-input-placeholder {
+        color: #7d7d7d;
+        opacity: 0.9; }
+      .modal .modal-dialog .form-control:-moz-placeholder {
+        /* Firefox 18- */
+        color: #7d7d7d;
+        opacity: 0.9; }
+      .modal .modal-dialog .form-control::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #7d7d7d;
+        opacity: 0.9; }
+      .modal .modal-dialog .form-control:-ms-input-placeholder {
+        color: #7d7d7d;
+        opacity: 0.9; }
+    .modal .modal-dialog .modal-body p, .modal .modal-dialog .modal-body div, .modal .modal-dialog .modal-body span {
+      color: #7d7d7d; }
+  .modal .modal-header {
+    border: none; }
+    .modal .modal-header .close {
+      margin-top: -5px; }
+  .modal .modal-footer {
+    border: none;
+    padding-top: 0; }
+  .modal .modal-icon {
+    margin-right: 3px; }
+  .modal .sn-link-close {
+    color: #7d7d7d;
+    font-size: 30px; }
+    .modal .sn-link-close:hover {
+      color: #e85656; }
+
+@media screen and (min-width: 768px) {
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%; } }
+
+.message-modal .modal-header {
+  text-align: center; }
+  .message-modal .modal-header i {
+    font-size: 32px; }
+
+.message-modal .modal-title {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 12px;
+  margin-top: 18px; }
+
+.message-modal .modal-body {
+  text-align: center;
+  padding: 0;
+  font-size: 14px; }
+
+.message-modal .modal-footer {
+  margin: 24px 0 12px;
+  text-align: center; }
+
+.alert {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 300; }
+  .alert strong {
+    font-weight: 400; }
+  .alert .close {
+    margin-top: -3px; }
+  .alert .alert-link {
+    font-weight: 400; }
+  .alert .control-alert {
+    padding-top: 10px; }
+    .alert .control-alert button {
+      margin-right: 10px; }
+
+.closeable button {
+  color: #cbcbcb; }
+
+.bg-success {
+  background-color: rgba(144, 185, 0, 0.85);
+  color: #ffffff; }
+  .bg-success a {
+    color: #c54949; }
+    .bg-success a:hover {
+      color: #e85656; }
+
+.bg-info {
+  background-color: rgba(45, 172, 209, 0.85);
+  color: #ffffff; }
+  .bg-info a {
+    color: #e9cd60; }
+    .bg-info a:hover {
+      color: #dfb81c; }
+
+.bg-warning {
+  background-color: rgba(223, 184, 28, 0.85);
+  color: #ffffff; }
+  .bg-warning a {
+    color: #c54949; }
+    .bg-warning a:hover {
+      color: #e85656; }
+
+.bg-danger {
+  background-color: rgba(232, 86, 86, 0.85);
+  color: #ffffff; }
+  .bg-danger a {
+    color: #e9cd60; }
+    .bg-danger a:hover {
+      color: #dfb81c; }
+
+/*审计日志*/
+.audit-log-detail-view h3.form-section {
+  margin-top: 5px; }
+
+.audit-log-detail-view .form-group {
+  margin-bottom: 0; }
+  .audit-log-detail-view .form-group p.form-control-static {
+    margin: 0; }
+  .audit-log-detail-view .form-group .control-label {
+    font-weight: bold; }
 
 .ui-grid {
   min-height: 480px;
