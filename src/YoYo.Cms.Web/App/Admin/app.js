@@ -89,11 +89,11 @@
                     templateUrl: '/App/Admin/views/organizationUnits/index.cshtml',
                     menu: 'OrgManage',//此处对应CmsNavigationProvider中的name
                     displayName: app.localize('OrgManage')
-                }).state('rolemanage',//对应浏览器地址栏的地址信息
+                }).state('roles',//对应浏览器地址栏的地址信息
                 {
-                    url: '/rolemanage',
-                    templateUrl: '/App/Admin/views/roleManage/index.cshtml',
-                    menu: 'RoleManage',//此处对应CmsNavigationProvider中的name
+                    url: '/roles',
+                    templateUrl: '/App/Admin/views/roles/index.cshtml',
+                    menu: 'roles',//此处对应CmsNavigationProvider中的name
                     displayName: app.localize('RoleManage')
                 }).state('auditlog',//对应浏览器地址栏的地址信息
                 {

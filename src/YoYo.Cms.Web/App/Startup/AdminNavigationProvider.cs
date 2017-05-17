@@ -62,9 +62,9 @@ namespace YoYo.Cms.Web.App.Startup
                 icon: "fa fa-share-alt"
             );
             var roleManage = new MenuItemDefinition(
-                "RoleManage",
+                "roles",
                 L("RoleManage"),
-                url: "rolemanage",
+                url: "roles",
                 icon: "fa fa-id-card-o"
             );
             var auditLog = new MenuItemDefinition(

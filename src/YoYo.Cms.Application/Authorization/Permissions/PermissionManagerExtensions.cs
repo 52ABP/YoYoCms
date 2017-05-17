@@ -8,12 +8,12 @@ namespace YoYo.Cms.Authorization.Permissions
     public static class PermissionManagerExtensions
     {
         /// <summary>
-        /// Gets all permissions by names.
+        /// 通过权限名称获取所有的权限信息
         /// Throws <see cref="AbpValidationException"/> if can not find any of the permission names.
         /// </summary>
-        public static IEnumerable<Abp.Authorization.Permission> GetPermissionsFromNamesByValidating(this IPermissionManager permissionManager, IEnumerable<string> permissionNames)
+        public static IEnumerable<Permission> GetPermissionsFromNamesByValidating(this IPermissionManager permissionManager, IEnumerable<string> permissionNames)
         {
-            var permissions = new List<Abp.Authorization.Permission>();
+            var permissions = new List<Permission>();
             var undefinedPermissionNames = new List<string>();
 
             foreach (var permissionName in permissionNames)
@@ -29,7 +29,8 @@ namespace YoYo.Cms.Authorization.Permissions
 
             if (undefinedPermissionNames.Count > 0)
             {
-                throw new AbpValidationException(string.Format("There are {0} undefined permission names.", undefinedPermissionNames.Count))
+                throw new AbpValidationException(
+                    $"There are {undefinedPermissionNames.Count} undefined permission names.")
                       {
                           ValidationErrors = undefinedPermissionNames.ConvertAll(permissionName => new ValidationResult("Undefined permission: " + permissionName))
                       };

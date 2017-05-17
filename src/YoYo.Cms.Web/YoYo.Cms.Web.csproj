@@ -438,6 +438,8 @@
     <Content Include="App\Admin\views\layout\progressBarRound\progressBarRound.directive.js" />
     <Content Include="App\Admin\views\layout\widgets\widgets.directive.js" />
     <Content Include="App\Admin\views\notifications\index.js" />
+    <Content Include="App\Admin\views\roles\createOrEditModal.js" />
+    <Content Include="App\Admin\views\roles\index.js" />
     <Content Include="App\Admin\views\tenants\createModal.js" />
     <Content Include="App\Admin\views\tenants\index.js" />
     <Content Include="App\Admin\views\userAnalysis\userLoginAttempts.js" />
@@ -1910,6 +1912,8 @@
     <Content Include="App\Admin\views\auditlog\index.cshtml" />
     <Content Include="App\Admin\views\auditlog\detailModal.cshtml" />
     <Content Include="App\sass\views\auditlog.scss" />
+    <Content Include="App\Admin\views\roles\createOrEditModal.cshtml" />
+    <Content Include="App\Admin\views\roles\index.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">

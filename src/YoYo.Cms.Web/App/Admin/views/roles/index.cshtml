@@ -1,0 +1,26 @@
+﻿@using YoYo.Cms.Localization
+<div  ng-controller="app.views.roles.index as vm">
+    <div class="panel">
+        <div class="content panel-body">
+            
+            <div class="row" enter-key="vm.getRoles()">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <input ng-model="vm.filterText" auto-focus class="form-control" placeholder="@L("SearchWithThreeDot")" type="text">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" style="display: block;" ng-click="vm.getRoles()"><i class="fa fa-refresh"></i> @L("Refresh")</button>
+                        </span>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-3 align-right">
+                    <button class="btn btn-primary " ng-if="vm.permissions.create" ng-click="vm.createRole()">添加角色</button>
+                </div>
+            </div>
+            <div busy-if="vm.loading">
+                <div ui-grid="vm.roleGridOptions" ui-grid-resize-columns dir=@(CultureHelper.IsRtl ? "rtl" : "")></div>
+            </div>
+        </div>
+    </div>
+</div>
