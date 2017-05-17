@@ -136,6 +136,6 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" ng-click="vm.close()">@L("Close")</button>
+        <button type="button" class="btn  " ng-class="{'btn-success':!vm.auditLog.exception,'btn-danger':vm.auditLog.exception}" ng-click="vm.close()">@L("Close")</button>
     </div>
 </div>
