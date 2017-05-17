@@ -2308,8 +2308,8 @@ label.custom-input-danger > span:hover:before {
     .modal .modal-header .close {
       margin-top: -5px; }
   .modal .modal-footer {
-    border: none;
-    padding-top: 0; }
+    /*border: none;
+    padding-top: 0;*/ }
   .modal .modal-icon {
     margin-right: 3px; }
   .modal .sn-link-close {
@@ -2441,4 +2441,7 @@ label.custom-input-danger > span:hover:before {
 
 .font-yellow-gold {
   color: #e87e04; }
+
+.dropdown-menu > li > a {
+  cursor: pointer; }
 

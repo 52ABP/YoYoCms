@@ -98,7 +98,7 @@
 
             function openCreateOrEditRoleModal(roleId) {
                 var modalInstance = $uibModal.open({
-                    templateUrl: '~/App/Admin/views/roleManage/createOrEditModal.cshtml',
+                    templateUrl: '~/App/Admin/views/roles/createOrEditModal.cshtml',
                     controller: 'app.views.roles.createOrEditModal as vm',
                     backdrop: 'static',
                     resolve: {

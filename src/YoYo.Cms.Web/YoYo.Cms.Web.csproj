@@ -399,6 +399,7 @@
     <Content Include="App\Admin\directives\ng\scrollPosition.js" />
     <Content Include="App\Admin\directives\ng\trackWidth.js" />
     <Content Include="App\Admin\directives\ng\zoomIn.js" />
+    <Content Include="App\Admin\directives\permissionTree.js" />
     <Content Include="App\Admin\filters\image\appImage.js" />
     <Content Include="App\Admin\filters\image\kameleonImg.js" />
     <Content Include="App\Admin\filters\image\profilePicture.js" />
