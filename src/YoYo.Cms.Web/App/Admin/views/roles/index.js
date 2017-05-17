@@ -7,9 +7,7 @@
 
             $state.current.title = $state.current.displayName;
 
-            $scope.$on('$viewContentLoaded', function () {
-              //  App.initAjax();
-            });
+          
 
             vm.loading = false;
             vm.requestParams = {

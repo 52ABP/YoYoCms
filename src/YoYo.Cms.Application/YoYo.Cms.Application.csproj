@@ -183,9 +183,6 @@
     <Compile Include="Notifications\Dto\UpdateNotificationSettingsInput.cs" />
     <Compile Include="Notifications\INotificationAppService.cs" />
     <Compile Include="Notifications\NotificationAppService.cs" />
-    <Compile Include="Roles\Dto\UpdateRolePermissionsInput.cs" />
-    <Compile Include="Roles\IRoleAppService.cs" />
-    <Compile Include="Roles\RoleAppService.cs" />
     <Compile Include="UserManagerment\UserAnalysis\Dtos\ChangeUserPasswordDto.cs" />
     <Compile Include="UserManagerment\UserAnalysis\Dtos\ChangeUserProfileDto.cs" />
     <Compile Include="UserManagerment\UserAnalysis\Dtos\UserLoginAttemptDto.cs" />
