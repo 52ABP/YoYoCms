@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace YoYo.Cms.Dto
 {
+    /// <summary>
+    /// 文件dto
+    /// </summary>
     public class FileDto
     {
         [Required]
