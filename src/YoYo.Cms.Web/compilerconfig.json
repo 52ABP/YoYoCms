@@ -10,5 +10,9 @@
   {
     "outputFile": "Abp/Framework/scripts/libs/angularjs/abp.ng.es5.js",
     "inputFile": "Abp/Framework/scripts/libs/angularjs/abp.ng.js"
+  },
+  {
+    "outputFile": "App/Admin/app.es5.js",
+    "inputFile": "App/Admin/app.js"
   }
 ]

@@ -308,6 +308,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Abp\Framework\scripts\abp.es5.js">
+      <DependentUpon>abp.js</DependentUpon>
+    </Content>
+    <Content Include="Abp\Framework\scripts\abp.es5.min.js">
+      <DependentUpon>abp.es5.js</DependentUpon>
+    </Content>
     <Content Include="Abp\Framework\scripts\abp.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.blockUI.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.jquery.js" />
@@ -321,6 +327,12 @@
     <Content Include="Abp\Framework\scripts\libs\abp.spin.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.sweet-alert.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.toastr.js" />
+    <Content Include="Abp\Framework\scripts\libs\angularjs\abp.ng.es5.js">
+      <DependentUpon>abp.ng.js</DependentUpon>
+    </Content>
+    <Content Include="Abp\Framework\scripts\libs\angularjs\abp.ng.es5.min.js">
+      <DependentUpon>abp.ng.es5.js</DependentUpon>
+    </Content>
     <Content Include="Abp\Framework\scripts\libs\angularjs\abp.ng.js" />
     <Content Include="Abp\Framework\scripts\libs\bundle.js" />
     <Content Include="Abp\Framework\scripts\libs\bundle.min.js">
@@ -333,6 +345,12 @@
     <Content Include="Abp\Framework\styles\abp.mixings.css" />
     <Content Include="Abp\Framework\styles\abp.mixings.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
+    <Content Include="App\Admin\app.es5.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
+    <Content Include="App\Admin\app.es5.min.js">
+      <DependentUpon>app.es5.js</DependentUpon>
+    </Content>
     <Content Include="App\Admin\app.js" />
     <Content Include="App\Admin\config\baSidebar\bundle.js" />
     <Content Include="App\Admin\config\baSidebar\bundle.min.js">

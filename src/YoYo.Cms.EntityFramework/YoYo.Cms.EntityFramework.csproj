@@ -139,6 +139,10 @@
     <Compile Include="Migrations\201704281345333_YoYoCms_Initial.Designer.cs">
       <DependentUpon>201704281345333_YoYoCms_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708291553133_Add_Upgrade_ABP2_3.cs" />
+    <Compile Include="Migrations\201708291553133_Add_Upgrade_ABP2_3.Designer.cs">
+      <DependentUpon>201708291553133_Add_Upgrade_ABP2_3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="CmsDataModule.cs" />
@@ -166,6 +170,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704281345333_YoYoCms_Initial.resx">
       <DependentUpon>201704281345333_YoYoCms_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708291553133_Add_Upgrade_ABP2_3.resx">
+      <DependentUpon>201708291553133_Add_Upgrade_ABP2_3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
