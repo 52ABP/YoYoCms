@@ -5,7 +5,7 @@ using YoYo.Cms.UserManagerment.Users;
 
 namespace YoYo.Cms.Authorization
 {
-    public class PermissionChecker : PermissionChecker<Tenant, Role, User>
+    public class PermissionChecker : PermissionChecker< Role, User>
     {
         public PermissionChecker(UserManager userManager)
             : base(userManager)

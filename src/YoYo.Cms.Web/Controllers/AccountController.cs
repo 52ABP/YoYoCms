@@ -30,6 +30,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Abp.Authorization;
 using YoYo.Cms.Notifications;
 using YoYo.Cms.UserManagerment.Users;
 

@@ -46,7 +46,7 @@ var abp = abp || {};
     abp.ajax = function (userOptions) {
         userOptions = userOptions || {};
 
-        var options = $.extend({}, abp.ajax.defaultOpts, userOptions);
+        var options = $.extend(true, {}, abp.ajax.defaultOpts, userOptions);
         options.success = undefined;
         options.error = undefined;
 
@@ -73,7 +73,10 @@ var abp = abp || {};
         defaultOpts: {
             dataType: 'json',
             type: 'POST',
-            contentType: 'application/json'
+            contentType: 'application/json',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
         },
 
         defaultError: {
@@ -326,33 +329,19 @@ var abp = abp || {};
                         maxResultCount: jtParams.jtPageSize,
                         sorting: jtParams.jtSorting
                     });
-                    if (!$.isFunction(originalListAction.method)) {
-                        originalListAction.method.done(function (result) {
 
+                    originalListAction.method(input)
+                        .done(function (result) {
                             $dfd.resolve({
                                 "Result": "OK",
                                 "Records": result.items || result[originalListAction.recordsField],
                                 "TotalRecordCount": result.totalCount,
                                 originalResult: result
                             });
-
+                        })
+                        .fail(function (error) {
+                            self._handlerForFailOnAbpRequest($dfd, error);
                         });
-
-                    } else {
-                        originalListAction.method(input)
-                            .done(function (result) {
-                                $dfd.resolve({
-                                    "Result": "OK",
-                                    "Records": result.items || result[originalListAction.recordsField],
-                                    "TotalRecordCount": result.totalCount,
-                                    originalResult: result
-                                });
-                            })
-                            .fail(function (error) {
-                                self._handlerForFailOnAbpRequest($dfd, error);
-                            });
-                    }
-
                 });
             };
         },
@@ -680,7 +669,7 @@ var abp = abp || {};
 
         var opts = $.extend(
             {},
-            abp.libs.sweetAlert.config.default,
+            abp.libs.sweetAlert.config['default'],
             abp.libs.sweetAlert.config[type],
             {
                 title: title,
@@ -724,7 +713,7 @@ var abp = abp || {};
 
         var opts = $.extend(
             {},
-            abp.libs.sweetAlert.config.default,
+            abp.libs.sweetAlert.config['default'],
             abp.libs.sweetAlert.config.confirm,
             userOpts
         );
@@ -744,6 +733,7 @@ var abp = abp || {};
     });
 
 })(jQuery);
+
 var abp = abp || {};
 (function () {
 
